@@ -35,7 +35,7 @@ export function HeroSection() {
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Innovative Software Developer,{" "}
               <br className="hidden sm:inline" />
-              building web and mobile applications
+              building Web, Mobile, and 3D applications
             </p>
           </div>
 

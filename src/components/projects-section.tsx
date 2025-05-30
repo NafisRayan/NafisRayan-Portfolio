@@ -1,17 +1,18 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Smartphone, Globe, Brain, Eye, Gamepad2, Monitor } from "lucide-react"
 
-const projects = [
-	{
+const projects = [	{
 		title: "GoFlix AndroidTV",
 		description:
 			"GoFlix is a mobile streaming app inspired by Netflix, built with React Native and Expo, offering features like a custom video player, dynamic content categories, real-time comments, and offline viewing. It includes search with real-time filtering, adaptive layouts, and bottom tab navigation. App also keeps tracks of user history.",
 		icon: Smartphone,
+		image: "/projects/goflix.png",
 		tags: [
 			"#react-native",
 			"#redux",
@@ -26,12 +27,12 @@ const projects = [
 		],
 		sourceCode: "#",
 		demoUrl: "#",
-	},
-	{
+	},	{
 		title: "AIContextChat App",
 		description:
 			"Application is built using Streamlit, offering real-time chat functionality and advanced AI capabilities. It supports file uploads (PDF, TXT, DOCX), web scraping to gather information from websites, and integrates Google's Generative AI model for intelligent responses.",
 		icon: Brain,
+		image: "/projects/AIContextChat.png",
 		tags: [
 			"#python",
 			"#nlp",
@@ -47,12 +48,12 @@ const projects = [
 		],
 		sourceCode: "#",
 		demoUrl: "#",
-	},
-	{
+	},	{
 		title: "ThreeJS Demo Works",
 		description:
 			"These projects demonstrates multi-purpose and cross-platform app and game development capabilities by leveraging Three.js to create an interactive 3D scene, integrating real-time object detection via YOLO algorithm, and building a responsive web interface using Flask.",
 		icon: Gamepad2,
+		image: "/projects/threejsDemo.png",
 		tags: [
 			"#Three.js",
 			"#JavaScript",
@@ -66,12 +67,12 @@ const projects = [
 		],
 		sourceCode: "#",
 		demoUrl: "#",
-	},
-	{
+	},	{
 		title: "DecentAI App",
 		description:
 			"DecentAI is a web app combining blockchain and AI to enhance decentralized community engagement and policy discussions. It features a React frontend, Python backend, and utilizes NLP and LLM for sentiment analysis, trend detection, and content moderation.",
 		icon: Globe,
+		image: "/projects/decentai.png",
 		tags: [
 			"#react-flask",
 			"#nlp-llm",
@@ -84,12 +85,12 @@ const projects = [
 		],
 		sourceCode: "#",
 		demoUrl: "#",
-	},
-	{
+	},	{
 		title: "ReactNative Browser",
 		description:
 			"This mobile browser application, developed with React Native, offers users a customizable browsing experience on their mobile devices. Key features include web content display via the WebView component, URL navigation with support for direct URL entry and search queries.",
 		icon: Monitor,
+		image: "/projects/reactBrowser.png",
 		tags: [
 			"#react",
 			"#android",
@@ -105,12 +106,12 @@ const projects = [
 		],
 		sourceCode: "#",
 		demoUrl: "#",
-	},
-	{
+	},	{
 		title: "YoloEYE App",
 		description:
 			"This project utilizes YOLO (You Only Look Once) models for object detection tasks. It provides a user-friendly interface built with Streamlit, allowing users to easily upload images or video streams to see object detections in real-time.",
 		icon: Eye,
+		image: "/projects/yoloEYE.png",
 		tags: [
 			"#opencv",
 			"#python",
@@ -149,22 +150,28 @@ export function ProjectsSection() {
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
 					{projects.map((project, index) => {
 						const Icon = project.icon
-						return (
-							<Card
+						return (							<Card
 								key={project.title}
-								className="group hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+								className="group hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden"
 								onMouseEnter={() => setHoveredIndex(index)}
 								onMouseLeave={() => setHoveredIndex(null)}
-							>
-								<CardHeader className="pb-4">
-									<div className="flex items-center gap-3 mb-3">
-										<div className="p-2 sm:p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-											<Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-										</div>
-										<CardTitle className="text-lg sm:text-xl leading-tight">
-											{project.title}
-										</CardTitle>
+							>								{/* Project Image */}
+								<div className="relative h-64 w-full overflow-hidden">
+									<Image
+										src={project.image}
+										alt={project.title}
+										fill
+										className="object-cover group-hover:scale-110 transition-transform duration-300"
+									/>
+									<div className="absolute top-4 left-4 p-2 rounded-lg bg-background/90 backdrop-blur-sm">
+										<Icon className="h-5 w-5 text-primary" />
 									</div>
+								</div>
+
+								<CardHeader className="pb-4">
+									<CardTitle className="text-lg sm:text-xl leading-tight mb-3">
+										{project.title}
+									</CardTitle>
 									<CardDescription className="text-sm sm:text-base leading-relaxed line-clamp-4">
 										{project.description}
 									</CardDescription>
