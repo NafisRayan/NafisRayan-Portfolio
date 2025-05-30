@@ -19,6 +19,8 @@ export function AboutSection() {
             With expertise in multiple programming languages and frameworks, I create efficient, scalable solutions
             that make a real impact.
           </p>
+
+
         </div>
 
         <div className="space-y-8">
@@ -40,6 +42,14 @@ export function AboutSection() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               loading="lazy"
             ></iframe>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-4 mt-8">
+            <a href="https://github.com/NafisRayan" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">GitHub</a>
+            <a href="https://linkedin.com/in/nafisrayan" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">LinkedIn</a>
+            <a href="https://wa.me/8801931999190" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">WhatsApp</a>
+            <a href="mailto:nafisrayan123@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">Email</a>
           </div>
         </div>
       </div>

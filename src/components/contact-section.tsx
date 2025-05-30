@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Github, Linkedin, Mail, Send } from "lucide-react"
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
 
 export function ContactSection() {
   const [isLoading, setIsLoading] = useState(false)
@@ -42,15 +43,27 @@ export function ContactSection() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://linkedin.com/in/nafisrayan",
       icon: Linkedin,
       description: "Connect with me on LinkedIn"
     },
     {
       name: "GitHub",
-      href: "#", 
+      href: "https://github.com/NafisRayan", 
       icon: Github,
       description: "Check out my repositories"
+    },
+    {
+      name: "WhatsApp",
+      href: "https://wa.me/8801931999190",
+      icon: WhatsappIcon,
+      description: "Chat with me on WhatsApp"
+    },
+    {
+      name: "Email",
+      href: "mailto:nafisrayan123@gmail.com",
+      icon: Mail,
+      description: "Send me an email"
     }
   ]
 

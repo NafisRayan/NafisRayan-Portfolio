@@ -1,13 +1,15 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: "GitHub", href: "#", icon: Github },
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Email", href: "mailto:contact@nafis.dev", icon: Mail },
+    { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
+    { name: "LinkedIn", href: "https://linkedin.com/in/nafisrayan", icon: Linkedin },
+    { name: "WhatsApp", href: "https://wa.me/8801931999190", icon: WhatsappIcon },
+    { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },
   ]
 
   return (

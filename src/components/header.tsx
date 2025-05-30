@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, Github, Linkedin, FileText } from "lucide-react"
+import { Menu, Github, Linkedin, FileText, Mail } from "lucide-react"
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -16,9 +17,11 @@ const navigation = [
 ]
 
 const socialLinks = [
-  { name: "GitHub", href: "#", icon: Github },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Resume", href: "#", icon: FileText },
+  { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
+  { name: "LinkedIn", href: "https://linkedin.com/in/nafisrayan", icon: Linkedin },
+  { name: "WhatsApp", href: "https://wa.me/8801931999190", icon: WhatsappIcon },
+  { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },
+  { name: "CV", href: "/NafisRayan_CV.pdf", icon: FileText },
 ]
 
 export function Header() {
