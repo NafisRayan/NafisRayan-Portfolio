@@ -6,81 +6,40 @@ export function AboutSection() {
   return (
     <section id="about" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-5xl">
-        <h1 className="text-4xl font-bold mb-16 text-muted-foreground">Skills & Experience</h1>
+        <div className="text-center mb-16">
+          <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
+            About Me
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold">
+            Bringing Ideas to Life with{" "}
+            <span className="text-primary">Code & Creativity</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto pt-8">
+            I'm a skilled software developer specializing in modern web technologies and AI applications.
+            With expertise in multiple programming languages and frameworks, I create efficient, scalable solutions
+            that make a real impact.
+          </p>
+        </div>
 
-        <div className="space-y-16">
-          {/* Full Stack Development */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-light text-foreground">
-              Full Stack Development
+        <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold">
+              Do You Like <span className="text-primary">Logo</span>? I Do Too!
             </h2>
-            <div className="flex items-center gap-2 text-primary">
-              <span className="text-muted-foreground">Web & Server Technologies</span>
-            </div>
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                At Tech-Dojo, I collaborated with a team to develop scalable applications using the MERN stack,
-                gaining hands-on experience with modern web development. I also improved database performance
-                by optimizing algorithms and SQL queries, demonstrating my ability to handle both frontend and backend challenges.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Notable projects include DecentAI, a comprehensive platform built using ReactJS and Flask that combines
-                blockchain technology with AI for community engagement, and PortalUp, a web-based file upload system
-                with ReactJS frontend and NodeJS backend.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Technologies: MERN Stack, Next.js, React, Nuxt.js, Vue.js, Node.js, Express, TypeScript, Python, Flask, Django
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              I believe in building things systematically, piece by piece. Whether it's code or 3D models,
+              I enjoy the creative process of bringing complex ideas to life.
+            </p>
           </div>
 
-          {/* Mobile Development */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-light text-foreground">
-              Android & iOS Development
-            </h2>
-            <div className="flex items-center gap-2 text-primary">
-              <span className="text-muted-foreground">Mobile Technologies</span>
-            </div>
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Developed various mobile applications using React Native at Tech-Dojo, including Android and iOS
-                applications. Created GoFlix-AndroidTV, a sophisticated mobile streaming application with React Native
-                and Expo, featuring a Netflix-like experience with robust video player and offline capabilities.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Also developed ReactNative-Browser, a mobile browser application with customized browsing features,
-                demonstrating my ability to create complex, user-friendly mobile interfaces.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Technologies: React Native, Flutter, Cross-platform Mobile Apps, Native Development, Mobile UI/UX
-              </p>
-            </div>
-          </div>
-
-          {/* 3D Development */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-light text-foreground">
-              3D Simulation & Game Development
-            </h2>
-            <div className="flex items-center gap-2 text-primary">
-              <span className="text-muted-foreground">3D Technologies & AI Integration</span>
-            </div>
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Integrated ThreeJS for 3D rendering and interactive web experiences at Tech-Dojo. Created VRIA,
-                an innovative VR Assistant application combining ThreeJS for 3D visualization with YOLO for AR
-                visual context processing.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                At BRACU Mongol-Tori and Dichari, I designed AI algorithms for Mars rover navigation and developed
-                firmware for rover localization. Built AI-powered rescue robots with IoT components and implemented
-                navigation algorithms using Python and OpenCV for real-time telemetry.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Technologies: Three.js, Blender, WebGL, Game Engines, Computer Graphics, 3D Modeling, AI Integration
-              </p>
-            </div>
+          <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://lego-blocks-game.vercel.app/"
+              className="w-full h-full border-0"
+              title="Lego Blocks Game"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>

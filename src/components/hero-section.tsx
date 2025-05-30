@@ -8,9 +8,9 @@ import { ArrowDown, Code, Smartphone, Database, Brain, Box } from "lucide-react"
 const skills = [
   { name: "MERN Stack", icon: Code },
   { name: "React Native", icon: Smartphone },
-  { name: "Flask-Django", icon: Database },
+  { name: "Three.js & Blender", icon: Box },
+  { name: "Flask & Django", icon: Database },
   { name: "AI & ML", icon: Brain },
-  { name: "Three.js", icon: Box },
 ]
 
 export function HeroSection() {

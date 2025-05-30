@@ -57,14 +57,13 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 grid-overlay">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center space-y-4 lg:space-y-6 mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Get in touch</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
-            Contact.
-          </p>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!
-          </p>
+        <div className="text-center mb-16">
+          <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
+            Get In Touch
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
+            Let&apos;s Connect
+          </h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

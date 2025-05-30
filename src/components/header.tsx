@@ -11,6 +11,7 @@ const navigation = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+   { name: "Why Hire Me", href: "#hire-me" },
   { name: "Contact", href: "#contact" },
 ]
 
