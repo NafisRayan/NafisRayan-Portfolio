@@ -145,7 +145,7 @@ export function ProjectsSection() {
 											src={project.image}
 											alt={project.title}
 											fill
-											className="object-cover group-hover:scale-110 transition-transform duration-300"
+className="object-cover"
 										/>
 										<div className="absolute top-4 left-4 p-2 rounded-lg bg-background/90 backdrop-blur-sm">
 											<Icon className="h-5 w-5 text-primary" />
