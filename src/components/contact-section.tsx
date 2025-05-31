@@ -156,9 +156,9 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
       name: "Email",
       href: "mailto:nafisrayan123@gmail.com",
       icon: Mail,
-      description: "Send me an email"
-    }
+      description: "Send me an email"    }
   ]
+  
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
@@ -167,16 +167,23 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
         setSubmitError("File size must be less than 5MB")
         return
       }
+        // Validate file type - only images allowed
+      const allowedTypes = [
+        'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'
+      ];
       
-      // Validate file type
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
       if (!allowedTypes.includes(file.type)) {
-        setSubmitError("Please upload only images, PDFs, or Word documents")
+        setSubmitError("Please upload only image files (JPEG, PNG, GIF, SVG, WebP)")
         return
       }
       
       setUploadedFile(file)
       setSubmitError("")
+      console.log('File selected:', {
+        name: file.name,
+        type: file.type,
+        size: file.size
+      })
     }
   }
   const removeFile = () => {
@@ -364,20 +371,18 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                   </div>
                     {/* File Upload */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-foreground">Want to Share Us Something?</Label>
+                    <Label className="text-sm font-medium text-foreground">Share an Image with Us?</Label>
                     {!uploadedFile ? (
                       <div 
                         className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted/30 hover:border-border/70 transition-colors cursor-pointer"
                         onClick={() => document.getElementById('file-upload')?.click()}
-                      >
-                        <Cloud className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                        <p className="text-muted-foreground mb-2">Click to upload or drag and drop</p>
-                        <p className="text-xs text-muted-foreground">Images, PDFs, or Word documents (max 5MB)</p>
+                      >                        <Cloud className="h-12 w-12 text-muted-foreground mx-auto mb-4" />                        <p className="text-muted-foreground mb-2">Click to upload or drag and drop</p>
+                        <p className="text-xs text-muted-foreground">Images only (JPEG, PNG, GIF, SVG, WebP) - max 5MB</p>
                         <input
                           id="file-upload"
                           type="file"
                           className="hidden"
-                          accept="image/*,.pdf,.doc,.docx"
+                          accept="image/*"
                           onChange={handleFileUpload}
                         />
                       </div>

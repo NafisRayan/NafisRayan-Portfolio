@@ -46,18 +46,18 @@ export async function POST(req: NextRequest) {
           { error: 'File size must be less than 5MB' },
           { status: 400 }
         )
-      }
+      }      // Validate file type - only images allowed
+      const allowedTypes = [
+        'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'
+      ];
       
-      // Validate file type
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
       if (!allowedTypes.includes(file.type)) {
         return NextResponse.json(
-          { error: 'Please upload only images, PDFs, or Word documents' },
+          { error: 'Please upload only image files (JPEG, PNG, GIF, SVG, WebP)' },
           { status: 400 }
         )
       }
-      
-      try {
+        try {
         // Convert file to buffer
         const fileBuffer = Buffer.from(await file.arrayBuffer())
         
@@ -74,15 +74,15 @@ export async function POST(req: NextRequest) {
         
         cloudinaryUrl = uploadResult.secure_url
         
-        console.log('File uploaded to Cloudinary:', {
+        console.log('Image uploaded to Cloudinary:', {
           url: uploadResult.secure_url,
           publicId: uploadResult.public_id
         })
         
       } catch (uploadError) {
-        console.error('Failed to upload file to Cloudinary:', uploadError)
+        console.error('Failed to upload image to Cloudinary:', uploadError)
         return NextResponse.json(
-          { error: 'Failed to upload file. Please try again.' },
+          { error: 'Failed to upload image. Please try again.' },
           { status: 500 }
         )
       }
@@ -122,16 +122,22 @@ export async function POST(req: NextRequest) {
               <h3 style="margin-top: 0; color: #374151;">Services Needed</h3>
               <ul style="margin: 0; padding-left: 20px;">
                 ${helpNeeded.map((service: string) => `<li>${service}</li>`).join('')}
-              </ul>
-            </div>
-              ${fileInfo ? `
+              </ul>            </div>
+            
+            ${fileInfo ? `
             <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #374151;">📎 Attached File</h3>
+              <h3 style="margin-top: 0; color: #374151;">🖼️ Attached Image</h3>
               <p><strong>File Name:</strong> ${fileInfo.name}</p>
               <p><strong>File Size:</strong> ${(fileInfo.size / 1024 / 1024).toFixed(2)} MB</p>
               <p><strong>File Type:</strong> ${fileInfo.type}</p>
-              <p><strong>Download Link:</strong> <a href="${fileInfo.cloudinaryUrl}" target="_blank" style="color: #2563eb; text-decoration: none;">View/Download File</a></p>
-              <p style="margin-top: 10px; color: #059669;"><em>✅ File has been securely uploaded and is accessible via the link above.</em></p>
+              
+              <div style="margin: 15px 0; text-align: center;">
+                <img src="${fileInfo.cloudinaryUrl}" alt="${fileInfo.name}" style="max-width: 100%; max-height: 400px; border-radius: 8px; border: 1px solid #e5e7eb;" />
+              </div>
+              
+              <p><strong>View Original:</strong> <a href="${fileInfo.cloudinaryUrl}" target="_blank" style="color: #2563eb; text-decoration: none; background: #dbeafe; padding: 8px 16px; border-radius: 4px; display: inline-block; margin-top: 8px;">🔗 Open Full Size Image</a></p>
+              
+              <p style="margin-top: 15px; color: #059669; font-size: 14px;"><em>✅ Image has been securely uploaded to Cloudinary.</em></p>
             </div>
             ` : ''}
             
