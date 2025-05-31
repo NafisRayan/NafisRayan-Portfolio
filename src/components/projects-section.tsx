@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -133,7 +132,6 @@ const projects = [	{
 ]
 
 export function ProjectsSection() {
-	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
 	return (
 		<section id="projects" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 grid-dots">
@@ -148,13 +146,11 @@ export function ProjectsSection() {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-					{projects.map((project, index) => {
-						const Icon = project.icon
+{projects.map((project) => {
+const Icon = project.icon
 						return (							<Card
 								key={project.title}
 								className="group hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden"
-								onMouseEnter={() => setHoveredIndex(index)}
-								onMouseLeave={() => setHoveredIndex(null)}
 							>								{/* Project Image */}
 								<div className="relative h-64 w-full overflow-hidden">
 									<Image

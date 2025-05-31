@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Github, Linkedin, Mail, Send, Upload, Cloud } from "lucide-react"
+import { Github, Linkedin, Mail, Cloud } from "lucide-react"
 import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
 
 export function ContactSection() {

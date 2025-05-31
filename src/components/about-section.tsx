@@ -15,7 +15,7 @@ export function AboutSection() {
             <span className="text-primary">Code & Creativity</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto pt-8">
-            I'm a skilled software developer specializing in modern web technologies and AI applications.
+            I&apos;m a skilled software developer specializing in modern web technologies and AI applications.
             With expertise in multiple programming languages and frameworks, I create efficient, scalable solutions
             that make a real impact.
           </p>
@@ -29,7 +29,7 @@ export function AboutSection() {
               Do You Like <span className="text-primary">Logo</span>? I Do Too!
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              I believe in building things systematically, piece by piece. Whether it's code or 3D models,
+              I believe in building things systematically, piece by piece. Whether it&apos;s code or 3D models,
               I enjoy the creative process of bringing complex ideas to life.
             </p>
           </div>
