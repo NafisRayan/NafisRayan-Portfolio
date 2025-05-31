@@ -38,17 +38,16 @@ export function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300">
-      <div className="container mx-auto">
-        <nav 
+      <div className="container mx-auto">        <nav 
           className={`
             backdrop-blur-md rounded-2xl border transition-all duration-300
             ${isScrolled 
-              ? "bg-background/80 border-border/40 shadow-lg" 
-              : "bg-background/60 border-border/30 shadow-sm"
+              ? "bg-background/70 border-border/40 shadow-lg" 
+              : "bg-background/70 border-border/30 shadow-sm"
             }
           `}
         >
-          <div className="flex h-16 items-center justify-between px-6">
+          <div className="flex h-24 items-center justify-between px-6">
             <Link href="/" className="flex items-center space-x-2 shrink-0">
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Nafis

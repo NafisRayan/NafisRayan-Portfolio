@@ -3,14 +3,13 @@
 import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowDown, Code, Smartphone, Database, Brain, Box } from "lucide-react"
+import { ArrowDown, Code, Smartphone, Brain, Box } from "lucide-react"
 
 const skills = [
-  { name: "MERN Stack", icon: Code },
-  { name: "React Native", icon: Smartphone },
-  { name: "Three.js & Blender", icon: Box },
-  { name: "Flask & Django", icon: Database },
-  { name: "AI & ML", icon: Brain },
+  { name: "Web Development", icon: Code },
+  { name: "App Development", icon: Smartphone },
+  { name: "AI Solutions", icon: Brain },
+  { name: "3D Experiences", icon: Box },
 ]
 
 export function HeroSection() {
@@ -36,32 +35,10 @@ export function HeroSection() {
               Innovative Software Developer,{" "}
               <br className="hidden sm:inline" />
               building Web, Mobile, and 3D applications
-            </p>
-          </div>
-
-          {/* Skills badges */}
-          <div className={`flex flex-wrap justify-center gap-3 lg:gap-4 max-w-3xl ${isLoaded ? 'animate-slide-up' : 'opacity-0'}`}>
-            {skills.map((skill, index) => {
-              const Icon = skill.icon
-              return (
-                <Badge
-                  key={skill.name}
-                  variant="secondary"
-                  className="text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5 flex items-center gap-2 animate-fade-in"
-                  style={{
-                    animationDelay: `${(index + 1) * 0.1}s`,
-                    animationFillMode: 'both'
-                  }}
-                >
-                  <Icon className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="whitespace-nowrap">{skill.name}</span>
-                </Badge>
-              )
-            })}
-          </div>
+            </p>          </div>
 
           {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 lg:gap-6 ${isLoaded ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+          <div className={`flex flex-col sm:flex-row gap-4 lg:gap-6 ${isLoaded ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             <Button size="lg" className="text-base px-6 lg:px-8 py-3 lg:py-4" asChild>
               <a href="#about">Learn More</a>
             </Button>
@@ -70,8 +47,73 @@ export function HeroSection() {
             </Button>
           </div>
 
+          {/* Client Logos */}
+          <div className={`w-full max-w-7xl mx-auto ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+            <p className="text-sm text-muted-foreground mb-6 text-center">Trusted by amazing clients</p>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-slide-carousel space-x-8 items-center">
+                {/* First set of logos */}
+                {[
+                  'BoctoCrop.png',
+                  'ByteSlack.png',
+                  'CollegeMastermind.png',
+                  'CreativeCentralian.png',
+                  'EcoMart.png',
+                  'LNP.png',
+                  'Micratto.png',
+                  'Middler.png',
+                  'PetSquadTV.png',
+                  'Photoreviser.png',
+                  'ReviewSensical.png',
+                  'Ultra Engineering.png'
+                ].map((logo, index) => (                <div
+                  key={`first-${logo}`}
+                  className="flex-shrink-0 flex items-center justify-center p-3 transition-all duration-300 hover:scale-110"
+                >
+                  <img
+                    src={`/client/${logo}`}
+                    alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                    className="h-6 w-auto sm:h-8 md:h-10 object-contain 
+                               filter brightness-0 saturate-100 
+                               dark:filter dark:brightness-0 dark:invert
+                               opacity-70 hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {[
+                  'BoctoCrop.png',
+                  'ByteSlack.png',
+                  'CollegeMastermind.png',
+                  'CreativeCentralian.png',
+                  'EcoMart.png',
+                  'LNP.png',
+                  'Micratto.png',
+                  'Middler.png',
+                  'PetSquadTV.png',
+                  'Photoreviser.png',
+                  'ReviewSensical.png',
+                  'Ultra Engineering.png'
+                ].map((logo, index) => (                <div
+                  key={`second-${logo}`}
+                  className="flex-shrink-0 flex items-center justify-center p-3 transition-all duration-300 hover:scale-110"
+                >
+                  <img
+                    src={`/client/${logo}`}
+                    alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                    className="h-6 w-auto sm:h-8 md:h-10 object-contain 
+                               filter brightness-0 saturate-100 
+                               dark:filter dark:brightness-0 dark:invert
+                               opacity-70 hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Scroll indicator */}
-          <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${isLoaded ? 'animate-pulse-slow' : 'opacity-0'}`} style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
+          <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${isLoaded ? 'animate-pulse-slow' : 'opacity-0'}`} style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
             <ArrowDown className="h-6 w-6 text-muted-foreground" />
           </div>
         </div>
