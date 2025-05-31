@@ -177,11 +177,36 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
               </div>
               <h2 className="text-2xl font-bold mb-1">Send me a message</h2>
               <p className="text-muted-foreground text-sm mb-2 text-center max-w-xs">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
-            </div>
-            <CardContent className="p-6 lg:p-8"><form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                {/* Project Name */}
+            </div>            <CardContent className="p-6 lg:p-8"><form onSubmit={handleSubmit} className="flex flex-col gap-6">                {/* Name and Email - Moved to top */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-sm font-medium">Your Name</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="What's your good name?"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="h-11"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium">Email Address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="What's your web address?"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="h-11"
+                      required
+                    />
+                  </div>
+                </div>                {/* Project Name */}
                 <div className="space-y-2">
-                  <Label htmlFor="projectName" className="text-sm font-medium">What's Your Project Called? <span className="text-red-500">(Required)</span></Label>
+                  <Label htmlFor="projectName" className="text-sm font-medium">What's Your Project Called?</Label>
                   <Input
                     id="projectName"
                     name="projectName"
@@ -195,7 +220,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
 
                 {/* Project Description */}
                 <div className="space-y-2">
-                  <Label htmlFor="description" className="text-sm font-medium">What's the Big Idea? <span className="text-red-500">(Required)</span></Label>
+                  <Label htmlFor="description" className="text-sm font-medium">What's the Big Idea?</Label>
                   <Textarea
                     id="description"
                     name="description"
@@ -262,37 +287,9 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                         accept="image/*,.pdf,.doc,.docx"
                       />
                     </label>
-                  </div>
-                </div>
+                  </div>                </div>
 
-                {/* Name and Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium">Your Name <span className="text-red-500">(Required)</span></Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="What's your good name?"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="h-11"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium">Email Address <span className="text-red-500">(Required)</span></Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="What's your web address?"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="h-11"
-                      required
-                    />
-                  </div>
-                </div>                {/* Submit Button */}
+                {/* Submit Button */}
                 <div className="flex justify-center mt-6">
                   <Button 
                     type="submit" 
