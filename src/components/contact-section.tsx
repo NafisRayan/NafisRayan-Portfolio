@@ -92,10 +92,9 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
     }
   ]
 
-  return (
-    <section
+  return (    <section
       id="contact"
-      className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#e0e7ff] via-[#f0fdfa] to-[#fdf2f8] dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] overflow-hidden animate-fade-in"
+      className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-background"
       style={{ minHeight: '100vh' }}
     >
       {/* Glassmorphism background shapes */}
@@ -108,6 +107,20 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
           <span className="font-medium text-green-700 dark:text-green-300">Project idea launched successfully!</span>
         </div>
       )}      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
+            Contact Me
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold">
+            Let's Work Together on Your{" "}
+            <span className="text-primary">Next Project</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto pt-8">
+            Have an idea you want to bring to life? I'm here to help you create something amazing.
+            Get in touch and let's discuss how we can make your vision a reality.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Social Links - Now on the left */}
           <div className="order-1 space-y-6 lg:space-y-8 animate-fade-in-up">
@@ -121,10 +134,9 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
             <div className="space-y-4">
               {socialLinks.map((link, idx) => {
                 const Icon = link.icon
-                return (
-                  <Card
+                return (                  <Card
                     key={link.name}
-                    className="hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-0 group animate-fade-in-up"
+                    className="hover:shadow-md transition-all duration-300 hover:scale-105 bg-transparent border border-border/50 group animate-fade-in-up"
                     style={{ transitionDelay: `${idx * 60}ms` }}
                   >
                     <CardContent className="p-4 sm:p-6">
@@ -150,10 +162,8 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                   </Card>
                 )
               })}
-            </div>
-
-            {/* Bigger Quick Response card for symmetry */}
-            <Card className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-0 animate-fade-in-up">
+            </div>            {/* Bigger Quick Response card for symmetry */}
+            <Card className="bg-transparent border border-border/50 animate-fade-in-up">
               <CardContent className="p-6 sm:p-8">
                 <h4 className="font-semibold mb-3 text-lg sm:text-xl">Quick Response</h4>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
@@ -167,16 +177,14 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                 </p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Contact Form - Now on the right */}
-          <Card className="order-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-2xl border-0 animate-fade-in-up p-0 overflow-hidden">
-            <div className="flex flex-col items-center justify-center pt-8 pb-2 px-6 border-b border-primary/10 bg-gradient-to-r from-primary/10 to-transparent">
-              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 mb-3 shadow-lg">
-                <Mail className="h-10 w-10 text-primary animate-fade-in-up" />
+          </div>          {/* Contact Form - Now on the right */}
+          <Card className="order-2 bg-transparent border border-border/50 shadow-sm animate-fade-in-up p-0 overflow-hidden">            <div className="relative flex flex-col items-center justify-center pt-8 pb-2 px-6 border-b border-primary/10 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-blue-950 dark:to-purple-950 overflow-hidden">
+              {/* Soothing background pattern */}
+              <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.1)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,rgba(147,51,234,0.1)_0%,transparent_50%),radial-gradient(circle_at_40%_40%,rgba(236,72,153,0.05)_0%,transparent_50%)]"></div>
+              <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 mb-3 shadow-lg backdrop-blur-sm">                <Mail className="h-10 w-10 text-primary animate-fade-in-up" />
               </div>
-              <h2 className="text-2xl font-bold mb-1">Send me a message</h2>
-              <p className="text-muted-foreground text-sm mb-2 text-center max-w-xs">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
+              <h2 className="relative z-10 text-2xl font-bold mb-1">Send me a message</h2>
+              <p className="relative z-10 text-muted-foreground text-sm mb-2 text-center max-w-xs">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
             </div>            <CardContent className="p-6 lg:p-8"><form onSubmit={handleSubmit} className="flex flex-col gap-6">                {/* Name and Email - Moved to top */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
