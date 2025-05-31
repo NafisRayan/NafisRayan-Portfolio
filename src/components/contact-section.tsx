@@ -86,22 +86,25 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
       return    }
     
     setIsLoading(true)
-    
-    try {
-      // Create form data for submission
-      const submissionData = {
-        ...formData,
-        file: uploadedFile,
-        timestamp: new Date().toISOString()
+      try {
+      // Create FormData for file upload support
+      const formDataToSend = new FormData()
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('projectTitle', formData.projectTitle)
+      formDataToSend.append('bigIdea', formData.bigIdea)
+      formDataToSend.append('helpNeeded', JSON.stringify(formData.helpNeeded))
+      formDataToSend.append('timestamp', new Date().toISOString())
+      
+      // Add file if uploaded
+      if (uploadedFile) {
+        formDataToSend.append('file', uploadedFile)
       }
       
       // Submit to API endpoint
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submissionData)
+        body: formDataToSend // Don't set Content-Type header - let browser set it for FormData
       })
       
       const result = await response.json()

@@ -1,15 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { uploadToCloudinary } from '@/lib/cloudinary'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json()
+    // Parse FormData
+    const formData = await req.formData()
+    
+    // Extract form fields
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const projectTitle = formData.get('projectTitle') as string
+    const bigIdea = formData.get('bigIdea') as string
+    const helpNeededStr = formData.get('helpNeeded') as string
+    const file = formData.get('file') as File | null
+    
+    // Parse helpNeeded array
+    const helpNeeded = helpNeededStr ? JSON.parse(helpNeededStr) : []
     
     // Validate required fields
-    const { name, email, projectTitle, bigIdea, helpNeeded } = body
-    
     if (!name || !email || !projectTitle || !bigIdea || !helpNeeded?.length) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -24,6 +35,57 @@ export async function POST(req: NextRequest) {
         { error: 'Invalid email format' },
         { status: 400 }
       )
+    }
+      // Process file if uploaded
+    let fileInfo = null
+    let cloudinaryUrl = null
+    if (file && file.size > 0) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        return NextResponse.json(
+          { error: 'File size must be less than 5MB' },
+          { status: 400 }
+        )
+      }
+      
+      // Validate file type
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+      if (!allowedTypes.includes(file.type)) {
+        return NextResponse.json(
+          { error: 'Please upload only images, PDFs, or Word documents' },
+          { status: 400 }
+        )
+      }
+      
+      try {
+        // Convert file to buffer
+        const fileBuffer = Buffer.from(await file.arrayBuffer())
+        
+        // Upload to Cloudinary
+        const uploadResult = await uploadToCloudinary(fileBuffer, file.name, file.type) as any
+        
+        fileInfo = {
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          cloudinaryUrl: uploadResult.secure_url,
+          cloudinaryPublicId: uploadResult.public_id
+        }
+        
+        cloudinaryUrl = uploadResult.secure_url
+        
+        console.log('File uploaded to Cloudinary:', {
+          url: uploadResult.secure_url,
+          publicId: uploadResult.public_id
+        })
+        
+      } catch (uploadError) {
+        console.error('Failed to upload file to Cloudinary:', uploadError)
+        return NextResponse.json(
+          { error: 'Failed to upload file. Please try again.' },
+          { status: 500 }
+        )
+      }
     }
       // Here you would typically:
     // 1. Save to database
@@ -56,13 +118,22 @@ export async function POST(req: NextRequest) {
                 ${bigIdea}
               </p>
             </div>
-            
-            <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <h3 style="margin-top: 0; color: #374151;">Services Needed</h3>
               <ul style="margin: 0; padding-left: 20px;">
                 ${helpNeeded.map((service: string) => `<li>${service}</li>`).join('')}
               </ul>
             </div>
+              ${fileInfo ? `
+            <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0; color: #374151;">📎 Attached File</h3>
+              <p><strong>File Name:</strong> ${fileInfo.name}</p>
+              <p><strong>File Size:</strong> ${(fileInfo.size / 1024 / 1024).toFixed(2)} MB</p>
+              <p><strong>File Type:</strong> ${fileInfo.type}</p>
+              <p><strong>Download Link:</strong> <a href="${fileInfo.cloudinaryUrl}" target="_blank" style="color: #2563eb; text-decoration: none;">View/Download File</a></p>
+              <p style="margin-top: 10px; color: #059669;"><em>✅ File has been securely uploaded and is accessible via the link above.</em></p>
+            </div>
+            ` : ''}
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
               <p>This message was sent from your portfolio contact form on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}.</p>
@@ -127,14 +198,14 @@ export async function POST(req: NextRequest) {
       // Don't fail the entire request if email fails
       // Just log the error and continue
     }
-    
-    // Log the submission for record keeping
+      // Log the submission for record keeping
     console.log('New contact form submission:', {
       name,
       email,
       projectTitle,
       bigIdea,
       helpNeeded,
+      fileInfo,
       timestamp: new Date().toISOString()
     })
     
