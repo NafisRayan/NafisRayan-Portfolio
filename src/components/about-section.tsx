@@ -43,14 +43,6 @@ export function AboutSection() {
               loading="lazy"
             ></iframe>
           </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-4 mt-8">
-            <a href="https://github.com/NafisRayan" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">GitHub</a>
-            <a href="https://linkedin.com/in/nafisrayan" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">LinkedIn</a>
-            <a href="https://wa.me/8801931999190" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">WhatsApp</a>
-            <a href="mailto:nafisrayan123@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-primary underline">Email</a>
-          </div>
         </div>
       </div>
     </section>

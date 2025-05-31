@@ -28,13 +28,13 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Nafis
+                Nafis Rayan
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Innovative Software Developer,{" "}
               <br className="hidden sm:inline" />
-              building Web, Mobile, and 3D applications
+              building Web, Mobile, and 3D applications.
             </p>          </div>
 
           {/* CTA Buttons */}

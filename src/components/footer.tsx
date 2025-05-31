@@ -1,61 +1,57 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
-import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
   const socialLinks = [
-    { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
     { name: "LinkedIn", href: "https://linkedin.com/in/nafisrayan", icon: Linkedin },
+    { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
     { name: "WhatsApp", href: "https://wa.me/8801931999190", icon: WhatsappIcon },
     { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },
   ]
 
   return (
-    <div className="border-t bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-muted-foreground text-center sm:text-left">
-            <span>© {currentYear} Nafis. Made with</span>
-            <div className="flex items-center gap-2">
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
-              <span>using NextJS & ShadCN</span>
-            </div>
+    <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-6 py-8">
+        {/* Main footer content */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+          {/* Brand/Logo section */}
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              Nafis
+            </span>
+            <span className="hidden sm:inline text-sm text-muted-foreground">
+              | Software Developer
+            </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* Social links - Center */}
+          <div className="flex items-center gap-4">
             {socialLinks.map((link) => {
               const Icon = link.icon
               return (
-                <Button key={link.name} variant="ghost" size="icon" asChild>
-                  <a 
-                    href={link.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span className="sr-only">{link.name}</span>
-                  </a>
-                </Button>
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors hover:bg-muted rounded-md"
+                  aria-label={link.name}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
               )
             })}
           </div>
-        </div>
 
-        <div className="mt-8 pt-6 border-t text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            Built with modern web technologies • Open to new opportunities • 
-            <a 
-              href="#contact" 
-              className="hover:text-foreground transition-colors ml-1 underline underline-offset-4"
-            >
-              Let&apos;s connect
-            </a>
-          </p>
+          {/* Credit text - Right */}
+          <div className="text-sm text-muted-foreground text-center lg:text-right">
+            © {currentYear} Nafis Rayan. All rights reserved.
+            <div className="text-xs mt-1">
+              Design That Solve Real Life Problems.
+            </div>          </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

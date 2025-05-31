@@ -85,7 +85,7 @@ export function ContactSection() {
     "Something Else"
   ]
   return (
-    <section id="contact" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="contact" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
