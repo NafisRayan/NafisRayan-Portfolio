@@ -162,6 +162,55 @@
   .animate-slide-carousel {
     animation: slideCarousel 30s linear infinite;
   }
+  /* Stacking scroll animation */
+  .stacking-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .stacking-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Enhanced sticky positioning for stacking effect */
+  @supports (position: sticky) {
+    .sticky-stack {
+      position: sticky;
+      top: 5rem;
+    }
+  }
+
+  /* Smooth stacking transitions */
+  @keyframes stackIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes stackOut {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-50px) scale(1.05);
+    }
+  }
+
+  .animate-stack-in {
+    animation: stackIn 0.6s ease-out forwards;
+  }
+
+  .animate-stack-out {
+    animation: stackOut 0.6s ease-out forwards;
+  }
 
 
 }

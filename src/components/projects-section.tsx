@@ -128,15 +128,22 @@ export function ProjectsSection() {
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
 						Featured Projects
 					</h1>
-				</div>
-
-				<div className="space-y-8">
-{projects.map((project) => {
-const Icon = project.icon
-return (							<Card
+				</div>				<div className="max-w-6xl mx-auto relative">
+					{projects.map((project, index) => {
+						const Icon = project.icon
+						return (
+							<div 
 								key={project.title}
-								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-6xl py-0"
-							><div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+								className="sticky top-32 mb-12 transition-all duration-500 ease-out"
+								style={{
+									zIndex: 100 + index,
+									transform: `translateY(${index * 30}px)`,
+									transformOrigin: 'center top'
+								}}
+							>
+								<Card
+									className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden py-0 stacking-card"
+								><div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 									{/* Project Image */}									<div className="relative aspect-[4/3] w-full overflow-hidden order-2 lg:order-1">
 										<Image
 											src={project.image}
@@ -204,12 +211,12 @@ return (							<Card
 														<ExternalLink className="h-4 w-4" />
 														<span>Live Demo</span>
 													</a>
-												</Button>
-											</div>
+												</Button>											</div>
 										</CardContent>
 									</div>
 								</div>
 							</Card>
+							</div>
 						)
 					})}
 				</div>

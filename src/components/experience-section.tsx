@@ -70,9 +70,17 @@ export function ExperienceSection() {
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
 						Professional Experience
 					</h1>
-				</div>				<div className="max-w-6xl mx-auto space-y-12">
-					{experiences.map((experience, index) => (
-						<Card key={index} className="relative p-6 border border-border/50 bg-transparent shadow-sm hover:shadow-md transition-shadow duration-200">
+				</div>				<div className="max-w-6xl mx-auto relative">
+					{experiences.map((experience, index) => (						<div 
+							key={index}
+							className="sticky top-32 mb-12 transition-all duration-500 ease-out"
+							style={{
+								zIndex: 100 + index,
+								transform: `translateY(${index * 30}px)`,
+								transformOrigin: 'center top'
+							}}
+						>
+							<Card className="relative p-6 border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow duration-200 stacking-card">
 							<div className="grid grid-cols-[200px_1fr] gap-8">
 								{/* Left column - Date and Location */}
 								<div className="space-y-2">
@@ -120,6 +128,7 @@ export function ExperienceSection() {
 									</div>								</div>
 							</div>
 						</Card>
+						</div>
 					))}
 				</div>
 			</div>
