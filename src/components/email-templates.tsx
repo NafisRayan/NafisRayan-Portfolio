@@ -77,16 +77,16 @@ export function ConfirmationEmailTemplate({ name, projectTitle }: ConfirmationEm
       </h2>
       
       <p>
-        I've received your project inquiry for <strong>"{projectTitle}"</strong> and I'm excited to learn more about your idea!
+        I&#39;ve received your project inquiry for <strong>&quot;{projectTitle}&quot;</strong> and I&#39;m excited to learn more about your idea!
       </p>
       
       <div style={{ background: '#f0f9ff', padding: '20px', borderRadius: '8px', margin: '20px 0' }}>
-        <h3 style={{ marginTop: 0, color: '#374151' }}>What's Next?</h3>
+        <h3 style={{ marginTop: 0, color: '#374151' }}>What&#39;s Next?</h3>
         <ul style={{ margin: 0, paddingLeft: '20px' }}>
-          <li>I'll review your project details carefully</li>
-          <li>I'll get back to you within 24 hours</li>
+          <li>I&#39;ll review your project details carefully</li>
+          <li>I&#39;ll get back to you within 24 hours</li>
           <li>We can schedule a call to discuss your vision</li>
-          <li>I'll provide a tailored proposal for your project</li>
+          <li>I&#39;ll provide a tailored proposal for your project</li>
         </ul>
       </div>
       

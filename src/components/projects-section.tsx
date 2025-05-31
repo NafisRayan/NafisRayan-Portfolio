@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Monitor, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap } from "lucide-react"
+import { ExternalLink, Github, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap } from "lucide-react"
 
 const projects = [
 	{
@@ -131,9 +131,9 @@ export function ProjectsSection() {
 				</div>
 
 				<div className="space-y-8">
-					{projects.map((project, index) => {
-						const Icon = project.icon
-						return (
+{projects.map((project) => {
+const Icon = project.icon
+return (
 							<Card
 								key={project.title}
 								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-4xl"

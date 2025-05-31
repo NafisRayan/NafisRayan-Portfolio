@@ -412,7 +412,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                   {isSubmitted && (
                     <div className="p-4 rounded-lg bg-green-50 border border-green-200 dark:bg-green-900/20 dark:border-green-800">
                       <p className="text-sm text-green-600 dark:text-green-400">
-                        🎉 Your message has been sent successfully! I'll get back to you within 24 hours.
+🎉 Your message has been sent successfully! I&#39;ll get back to you within 24 hours.
                       </p>
                       <p className="text-xs text-green-500 dark:text-green-300 mt-1">
                         📧 Check your email for a confirmation message with next steps.
