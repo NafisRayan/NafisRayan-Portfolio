@@ -70,7 +70,7 @@ export function ExperienceSection() {
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
 						Professional Experience
 					</h1>
-				</div>				<div className="max-w-4xl mx-auto space-y-12">
+				</div>				<div className="max-w-6xl mx-auto space-y-12">
 					{experiences.map((experience, index) => (
 						<Card key={index} className="relative p-6 border border-border/50 bg-transparent shadow-sm hover:shadow-md transition-shadow duration-200">
 							<div className="grid grid-cols-[200px_1fr] gap-8">

@@ -133,10 +133,9 @@ export function ProjectsSection() {
 				<div className="space-y-8">
 {projects.map((project) => {
 const Icon = project.icon
-return (
-							<Card
+return (							<Card
 								key={project.title}
-								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-4xl"
+								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-6xl"
 							>
 								<div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
 									{/* Project Image */}
