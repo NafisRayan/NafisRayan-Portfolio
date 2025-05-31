@@ -135,24 +135,20 @@ export function ProjectsSection() {
 const Icon = project.icon
 return (							<Card
 								key={project.title}
-								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-6xl"
-							>
-								<div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
-									{/* Project Image */}
-									<div className="relative h-64 lg:h-full w-full overflow-hidden order-2 lg:order-1">
+								className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden mx-auto max-w-6xl py-0"
+							><div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+									{/* Project Image */}									<div className="relative aspect-[4/3] w-full overflow-hidden order-2 lg:order-1">
 										<Image
 											src={project.image}
 											alt={project.title}
 											fill
-className="object-cover"
+											className="object-cover"
 										/>
 										<div className="absolute top-4 left-4 p-2 rounded-lg bg-background/90 backdrop-blur-sm">
 											<Icon className="h-5 w-5 text-primary" />
 										</div>
-									</div>
-
-									{/* Project Content */}
-									<div className="p-6 lg:p-8 flex flex-col justify-center order-1 lg:order-2">
+									</div>									{/* Project Content */}
+									<div className="p-6 lg:p-8 order-1 lg:order-2">
 										<CardHeader className="p-0 pb-4">
 											<CardTitle className="text-xl lg:text-2xl xl:text-3xl leading-tight mb-3">
 												{project.title}
