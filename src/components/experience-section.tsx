@@ -63,7 +63,6 @@ const experiences = [
 export function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollOffset, setScrollOffset] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
@@ -81,55 +80,54 @@ export function ExperienceSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <section id="experience" ref={sectionRef} className="pt-16 lg:pt-24 pb-0 mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8">
+  return (    <section id="experience" ref={sectionRef} className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-6 sm:mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-					<span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+					<span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
 						Career Path
 					</span>
-					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
+					<h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground">
 						Professional Experience
 					</h1>
-				</div>				<div className="max-w-6xl mx-auto relative stacking-container">
-					{experiences.map((experience, index) => (						<div 
+				</div><div className="max-w-6xl mx-auto relative stacking-container">
+					{experiences.map((experience, index) => (
+						<div 
 							key={index}
-className="stacking-item transition-all ease-out"
-style={{
-  zIndex: 100 + index,
-  transform: `translateY(${index * 10 - scrollOffset}px)`, /* Reduced initial offset */
-  transformOrigin: 'center top'
-}}
->
-<Card className="relative p-6 border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow duration-200 stacking-card">
-							<div className="grid grid-cols-[200px_1fr] gap-8">
-								{/* Left column - Date and Location */}
-								<div className="space-y-2">
+							className="stacking-item transition-all ease-out"							style={{
+								zIndex: 100 + index,
+								transform: `translateY(${index * 10 - scrollOffset}px)`,
+								transformOrigin: 'center top'
+							}}
+						><Card className="relative p-4 sm:p-6 border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow duration-200 stacking-card">
+							{/* Mobile-first responsive layout */}
+							<div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr] gap-4 lg:gap-8">
+								{/* Top section on mobile, Left column on desktop - Date and Location */}
+								<div className="space-y-2 lg:order-1">
 									<div className="flex items-center gap-2 text-foreground">
 										<Calendar className="h-4 w-4" />
-										<span className="font-medium">{experience.period}</span>
+										<span className="font-medium text-sm sm:text-base">{experience.period}</span>
 									</div>
 									<div className="flex items-center gap-2 text-muted-foreground">
 										<MapPin className="h-4 w-4" />
-										<span>{experience.location}</span>
+										<span className="text-sm sm:text-base">{experience.location}</span>
 									</div>
 								</div>
 
-								{/* Right column - Experience details */}
-								<div>
-									<h3 className="text-xl font-bold mb-1">
+								{/* Bottom section on mobile, Right column on desktop - Experience details */}
+								<div className="lg:order-2">
+									<h3 className="text-lg sm:text-xl font-bold mb-1">
 										{experience.title}
 									</h3>
-									<p className="text-lg text-muted-foreground mb-4">
+									<p className="text-base sm:text-lg text-muted-foreground mb-4">
 										{experience.company}
 									</p>
 
-									<ul className="space-y-3">
+									<ul className="space-y-2 sm:space-y-3">
 										{experience.responsibilities.map(
 											(responsibility, idx) => (
-												<li key={idx} className="flex gap-3">
-													<CircleDot className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-													<span className="text-muted-foreground">
+												<li key={idx} className="flex gap-2 sm:gap-3">
+													<CircleDot className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-1" />
+													<span className="text-muted-foreground text-sm sm:text-base">
 														{responsibility}
 													</span>
 												</li>
@@ -137,11 +135,12 @@ style={{
 										)}
 									</ul>
 
-									<div className="mt-4 flex flex-wrap gap-2">
+									<div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
 										{experience.technologies.map((tech, idx) => (
 											<Badge
 												key={idx}
 												variant="secondary"
+												className="text-xs sm:text-sm px-2 sm:px-3 py-1"
 											>
 												{tech}
 											</Badge>

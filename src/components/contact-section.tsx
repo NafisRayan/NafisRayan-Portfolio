@@ -189,7 +189,6 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
   const removeFile = () => {
     setUploadedFile(null)
   }
-
   const services = [
     "Website Development",
     "Mobile App Development", 
@@ -198,44 +197,41 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
     "AI or Chatbot Integration",
     "Something Else"
   ]
+  
   return (
-    <section id="contact" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
+    <section id="contact" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl">        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-4">
             Contact Me
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
             Let&apos;s Work Together on Your Next Project
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Have an idea you want to bring to life? I&apos;m here to help you create something amazing. Get in 
             touch and let&apos;s discuss how we can make your vision a reality.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Social Links */}
-          <div className="order-1 lg:order-1 space-y-6">            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-foreground">Feel free to reach out directly...
-
-</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">          {/* Social Links */}
+          <div className="order-1 lg:order-1 space-y-4 sm:space-y-6">
+            <div>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Feel free to reach out directly...</h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {socialLinks.map((link) => {
                 const Icon = link.icon
-                return (
-                  <Card key={link.name} className="border border-border/50 bg-transparent hover:shadow-md transition-all duration-300">
-                    <CardContent className="p-4 sm:p-6">
+                return (                  <Card key={link.name} className="border border-border/50 bg-transparent hover:shadow-md transition-all duration-300">
+                    <CardContent className="p-3 sm:p-4 lg:p-6">
                       <a
                         href={link.href}
-                        className="flex items-center gap-4 group"
+                        className="flex items-center gap-3 sm:gap-4 group"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
-                          <Icon className="h-6 w-6 text-primary" />
+                        <div className="p-2 sm:p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+                          <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                         </div>
                         <div className="min-w-0 flex-1">
                           <h4 className="font-semibold group-hover:text-primary transition-colors text-sm sm:text-base text-foreground">
@@ -250,15 +246,13 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                   </Card>
                 )
               })}
-            </div>
-
-            {/* Additional contact info */}
+            </div>            {/* Additional contact info */}
             <Card className="border border-border/50 bg-transparent">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent className="p-3 sm:p-4 lg:p-6">
                 <h4 className="font-semibold mb-2 text-sm sm:text-base text-foreground">Quick Response</h4>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   I typically respond to messages within 24 hours. For urgent inquiries, 
-                  feel free to reach out on LinkedIn for faster communication.
+                  feel free to reach out on WhatsAPP for faster communication.
                 </p>
                 <br />
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -268,29 +262,26 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                 </p>
               </CardContent>
             </Card></div>          {/* Contact Form */}
-          <div className="order-2 lg:order-2">
-            <Card className="border border-border/50 bg-transparent shadow-sm hover:shadow-md transition-shadow duration-200">
-              <CardHeader className="text-center pb-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-8 w-8 text-primary" />
+          <div className="order-2 lg:order-2">            <Card className="border border-border/50 bg-transparent shadow-sm hover:shadow-md transition-shadow duration-200">
+              <CardHeader className="text-center pb-6 sm:pb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl text-foreground">Send me a message</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardTitle className="text-lg sm:text-xl text-foreground">Send me a message</CardTitle>
+                <CardDescription className="text-sm sm:text-base text-muted-foreground">
                   Fill out the form below and I&apos;ll get back to you as soon as possible.
                 </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              </CardHeader>              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   {/* Name and Email */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">                    <div className="space-y-2">
-                      <Label htmlFor="name" className="text-sm font-medium text-foreground">Your Name</Label>
-                      <Input
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"><div className="space-y-2">
+                      <Label htmlFor="name" className="text-sm font-medium text-foreground">Your Name</Label>                      <Input
                         id="name"
                         name="name"
                         placeholder="What's your good name?"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className={`h-12 ${formErrors.name ? 'border-red-500' : ''}`}
+                        className={`h-10 sm:h-12 ${formErrors.name ? 'border-red-500' : ''}`}
                         required
                       />
                       {formErrors.name && (
@@ -298,15 +289,14 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                       )}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm font-medium text-foreground">Email Address</Label>
-                      <Input
+                      <Label htmlFor="email" className="text-sm font-medium text-foreground">Email Address</Label>                      <Input
                         id="email"
                         name="email"
                         type="email"
                         placeholder="What's your web address?"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className={`h-12 ${formErrors.email ? 'border-red-500' : ''}`}
+                        className={`h-10 sm:h-12 ${formErrors.email ? 'border-red-500' : ''}`}
                         required
                       />
                       {formErrors.email && (
@@ -316,14 +306,13 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                   </div>
                     {/* Project Title */}
                   <div className="space-y-2">
-                    <Label htmlFor="projectTitle" className="text-sm font-medium text-foreground">What&apos;s Your Project Called?</Label>
-                    <Input
+                    <Label htmlFor="projectTitle" className="text-sm font-medium text-foreground">What&apos;s Your Project Called?</Label>                    <Input
                       id="projectTitle"
                       name="projectTitle"
                       placeholder="e.g. Social App 2.0"
                       value={formData.projectTitle}
                       onChange={handleInputChange}
-                      className={`h-12 ${formErrors.projectTitle ? 'border-red-500' : ''}`}
+                      className={`h-10 sm:h-12 ${formErrors.projectTitle ? 'border-red-500' : ''}`}
                       required
                     />
                     {formErrors.projectTitle && (
@@ -348,13 +337,12 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                       <p className="text-sm text-red-500">{formErrors.bigIdea}</p>
                     )}
                   </div>
-                  
-                  {/* Help Needed */}
-                  <div className="space-y-3">
+                    {/* Help Needed */}
+                  <div className="space-y-2 sm:space-y-3">
                     <Label className="text-sm font-medium text-foreground">What Do You Need Help With?</Label>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {services.map((service) => (
-                        <label key={service} className="flex items-center space-x-3 cursor-pointer">
+                        <label key={service} className="flex items-center space-x-2 sm:space-x-3 cursor-pointer">
                           <input
                             type="checkbox"
                             checked={formData.helpNeeded.includes(service)}
@@ -372,11 +360,12 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                     {/* File Upload */}
                   <div className="space-y-2">
                     <Label className="text-sm font-medium text-foreground">Share an Image with Us?</Label>
-                    {!uploadedFile ? (
-                      <div 
-                        className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted/30 hover:border-border/70 transition-colors cursor-pointer"
+                    {!uploadedFile ? (                      <div 
+                        className="border-2 border-dashed border-border rounded-lg p-4 sm:p-6 lg:p-8 text-center bg-muted/30 hover:border-border/70 transition-colors cursor-pointer"
                         onClick={() => document.getElementById('file-upload')?.click()}
-                      >                        <Cloud className="h-12 w-12 text-muted-foreground mx-auto mb-4" />                        <p className="text-muted-foreground mb-2">Click to upload or drag and drop</p>
+                      >
+                        <Cloud className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-muted-foreground mx-auto mb-3 sm:mb-4" />
+                        <p className="text-muted-foreground mb-2 text-sm sm:text-base">Click to upload or drag and drop</p>
                         <p className="text-xs text-muted-foreground">Images only (JPEG, PNG, GIF, SVG, WebP) - max 5MB</p>
                         <input
                           id="file-upload"
@@ -427,7 +416,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                       </p>
                     </div>
                   )}
-                    <Button type="submit" className="w-full h-12" disabled={isLoading || isSubmitted}>
+                    <Button type="submit" className="w-full h-10 sm:h-12" disabled={isLoading || isSubmitted}>
                     {isLoading ? (
                       <span className="flex items-center gap-2">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>

@@ -162,8 +162,7 @@
     animation: slideCarousel 30s linear infinite;
   }
   
-  /* Stacking scroll animation */
-  .stacking-card {
+  /* Stacking scroll animation */  .stacking-card {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
   }
@@ -171,6 +170,21 @@
   .stacking-card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Enhanced hover effects for larger screens */
+  @media (min-width: 768px) {
+    .stacking-card:hover {
+      transform: translateY(-12px) scale(1.015);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .stacking-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
   }
 
   /* Enhanced sticky positioning for stacking effect */
@@ -188,7 +202,6 @@
     scroll-behavior: smooth;
     overflow: visible;
   }
-
   .stacking-item {
     position: sticky;
     top: 8rem;
@@ -198,6 +211,55 @@
     transition-property: all; /* Ensure all relevant properties are transitioned */
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Default Tailwind ease-out */
     transition-duration: 400ms; /* Adjusted for smoothness */
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 767px) {
+    .stacking-container {
+      padding: 0 0.5rem;
+    }
+    
+    .stacking-item {
+      top: 4rem; /* Reduced top spacing for mobile header */
+      margin-bottom: 0.5rem;
+    }
+    
+    .stacking-card {
+      border-radius: 0.75rem;
+    }
+    
+    .stacking-card:hover {
+      transform: translateY(-4px) scale(1.005);
+      box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  /* Tablet optimizations */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .stacking-item {
+      top: 6rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .stacking-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 18px 35px -8px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  /* Responsive stacking adjustments */
+  @media (min-width: 768px) {
+    .stacking-item {
+      top: 8rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .stacking-item {
+      top: 8rem;
+      margin-bottom: 1.25rem;
+    }
   }
 
   /* Smooth stacking transitions */
@@ -231,6 +293,35 @@
     animation: stackOut 0.6s ease-out forwards;
   }
 
+  /* Touch-friendly improvements for mobile */
+  @media (hover: none) and (pointer: coarse) {
+    .stacking-card {
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    
+    .stacking-card:active {
+      transform: translateY(-2px) scale(0.98);
+      box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  /* Ensure smooth scrolling on all devices */
+  @supports (scroll-behavior: smooth) {
+    .stacking-container {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .stacking-card {
+      transition: none;
+    }
+    
+    .stacking-item {
+      transition: none;
+    }
+  }
 }
 
 @keyframes fadeIn {
