@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, CircleDot } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
 
 const experiences = [
 	{
@@ -60,19 +61,47 @@ const experiences = [
 ]
 
 export function ExperienceSection() {
-	return (
-		<section id="experience" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-			<div className="container mx-auto">
-				<div className="text-center mb-16">
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Calculate offset: how much the section top has scrolled past the viewport top
+        // Apply a factor to control the speed of upward movement (e.g., 0.05 for 5% of scroll speed)
+        const currentOffset = Math.max(0, -rect.top) * 0.05;
+        setScrollOffset(currentOffset);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section id="experience" ref={sectionRef} className="pt-16 lg:pt-24 pb-0 mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
 					<span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
 						Career Path
 					</span>
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
 						Professional Experience
 					</h1>
-				</div>				<div className="max-w-6xl mx-auto space-y-12">
-					{experiences.map((experience, index) => (
-						<Card key={index} className="relative p-6 border border-border/50 bg-transparent shadow-sm hover:shadow-md transition-shadow duration-200">
+				</div>				<div className="max-w-6xl mx-auto relative stacking-container">
+					{experiences.map((experience, index) => (						<div 
+							key={index}
+className="stacking-item transition-all ease-out"
+style={{
+  zIndex: 100 + index,
+  transform: `translateY(${index * 10 - scrollOffset}px)`, /* Reduced initial offset */
+  transformOrigin: 'center top'
+}}
+>
+<Card className="relative p-6 border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow duration-200 stacking-card">
 							<div className="grid grid-cols-[200px_1fr] gap-8">
 								{/* Left column - Date and Location */}
 								<div className="space-y-2">
@@ -120,6 +149,7 @@ export function ExperienceSection() {
 									</div>								</div>
 							</div>
 						</Card>
+						</div>
 					))}
 				</div>
 			</div>

@@ -1,6 +1,7 @@
 ﻿"use client"
 
 import React, { useEffect, useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 
@@ -63,9 +64,11 @@ export function HeroSection() {
                     key={`first-${logo}`}
                     className="flex-shrink-0 flex items-center justify-center p-3 transition-all duration-300 hover:scale-110"
                   >
-                    <img
+                    <Image
                       src={`/client/${logo}`}
                       alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                      width={120}
+                      height={40}
                       className="h-6 w-auto sm:h-8 md:h-10 object-contain filter brightness-0 saturate-100 dark:filter dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-all duration-300"
                     />
                   </div>
@@ -76,9 +79,11 @@ export function HeroSection() {
                     key={`second-${logo}`}
                     className="flex-shrink-0 flex items-center justify-center p-3 transition-all duration-300 hover:scale-110"
                   >
-                    <img
+                    <Image
                       src={`/client/${logo}`}
                       alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                      width={120}
+                      height={40}
                       className="h-6 w-auto sm:h-8 md:h-10 object-contain filter brightness-0 saturate-100 dark:filter dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-all duration-300"
                     />
                   </div>

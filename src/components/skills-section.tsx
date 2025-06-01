@@ -4,7 +4,7 @@ import React from "react"
 
 export function SkillsSection() {
   return (
-    <section id="hire-me" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="hire-me" className="pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">

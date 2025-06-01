@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, Github, Linkedin, FileText, Mail } from "lucide-react"
-import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -14,14 +13,6 @@ const navigation = [
   { name: "Projects", href: "#projects" },
    { name: "Why Hire Me", href: "#hire-me" },
   { name: "Contact", href: "#contact" },
-]
-
-const socialLinks = [
-  { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com/in/nafisrayan", icon: Linkedin },
-  { name: "WhatsApp", href: "https://wa.me/8801931999190", icon: WhatsappIcon },
-  { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },
-  { name: "CV", href: "/NafisRayan_CV.pdf", icon: FileText },
 ]
 
 export function Header() {
@@ -37,7 +28,7 @@ export function Header() {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300">
+    <div className="fixed top-0 left-0 right-0 z-[9999] p-4 transition-all duration-300">
       <div className="container mx-auto">        <nav 
           className={`
             backdrop-blur-md rounded-2xl border transition-all duration-300
@@ -69,19 +60,13 @@ export function Header() {
               ))}
             </div>
 
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center space-x-3">
               <ThemeToggle />
-              {socialLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <Button key={link.name} variant="ghost" size="icon" className="rounded-lg" asChild>
-                    <Link href={link.href}>
-                      <Icon className="h-4 w-4" />
-                      <span className="sr-only">{link.name}</span>
-                    </Link>
-                  </Button>
-                )
-              })}
+              <Button variant="ghost" size="sm" className="rounded-lg border border-border text-muted-foreground hover:text-foreground" asChild>
+                <Link href="#contact">
+                  Contact Me
+                </Link>
+              </Button>
             </div>
 
             <div className="flex lg:hidden items-center space-x-2">
@@ -113,19 +98,11 @@ export function Header() {
                     </nav>
 
                     <div className="border-t pt-4">
-                      <div className="flex space-x-2">
-                        {socialLinks.map((link) => {
-                          const Icon = link.icon
-                          return (
-                            <Button key={link.name} variant="ghost" size="icon" className="rounded-lg" asChild>
-                              <Link href={link.href}>
-                                <Icon className="h-5 w-5" />
-                                <span className="sr-only">{link.name}</span>
-                              </Link>
-                            </Button>
-                          )
-                        })}
-                      </div>
+                      <Button variant="ghost" size="sm" className="rounded-lg w-full border border-border text-muted-foreground hover:text-foreground" asChild>
+                        <Link href="#contact" onClick={() => setIsOpen(false)}>
+                          Contact Me
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </SheetContent>
