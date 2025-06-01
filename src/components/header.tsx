@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, Download, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -67,13 +67,27 @@ export function Header() {
             <div className="hidden md:flex items-center space-x-2 lg:space-x-3 xl:space-x-4">
               <ThemeToggle />
               <Button 
-                variant="ghost" 
-                size="sm" 
-                className="rounded-lg border border-border text-muted-foreground hover:text-foreground text-xs lg:text-sm xl:text-base px-3 lg:px-4 xl:px-5 py-2 transition-all duration-300 hover:scale-105 active:scale-95 hover:border-primary/50" 
+                variant="outline" 
+                size="icon" 
+                className="rounded-lg h-9 w-9 lg:h-10 lg:w-10 transition-all duration-300 hover:scale-105 active:scale-95"
+                title="Download CV" 
+                asChild
+              >
+                <a href="/NafisRayan_CV.pdf" download="NafisRayan_CV.pdf">
+                  <Download className="h-4 w-4 lg:h-5 lg:w-5" />
+                  <span className="sr-only">Download CV</span>
+                </a>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-lg h-9 w-9 lg:h-10 lg:w-10 transition-all duration-300 hover:scale-105 active:scale-95"
+                title="Contact Me" 
                 asChild
               >
                 <Link href="#contact">
-                  Contact Me
+                  <Mail className="h-4 w-4 lg:h-5 lg:w-5" />
+                  <span className="sr-only">Contact Me</span>
                 </Link>
               </Button>
             </div>            {/* Mobile Navigation */}
@@ -124,7 +138,17 @@ export function Header() {
                     </nav>
 
                     {/* Mobile Footer */}
-                    <div className="border-t border-border/50 p-4 sm:p-6">
+                    <div className="border-t border-border/50 p-4 sm:p-6 space-y-3">
+                      <Button 
+                        variant="outline" 
+                        size="lg"
+                        className="w-full rounded-xl text-sm sm:text-base h-12 sm:h-14 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]" 
+                        asChild
+                      >
+                        <a href="/NafisRayan_CV.pdf" download="NafisRayan_CV.pdf" onClick={() => setIsOpen(false)}>
+                          Download CV
+                        </a>
+                      </Button>
                       <Button 
                         variant="ghost" 
                         size="lg"
