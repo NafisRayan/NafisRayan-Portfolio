@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
+// import { AboutSection } from "@/components/about-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { SkillsSection } from "@/components/skills-section"
@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
