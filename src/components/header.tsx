@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const navigation = [
@@ -77,8 +77,8 @@ export function Header() {
                     <Menu className="h-5 w-5" />
                     <span className="sr-only">Toggle menu</span>
                   </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-80 backdrop-blur-md bg-background/95">
+                </SheetTrigger>                <SheetContent side="right" className="w-80 backdrop-blur-md bg-background/95">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                   <div className="flex flex-col space-y-6 mt-6">
                     <div className="flex items-center justify-between">
                       <span className="text-lg font-semibold">Menu</span>
