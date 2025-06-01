@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     }
       // Process file if uploaded
     let fileInfo = null
-    let cloudinaryUrl = null
+
     if (file && file.size > 0) {
       // Validate file size (max 5MB)
       if (file.size > 5 * 1024 * 1024) {
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
         const fileBuffer = Buffer.from(await file.arrayBuffer())
         
         // Upload to Cloudinary
-        const uploadResult = await uploadToCloudinary(fileBuffer, file.name, file.type) as any
+        const uploadResult = await uploadToCloudinary(fileBuffer, file.name, file.type) as { secure_url: string; public_id: string }
         
         fileInfo = {
           name: file.name,
@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
           cloudinaryPublicId: uploadResult.public_id
         }
         
-        cloudinaryUrl = uploadResult.secure_url
+
         
         console.log('Image uploaded to Cloudinary:', {
           url: uploadResult.secure_url,
