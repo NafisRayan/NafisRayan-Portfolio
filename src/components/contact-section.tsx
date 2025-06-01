@@ -252,7 +252,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                 <h4 className="font-semibold mb-2 text-sm sm:text-base text-foreground">Quick Response</h4>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   I typically respond to messages within 24 hours. For urgent inquiries, 
-                  feel free to reach out on LinkedIn for faster communication.
+                  feel free to reach out on WhatsAPP for faster communication.
                 </p>
                 <br />
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
