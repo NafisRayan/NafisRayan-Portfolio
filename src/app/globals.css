@@ -127,7 +127,6 @@
 
 @layer utilities {
 
-
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in;
   }
@@ -162,6 +161,7 @@
   .animate-slide-carousel {
     animation: slideCarousel 30s linear infinite;
   }
+  
   /* Stacking scroll animation */
   .stacking-card {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -177,8 +177,27 @@
   @supports (position: sticky) {
     .sticky-stack {
       position: sticky;
-      top: 5rem;
+      top: 8rem;
+      will-change: transform;
     }
+  }
+
+  /* Ensure smooth scrolling during stacking */
+  .stacking-container {
+    will-change: scroll-position;
+    scroll-behavior: smooth;
+    overflow: visible;
+  }
+
+  .stacking-item {
+    position: sticky;
+    top: 8rem;
+    margin-bottom: 1rem; /* Reduced from 3rem */
+    will-change: transform;
+    pointer-events: auto;
+    transition-property: all; /* Ensure all relevant properties are transitioned */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Default Tailwind ease-out */
+    transition-duration: 400ms; /* Adjusted for smoothness */
   }
 
   /* Smooth stacking transitions */
@@ -211,7 +230,6 @@
   .animate-stack-out {
     animation: stackOut 0.6s ease-out forwards;
   }
-
 
 }
 

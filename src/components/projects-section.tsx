@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
 
 const projects = [
 	{
@@ -118,30 +119,48 @@ tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
 ]
 
 export function ProjectsSection() {
-	return (
-		<section id="projects" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 grid-dots">
-			<div className="container mx-auto">
-				<div className="text-center mb-16">
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const currentOffset = Math.max(0, -rect.top) * 0.05;
+        setScrollOffset(currentOffset);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section id="projects" ref={sectionRef} className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 grid-dots">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
 					<span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
 						My Portfolio
 					</span>
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">
 						Featured Projects
 					</h1>
-				</div>				<div className="max-w-6xl mx-auto relative">
+				</div>				<div className="max-w-6xl mx-auto relative stacking-container">
 					{projects.map((project, index) => {
 						const Icon = project.icon
 						return (
 							<div 
 								key={project.title}
-								className="sticky top-32 mb-12 transition-all duration-500 ease-out"
-								style={{
-									zIndex: 100 + index,
-									transform: `translateY(${index * 30}px)`,
-									transformOrigin: 'center top'
-								}}
-							>
-								<Card
+className="stacking-item transition-all ease-out"
+style={{
+  zIndex: 100 + index,
+  transform: `translateY(${index * 10 - scrollOffset}px)`, /* Reduced initial offset */
+  transformOrigin: 'center top'
+}}
+>
+<Card
 									className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden py-0 stacking-card"
 								><div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 									{/* Project Image */}									<div className="relative aspect-[4/3] w-full overflow-hidden order-2 lg:order-1">
