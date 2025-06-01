@@ -199,7 +199,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
   ]
   
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">        <div className="text-center mb-12 sm:mb-16">
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-4">
             Contact Me
