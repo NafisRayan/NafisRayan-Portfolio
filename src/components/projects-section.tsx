@@ -138,7 +138,7 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 grid-dots">
+    <section id="projects" ref={sectionRef} className="pt-16 lg:pt-24 pb-0 mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 grid-dots">
       <div className="container mx-auto">
         <div className="text-center mb-16">
 					<span className="text-sm text-primary px-4 py-2 rounded-full bg-primary/10 inline-block mb-4">
