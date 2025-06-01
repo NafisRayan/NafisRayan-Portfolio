@@ -126,7 +126,8 @@ export function ProjectsSection() {
     const handleScroll = () => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        const currentOffset = Math.max(0, -rect.top) * 0.05;
+        // Smoother calculation with reduced multiplier for gentler movement
+        const currentOffset = Math.max(0, -rect.top) * 0.02;
         setScrollOffset(currentOffset);
       }
     };
@@ -152,13 +153,13 @@ export function ProjectsSection() {
 						return (
 							<div 
 								key={project.title}
-								className="stacking-item transition-all ease-out"								style={{
+								className="stacking-item transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"								style={{
 									zIndex: 100 + index,
 									transform: `translateY(${index * 10 - scrollOffset}px)`,
 									transformOrigin: 'center top'
 								}}
 							><Card
-									className="group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden py-0 stacking-card"
+									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card"
 								>
 								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0">
 									{/* Project Image */}
@@ -167,7 +168,7 @@ export function ProjectsSection() {
 											src={project.image}
 											alt={project.title}
 											fill
-											className="object-cover"
+											className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
 										/>
 										<div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 rounded-lg bg-background/90 backdrop-blur-sm">
 											<Icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -205,10 +206,8 @@ export function ProjectsSection() {
 														+{project.tags.length - 6} more
 													</Badge>
 												)}
-											</div>
-
-											{/* Action buttons */}
-											<div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
+											</div>											{/* Action buttons */}
+											<div className="flex flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
 												<Button
 													variant="outline"
 													size="sm"

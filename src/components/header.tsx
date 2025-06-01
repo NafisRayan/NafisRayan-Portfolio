@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -76,9 +76,7 @@ export function Header() {
                   Contact Me
                 </Link>
               </Button>
-            </div>
-
-            {/* Mobile Navigation */}
+            </div>            {/* Mobile Navigation */}
             <div className="flex md:hidden items-center space-x-2 sm:space-x-3">
               <ThemeToggle />
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -88,11 +86,7 @@ export function Header() {
                     size="icon" 
                     className="rounded-lg h-9 w-9 sm:h-10 sm:w-10 transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-muted/70"
                   >
-                    {isOpen ? (
-                      <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                    ) : (
-                      <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
-                    )}
+                    <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
@@ -102,21 +96,12 @@ export function Header() {
                   className="w-[280px] sm:w-[320px] backdrop-blur-md bg-background/95 border-l p-0"
                 >
                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  
-                  <div className="flex flex-col h-full">
+                    <div className="flex flex-col h-full">
                     {/* Mobile Header */}
                     <div className="flex items-center justify-between p-4 sm:p-6 border-b border-border/50">
                       <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                         Menu
                       </span>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => setIsOpen(false)}
-                        className="h-8 w-8 rounded-lg hover:bg-muted/50"
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
                     </div>
                     
                     {/* Mobile Navigation Links */}

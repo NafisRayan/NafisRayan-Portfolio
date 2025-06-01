@@ -12,6 +12,16 @@ export function HeroSection() {
     setIsLoaded(true)
   }, [])
 
+  const scrollToNextSection = () => {
+    const experienceSection = document.getElementById('experience')
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   const clientLogos = [
     'BoctoCrop.png',
     'ByteSlack.png',
@@ -87,12 +97,15 @@ export function HeroSection() {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className={`absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 ${isLoaded ? 'animate-pulse-slow' : 'opacity-0'}`} style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-            <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
-          </div>
+          </div>          {/* Scroll indicator */}
+          <button 
+            onClick={scrollToNextSection}
+            className={`absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 cursor-pointer group ${isLoaded ? 'animate-pulse-slow' : 'opacity-0'}`} 
+            style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
+            aria-label="Scroll to next section"
+          >
+            <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+          </button>
         </div>
       </div>
     </section>
