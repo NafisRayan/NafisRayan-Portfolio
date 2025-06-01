@@ -15,9 +15,9 @@ const experiences = [
 			"Collaborated with a team to develop scalable applications using MERN stack",
 			"Integrated ThreeJS for 3D rendering and interactive web experiences",
 			"Developed Android and iOS applications using React Native",
-			"Improved database performance by optimizing algorithms, and SQL queries",
+			"Improved database performance by optimizing algorithms, SQL queries, and MongoDB operations",
 		],
-		technologies: ["MERN Stack", "ThreeJS", "React Native", "SQL"],
+		technologies: ["MERN Stack", "ThreeJS", "React Native", "SQLite", "MongoDB", "MySQL", "GCP"],
 	},
 	{
 		title: "Software Engineer Intern",
@@ -28,9 +28,9 @@ const experiences = [
 			"Assisted in developing scalable applications using MERN stack",
 			"Contributed to integrating ThreeJS for 3D rendering and interactive web experiences",
 			"Assisted in developing Android and iOS applications using React Native",
-			"Participated in improving database performance by optimizing algorithms, and SQL queries",
+			"Participated in improving database performance by optimizing algorithms, SQL queries, and NoSQL database operations",
 		],
-		technologies: ["MERN Stack", "ThreeJS", "React Native", "SQL"],
+		technologies: ["MERN Stack", "ThreeJS", "React Native", "SQLite", "MongoDB", "MySQL", "GCP"],
 	},
 	{
 		title: "Autonomous & AI Engineer",
