@@ -45,6 +45,15 @@ tags: ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"
 		demoUrl: "#",
 	},
 	{
+		title: "Ecommerce Flutter App",
+		description: "Modern cross-platform e-commerce mobile application built with Flutter, featuring product browsing, shopping cart, user profiles, and seamless shopping experience across iOS and Android.",
+		icon: Smartphone,
+		image: "/projects/Ecommerce-Flutter.png",
+tags: ["flutter", "dart", "mobile", "ecommerce", "cross-platform", "ios", "android"],
+		sourceCode: "https://github.com/nafisrayan/ecommerce-flutter",
+		demoUrl: "https://github.com/nafisrayan/ecommerce-flutter",
+	},
+	{
 		title: "AI-Powered Customer Support",
 		description: "Intelligent customer support system with AI chatbots, automated ticket routing, and sentiment analysis for enhanced customer experience.",
 		icon: Brain,
@@ -63,11 +72,11 @@ tags: ["fintech", "react-native", "mobile", "payments", "security", "supabase", 
 		demoUrl: "#",
 	},
 	{
-		title: "AI-Powered Health Dashboard",
+		title: "Health Dashboard",
 		description: "Comprehensive health monitoring dashboard with AI insights, data visualization, and predictive analytics for personalized healthcare.",
 		icon: Activity,
-		image: "/projects/AI-Powered Health Dashboard.png",
-tags: ["healthcare", "ai", "dashboard", "data-viz", "react", "analytics"],
+		image: "/projects/Health Dashboard.png",
+tags: ["healthcare", "ai", "dashboard", "data-viz", "react", "mern","analytics"],
 		sourceCode: "#",
 		demoUrl: "#",
 	},
@@ -159,9 +168,9 @@ export function ProjectsSection() {
 									transformOrigin: 'center top'
 								}}
 							><Card
-									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card"
+									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card h-full"
 								>
-								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0">
+								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0 h-full">
 									{/* Project Image */}
 									<div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden order-1 xl:order-1">
 										<Image
@@ -176,7 +185,7 @@ export function ProjectsSection() {
 									</div>
 
 									{/* Project Content */}
-									<div className="p-4 sm:p-6 lg:p-6 xl:p-8 order-2 xl:order-2">
+									<div className="p-4 sm:p-6 lg:p-6 xl:p-8 order-2 xl:order-2 flex flex-col h-full">
 										<CardHeader className="p-0 pb-3 sm:pb-4">
 											<CardTitle className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight mb-2 sm:mb-3">
 												{project.title}
@@ -186,9 +195,9 @@ export function ProjectsSection() {
 											</CardDescription>
 										</CardHeader>
 
-										<CardContent className="p-0 space-y-4 sm:space-y-6">
+										<CardContent className="p-0 flex flex-col flex-grow">
 											{/* Tags */}
-											<div className="flex flex-wrap gap-1.5 sm:gap-2">
+											<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 												{project.tags.slice(0, 6).map((tag) => (
 													<Badge
 														key={tag}
@@ -206,33 +215,21 @@ export function ProjectsSection() {
 														+{project.tags.length - 6} more
 													</Badge>
 												)}
-											</div>											{/* Action buttons */}
-											<div className="flex flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
+											</div>
+
+											{/* Action buttons - Fixed at bottom */}
+											<div className="mt-auto pt-1 sm:pt-2">
 												<Button
-													variant="outline"
 													size="sm"
-													className="flex-1 h-9 sm:h-10"
+													className="w-full h-9 sm:h-10"
 													asChild
 												>
 													<a
 														href={project.sourceCode}
 														className="flex items-center justify-center gap-2"
 													>
-														<Github className="h-3 w-3 sm:h-4 sm:w-4" />
-														<span className="text-sm">Source Code</span>
-													</a>
-												</Button>
-												<Button 
-													size="sm" 
-													className="flex-1 h-9 sm:h-10" 
-													asChild
-												>
-													<a
-														href={project.demoUrl}
-														className="flex items-center justify-center gap-2"
-													>
 														<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
-														<span className="text-sm">Live Demo</span>
+														<span className="text-sm">Learn More</span>
 													</a>
 												</Button>
 											</div>
