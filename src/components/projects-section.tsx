@@ -4,13 +4,13 @@ import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap } from "lucide-react"
+import { ExternalLink, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap, LayoutDashboard } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
 const projects = [
 	{
 		title: "E-commerce Platform",
-		description: "Full-featured e-commerce solution with product catalog, shopping cart, payment integration, and order management system.",
+		description: "Full-featured e-commerce solution with comprehensive product catalog, advanced shopping cart functionality, secure payment integration using Stripe, and complete order management system. Features include user authentication, inventory tracking, order processing, and responsive design for optimal shopping experience across all devices.",
 		icon: ShoppingCart,
 		image: "/projects/E-commerce Platform.png",
 tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
@@ -18,8 +18,17 @@ tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
 		demoUrl: "#",
 	},
 	{
+		title: "Admin Dashboard",
+		description: "Modern admin panel dashboard built with ShadcnUI in NextJS featuring light/dark mode, responsive design, and accessibility. Includes built-in sidebar component, global search command, 10+ pages, and custom components. Created as reusable collection for future projects with code adapted from ShadcnUI examples.",
+		icon: LayoutDashboard,
+		image: "/projects/Admin Dashboard.png",
+		tags: ["react", "light-theme", "admin", "dark-theme", "reactjs", "nextjs", "admin-dashboard", "admin-panel", "shadcn-ui", "shadcn"],
+		sourceCode: "https://github.com/NafisRayan/AdminPanel-Shadcn",
+		demoUrl: "https://github.com/NafisRayan/AdminPanel-Shadcn",
+	},
+	{
 		title: "Fitness Tracking App",
-		description: "Comprehensive fitness application with workout tracking, progress monitoring, social features, and personalized training plans.",
+		description: "Comprehensive fitness application featuring advanced workout tracking, detailed progress monitoring, social networking features, and personalized training plans. Built with React Native for cross-platform compatibility, includes SQLite database for local storage, wellness insights, and motivation tools for achieving fitness goals effectively.",
 		icon: Activity,
 		image: "/projects/Fitness Tracking App.png",
 tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
@@ -28,16 +37,16 @@ tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wel
 	},
 	{
 		title: "Educational Learning Platform",
-		description: "Interactive e-learning platform with course management, progress tracking, and collaborative learning features for students and educators.",
+		description: "Interactive e-learning platform with comprehensive course management system, detailed progress tracking, and collaborative learning features for students and educators. Built with React and NodeJS, includes Firebase integration, learning management system capabilities, assessment tools, and real-time communication features for enhanced education.",
 		icon: GraduationCap,
 		image: "/projects/ducational Learning Platform.png",
-tags: ["education", "e-learning", "react", "nodejs", "firebase", "lms"],
-		sourceCode: "#",
-		demoUrl: "#",
+		tags: ["education", "e-learning", "react", "nodejs", "firebase", "lms"],
+		sourceCode: "https://github.com/NafisRayan/EdTech",
+		demoUrl: "https://github.com/NafisRayan/EdTech",
 	},
 	{
 		title: "Social Media Dashboard",
-		description: "Unified social media management platform with content scheduling, analytics, engagement tracking, and multi-platform integration.",
+		description: "Unified social media management platform featuring advanced content scheduling, comprehensive analytics dashboard, engagement tracking across multiple platforms, and seamless API integrations. Provides content creators and businesses with powerful tools for managing their social media presence and analyzing performance metrics effectively.",
 		icon: Users,
 		image: "/projects/Social Media Dashboard.png",
 tags: ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
@@ -46,7 +55,7 @@ tags: ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"
 	},
 	{
 		title: "Ecommerce Flutter App",
-		description: "Modern cross-platform e-commerce mobile application built with Flutter, featuring product browsing, shopping cart, user profiles, and seamless shopping experience across iOS and Android.",
+		description: "Modern cross-platform e-commerce mobile application built with Flutter and Dart, featuring intuitive product browsing, advanced shopping cart functionality, comprehensive user profiles, and seamless shopping experience. Optimized for both iOS and Android platforms with responsive design and smooth performance across devices.",
 		icon: Smartphone,
 		image: "/projects/Ecommerce-Flutter.png",
 tags: ["flutter", "dart", "mobile", "ecommerce", "cross-platform", "ios", "android"],
@@ -55,7 +64,7 @@ tags: ["flutter", "dart", "mobile", "ecommerce", "cross-platform", "ios", "andro
 	},
 	{
 		title: "AI-Powered Customer Support",
-		description: "Intelligent customer support system with AI chatbots, automated ticket routing, and sentiment analysis for enhanced customer experience.",
+		description: "Intelligent customer support system featuring advanced AI chatbots, automated ticket routing, and sentiment analysis for enhanced customer experience. Built with React and NodeJS, includes natural language processing, machine learning algorithms, and real-time communication for improved customer service and support efficiency.",
 		icon: Brain,
 		image: "/projects/AI-Powered Customer Support.png",
 tags: ["ai", "nlp", "chatbot", "react", "nodejs", "machine-learning"],
@@ -64,7 +73,7 @@ tags: ["ai", "nlp", "chatbot", "react", "nodejs", "machine-learning"],
 	},
 	{
 		title: "Fintech Mobile App",
-		description: "Mobile financial application with account management, transaction history, budgeting tools, and secure payment processing.",
+		description: "Secure mobile financial application featuring comprehensive account management, detailed transaction history, advanced budgeting tools, and encrypted payment processing. Built with React Native and Supabase backend, includes banking integrations, financial analytics, security features, and user-friendly interface for seamless financial management experience.",
 		icon: Smartphone,
 		image: "/projects/Fintech Mobile App.png",
 tags: ["fintech", "react-native", "mobile", "payments", "security", "supabase", "banking"],
@@ -72,17 +81,17 @@ tags: ["fintech", "react-native", "mobile", "payments", "security", "supabase", 
 		demoUrl: "#",
 	},
 	{
-		title: "Health Dashboard",
-		description: "Comprehensive health monitoring dashboard with AI insights, data visualization, and predictive analytics for personalized healthcare.",
+		title: "HealthCare Dashboard",
+		description: "Modern React-based healthcare web application built with Vite and Tailwind CSS for managing patient health data. Features interactive blood pressure charts, detailed diagnosis history, and comprehensive patient management tools. Utilizes Chart.js for data visualization with responsive design principles for optimal healthcare workflow.",
 		icon: Activity,
 		image: "/projects/Health Dashboard.png",
-tags: ["healthcare", "ai", "dashboard", "data-viz", "react", "mern","analytics"],
-		sourceCode: "#",
-		demoUrl: "#",
+		tags: ["healthcare", "react", "dashboard", "vite", "tailwind", "chartjs", "responsive", "patient-data"],
+		sourceCode: "https://github.com/NafisRayan/HealthCare-Dashboard",
+		demoUrl: "https://github.com/NafisRayan/HealthCare-Dashboard",
 	},
 	{
 		title: "Crypto Trading Platform",
-		description: "Advanced cryptocurrency trading platform with real-time market data, portfolio management, and secure transaction processing.",
+		description: "Advanced cryptocurrency trading platform featuring real-time market data, comprehensive portfolio management, and secure transaction processing. Built with React and WebSocket technology for live updates, includes blockchain integration, trading analytics, charting tools, and robust security measures for safe cryptocurrency trading experience.",
 		icon: CreditCard,
 		image: "/projects/Crypto Trading Platform.png",
 tags: ["crypto", "trading", "blockchain", "react", "websockets", "fintech"],
@@ -91,7 +100,7 @@ tags: ["crypto", "trading", "blockchain", "react", "websockets", "fintech"],
 	},
 	{
 		title: "AR Product Visualization",
-		description: "Augmented reality application for product visualization, allowing customers to view products in their real environment before purchase.",
+		description: "Innovative augmented reality application for immersive product visualization, allowing customers to view and interact with products in their real environment before making purchase decisions. Built with WebXR and ThreeJS technology for mobile devices, enhancing e-commerce experience through cutting-edge AR technology.",
 		icon: Eye,
 		image: "/projects/AR Product Visualization.png",
 tags: ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
@@ -100,7 +109,7 @@ tags: ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
 	},
 	{
 		title: "3D Product Configurator",
-		description: "An interactive 3D product visualization tool that allows users to customize and configure products in real-time with advanced rendering capabilities.",
+		description: "Interactive 3D product visualization tool enabling users to customize and configure products in real-time with advanced rendering capabilities. Built with ThreeJS and WebGL technology, features TypeScript integration, dynamic customization options, realistic rendering, and seamless user experience for product configuration and personalization workflows.",
 		icon: Box,
 		image: "/projects/3D Product Configurator.png",
 tags: ["threejs", "webgl", "3d", "react", "typescript", "customization"],
@@ -109,7 +118,7 @@ tags: ["threejs", "webgl", "3d", "react", "typescript", "customization"],
 	},
 	{
 		title: "Revenue Tracking App",
-		description: "Business intelligence dashboard for revenue tracking, financial analytics, and performance monitoring with real-time insights.",
+		description: "Comprehensive business intelligence dashboard for revenue tracking, advanced financial analytics, and performance monitoring with real-time insights. Features interactive charts, reporting tools, business metrics analysis, data visualization capabilities, and dashboard functionality for effective business decision-making and financial management strategies.",
 		icon: TrendingUp,
 		image: "/projects/Revenue Tracking and Management App.png",
 tags: ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
@@ -118,7 +127,7 @@ tags: ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
 	},
 	{
 		title: "Virtual Reality Game",
-		description: "Immersive VR gaming experience with interactive environments, physics simulation, and multiplayer capabilities.",
+		description: "Immersive virtual reality gaming experience featuring interactive 3D environments, realistic physics simulation, and engaging multiplayer capabilities. Built with WebXR and ThreeJS technology, includes advanced gaming mechanics, collision detection, real-time networking, and optimized performance for smooth VR gameplay across devices.",
 		icon: Gamepad2,
 		image: "/projects/Virtual Reality Game.png",
 tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
@@ -226,6 +235,8 @@ export function ProjectsSection() {
 												>
 													<a
 														href={project.sourceCode}
+														target="_blank"
+														rel="noopener noreferrer"
 														className="flex items-center justify-center gap-2"
 													>
 														<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
