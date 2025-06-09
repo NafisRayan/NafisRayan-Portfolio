@@ -130,9 +130,9 @@ tags: ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
 		description: "Immersive virtual reality gaming experience featuring interactive 3D environments, realistic physics simulation, and engaging multiplayer capabilities. Built with WebXR and ThreeJS technology, includes advanced gaming mechanics, collision detection, real-time networking, and optimized performance for smooth VR gameplay across devices.",
 		icon: Gamepad2,
 		image: "/projects/Virtual Reality Game.png",
-tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
-		sourceCode: "#",
-		demoUrl: "#",
+		tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
+		sourceCode: "https://nafisrayan.github.io/FPS-Game-ThreeJS/",
+		demoUrl: "https://nafisrayan.github.io/FPS-Game-ThreeJS/",
 	},
 ]
 
