@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap, LayoutDashboard } from "lucide-react"
+import { ExternalLink, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap, LayoutDashboard, Github } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
 const projects = [
@@ -14,8 +14,8 @@ const projects = [
 		icon: ShoppingCart,
 		image: "/projects/E-commerce Platform.png",
 tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
-		sourceCode: "#",
-		demoUrl: "#",
+		sourceCode: "https://github.com/NafisRayan/GoMert-Ecommerce",
+		demoUrl: "go-mert-ecommerce.vercel.app",
 	},
 	{
 		title: "Admin Dashboard",
@@ -24,7 +24,7 @@ tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
 		image: "/projects/Admin Dashboard.png",
 		tags: ["react", "light-theme", "admin", "dark-theme", "reactjs", "nextjs", "admin-dashboard", "admin-panel", "shadcn-ui", "shadcn"],
 		sourceCode: "https://github.com/NafisRayan/AdminPanel-Shadcn",
-		demoUrl: "https://github.com/NafisRayan/AdminPanel-Shadcn",
+		demoUrl: "admin-panel-demo-five.vercel.app",
 	},
 	{
 		title: "Fitness Tracking App",
@@ -32,8 +32,8 @@ tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
 		icon: Activity,
 		image: "/projects/Fitness Tracking App.png",
 tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
-		sourceCode: "#",
-		demoUrl: "#",
+		sourceCode: "https://github.com/NafisRayan/FitUp-ReactNative",
+		demoUrl: "https://github.com/NafisRayan/FitUp-ReactNative",
 	},
 	{
 		title: "Educational Learning Platform",
@@ -42,7 +42,7 @@ tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wel
 		image: "/projects/ducational Learning Platform.png",
 		tags: ["education", "e-learning", "react", "nodejs", "firebase", "lms"],
 		sourceCode: "https://github.com/NafisRayan/EdTech",
-		demoUrl: "https://github.com/NafisRayan/EdTech",
+		demoUrl: "https://ed-tech-rouge.vercel.app/",
 	},
 	{
 		title: "Social Media Dashboard",
@@ -50,8 +50,8 @@ tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wel
 		icon: Users,
 		image: "/projects/Social Media Dashboard.png",
 tags: ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
-		sourceCode: "#",
-		demoUrl: "#",
+		sourceCode: "https://github.com/NafisRayan/chatCOMsystem",
+		demoUrl: "https://github.com/NafisRayan/chatCOMsystem",
 	},
 	{
 		title: "Ecommerce Flutter App",
@@ -87,7 +87,7 @@ tags: ["fintech", "react-native", "mobile", "payments", "security", "supabase", 
 		image: "/projects/Health Dashboard.png",
 		tags: ["healthcare", "react", "dashboard", "vite", "tailwind", "chartjs", "responsive", "patient-data"],
 		sourceCode: "https://github.com/NafisRayan/HealthCare-Dashboard",
-		demoUrl: "https://github.com/NafisRayan/HealthCare-Dashboard",
+		demoUrl: "health-care-dashboard-sigma.vercel.app",
 	},
 	{
 		title: "Crypto Trading Platform",
@@ -108,13 +108,13 @@ tags: ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
 		demoUrl: "#",
 	},
 	{
-		title: "3D Product Configurator",
-		description: "Interactive 3D product visualization tool enabling users to customize and configure products in real-time with advanced rendering capabilities. Built with ThreeJS and WebGL technology, features TypeScript integration, dynamic customization options, realistic rendering, and seamless user experience for product configuration and personalization workflows.",
+		title: "3D Lego Simulation",
+		description: "A modern web-based 3D Lego simulation game built with **Next.js 15**, **React 19**, and **Three.js**. Create, modify, and explore virtual Lego structures using an elegant UI and immersive 3D environment.",
 		icon: Box,
-		image: "/projects/3D Product Configurator.png",
-tags: ["threejs", "webgl", "3d", "react", "typescript", "customization"],
-		sourceCode: "#",
-		demoUrl: "#",
+		image: "/projects/Lego Simulation.png",
+tags: ["nextjs", "react", "threejs", "3d", "lego", "simulation"],
+		sourceCode: "https://github.com/NafisRayan/Lego-Blocks-Game",
+		demoUrl: "https://lego-blocks-game.vercel.app",
 	},
 	{
 		title: "Revenue Tracking App",
@@ -131,7 +131,7 @@ tags: ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
 		icon: Gamepad2,
 		image: "/projects/Virtual Reality Game.png",
 		tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
-		sourceCode: "https://nafisrayan.github.io/FPS-Game-ThreeJS/",
+		sourceCode: "https://github.com/NafisRayan/FPS-Game-ThreeJS",
 		demoUrl: "https://nafisrayan.github.io/FPS-Game-ThreeJS/",
 	},
 ]
@@ -204,7 +204,7 @@ export function ProjectsSection() {
 											</CardDescription>
 										</CardHeader>
 
-										<CardContent className="p-0 flex flex-col flex-grow">
+										<CardContent className="p-0 flex flex-col h-full justify-between">
 											{/* Tags */}
 											<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 												{project.tags.slice(0, 6).map((tag) => (
@@ -226,11 +226,12 @@ export function ProjectsSection() {
 												)}
 											</div>
 
-											{/* Action buttons - Fixed at bottom */}
-											<div className="mt-auto pt-1 sm:pt-2">
+											{/* Action buttons */}
+											<div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
 												<Button
+													variant="outline"
 													size="sm"
-													className="w-full h-9 sm:h-10"
+													className="flex-1 h-9 sm:h-10"
 													asChild
 												>
 													<a
@@ -239,8 +240,23 @@ export function ProjectsSection() {
 														rel="noopener noreferrer"
 														className="flex items-center justify-center gap-2"
 													>
+														<Github className="h-3 w-3 sm:h-4 sm:w-4" />
+														<span className="text-sm">Source Code</span>
+													</a>
+												</Button>
+												<Button 
+													size="sm" 
+													className="flex-1 h-9 sm:h-10" 
+													asChild
+												>
+													<a
+														href={project.demoUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="flex items-center justify-center gap-2"
+													>
 														<ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
-														<span className="text-sm">Learn More</span>
+														<span className="text-sm">Live Demo</span>
 													</a>
 												</Button>
 											</div>
