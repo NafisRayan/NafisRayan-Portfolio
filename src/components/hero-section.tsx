@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 
 // Lazy load Spline with delay for better initial performance
 const Spline = lazy(() => 
-  new Promise<any>(resolve => {
+  new Promise<typeof import('@splinetool/react-spline')>(resolve => {
     setTimeout(() => {
       import('@splinetool/react-spline').then(module => {
         resolve(module)
@@ -225,7 +225,7 @@ function Spotlight({
 // Main HeroSection Component
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const { isMobile, isLowPerformance } = useDeviceDetection()
+  const { isLowPerformance } = useDeviceDetection()
 
   useEffect(() => {
     setIsLoaded(true)

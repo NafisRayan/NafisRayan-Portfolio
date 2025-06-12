@@ -21,7 +21,11 @@ export function PerformanceOptimization() {
             console.log('LCP:', entry.startTime)
           }
           if (entry.entryType === 'first-input') {
-            const fidEntry = entry as any
+            // Type assertion for first-input entry which has processingStart property
+            interface FirstInputEntry extends PerformanceEntry {
+              processingStart: number;
+            }
+            const fidEntry = entry as FirstInputEntry
             console.log('FID:', fidEntry.processingStart - entry.startTime)
           }
         }
