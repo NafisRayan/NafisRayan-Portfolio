@@ -7,10 +7,10 @@ export function Footer() {
     { name: "LinkedIn", href: "https://linkedin.com/in/nafisrayan", icon: Linkedin },
     { name: "GitHub", href: "https://github.com/NafisRayan", icon: Github },
     { name: "WhatsApp", href: "https://wa.me/8801931999190", icon: WhatsappIcon },
-    { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },
-  ]
+    { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },  ]
+  
   return (
-    <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="w-full border-t bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
       <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Main footer content */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
