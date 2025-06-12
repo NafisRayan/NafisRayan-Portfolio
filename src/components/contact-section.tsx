@@ -197,10 +197,9 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
     "AI or Chatbot Integration",
     "Something Else"
   ]
-  
-  return (
-    <section id="contact" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">        <div className="text-center mb-12 sm:mb-16">
+    return (
+    <section id="contact" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+      <div className="container mx-auto max-w-6xl"><div className="text-center mb-12 sm:mb-16">
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-4">
             Contact Me
           </span>
@@ -347,7 +346,7 @@ export function ContactSection() {  const [isLoading, setIsLoading] = useState(f
                             type="checkbox"
                             checked={formData.helpNeeded.includes(service)}
                             onChange={() => handleCheckboxChange(service)}
-                            className="w-4 h-4 text-primary bg-background border-border rounded focus:ring-primary focus:ring-2"
+                            className="w-4 h-4 text-primary bg-white dark:bg-black border-border rounded focus:ring-primary focus:ring-2"
                           />
                           <span className="text-sm text-foreground">{service}</span>
                         </label>

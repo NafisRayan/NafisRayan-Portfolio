@@ -61,7 +61,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-6 sm:mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-6 sm:mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -71,10 +71,9 @@ export function ExperienceSection() {
             Professional Experience
           </h1>
         </div>
-        
-        <div className="max-w-6xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto space-y-6">
           {experiences.map((experience, index) => (
-            <Card key={index} className="p-4 sm:p-6 border border-border/50 bg-card shadow-sm">
+            <Card key={index} className="p-4 sm:p-6 border border-border/50 bg-white/30 dark:bg-black/30 shadow-sm backdrop-blur-sm">
               {/* Mobile-first responsive layout */}
               <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr] gap-4 lg:gap-8">
                 {/* Top section on mobile, Left column on desktop - Date and Location */}
