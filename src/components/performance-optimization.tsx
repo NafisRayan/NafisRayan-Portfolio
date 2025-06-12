@@ -5,13 +5,16 @@ import { useEffect } from 'react'
 // Performance optimization component
 export function PerformanceOptimization() {
   useEffect(() => {
-    // Preload Spline resources
-    const link = document.createElement('link')
-    link.rel = 'preload'
-    link.href = 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode'
-    link.as = 'fetch'
-    link.crossOrigin = 'anonymous'
-    document.head.appendChild(link)
+    // Only preload Spline on desktop/high-perf devices
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    if (!isMobile) {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.href = 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode'
+      link.as = 'fetch'
+      link.crossOrigin = 'anonymous'
+      document.head.appendChild(link)
+    }
 
     // Performance observer for monitoring
     if ('PerformanceObserver' in window) {
@@ -35,9 +38,9 @@ export function PerformanceOptimization() {
     }
 
     return () => {
-      if (link.parentNode) {
-        link.parentNode.removeChild(link)
-      }
+      // Remove Spline preload if present
+      const links = document.querySelectorAll('link[rel="preload"][href*="spline.design"]')
+      links.forEach(link => link.parentNode?.removeChild(link))
     }
   }, [])
 

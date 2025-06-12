@@ -189,7 +189,7 @@
   }
 
   .animate-slide-carousel {
-    animation: slideCarousel 30s linear infinite;
+    animation: slide-carousel 30s linear infinite;
   }
   
   /* Stacking scroll animation */  .stacking-card {
@@ -376,7 +376,8 @@
   }
 }
 
-@keyframes slideCarousel {
+/* Optimize carousel animation for single logo set */
+@keyframes slide-carousel {
   0% {
     transform: translateX(0);
   }

@@ -302,11 +302,11 @@ export function HeroSection() {
           <div className={`w-full max-w-7xl mx-auto ${isLoaded ? 'animate-fade-in' : 'opacity-0'} pointer-events-auto`} style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 text-center">Trusted by amazing clients</p>
             <div className="relative overflow-hidden">
-              <div className="flex animate-slide-carousel space-x-4 sm:space-x-6 lg:space-x-8 items-center">
-                {/* First set of logos */}
+              {/* Use a single set of logos and CSS animation for seamless loop, reducing DOM size */}
+              <div className="flex space-x-4 sm:space-x-6 lg:space-x-8 items-center animate-slide-carousel" style={{ minWidth: '100%' }}>
                 {clientLogos.map((logo) => (
                   <div
-                    key={`first-${logo}`}
+                    key={logo}
                     className="flex-shrink-0 flex items-center justify-center p-2 sm:p-3 transition-all duration-300 hover:scale-110"
                   >
                     <Image
@@ -315,21 +315,8 @@ export function HeroSection() {
                       width={120}
                       height={40}
                       className="h-5 w-auto sm:h-6 md:h-8 lg:h-10 object-contain filter brightness-0 saturate-100 dark:filter dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {clientLogos.map((logo) => (
-                  <div
-                    key={`second-${logo}`}
-                    className="flex-shrink-0 flex items-center justify-center p-2 sm:p-3 transition-all duration-300 hover:scale-110"
-                  >
-                    <Image
-                      src={`/client/${logo}`}
-                      alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
-                      width={120}
-                      height={40}
-                      className="h-5 w-auto sm:h-6 md:h-8 lg:h-10 object-contain filter brightness-0 saturate-100 dark:filter dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-all duration-300"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 80px, 120px"
                     />
                   </div>
                 ))}
