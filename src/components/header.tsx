@@ -28,12 +28,13 @@ export function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[9999] p-2 sm:p-3 md:p-4 lg:p-6 transition-all duration-300">
-      <div className="container mx-auto max-w-7xl">        <nav 
+      <div className="container mx-auto max-w-7xl">
+        <nav 
           className={`
             backdrop-blur-md rounded-xl sm:rounded-2xl border transition-all duration-300
             ${isScrolled 
-              ? "bg-white/85 dark:bg-black/85 border-border/50 shadow-lg" 
-              : "bg-white/75 dark:bg-black/75 border-border/40 shadow-sm"
+              ? "bg-background/85 border-border/50 shadow-lg" 
+              : "bg-background/75 border-border/40 shadow-sm"
             }
           `}
         >
@@ -103,9 +104,10 @@ export function Header() {
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
-                  <SheetContent 
+                
+                <SheetContent 
                   side="right" 
-                  className="w-[280px] sm:w-[320px] backdrop-blur-md bg-white/95 dark:bg-black/95 border-l p-0"
+                  className="w-[280px] sm:w-[320px] backdrop-blur-md bg-background/95 border-l p-0"
                 >
                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                     <div className="flex flex-col h-full">

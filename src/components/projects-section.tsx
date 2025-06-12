@@ -164,7 +164,8 @@ export function ProjectsSection() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return (    <section id="projects" ref={sectionRef} className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-3 sm:mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 grid-dots bg-white dark:bg-black">
+
+  return (    <section id="projects" ref={sectionRef} className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-3 sm:mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 grid-dots">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
 					<span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -184,8 +185,8 @@ export function ProjectsSection() {
 									transform: `translateY(${index * 10 - scrollOffset}px)`,
 									transformOrigin: 'center top'
 								}}
-							>							<Card
-									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm"
+							><Card
+									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card h-full"
 								>
 								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0 h-full">
 									{/* Project Image */}
@@ -195,7 +196,8 @@ export function ProjectsSection() {
 											alt={project.title}
 											fill
 											className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-										/>										<div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-sm">
+										/>
+										<div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 rounded-lg bg-background/90 backdrop-blur-sm">
 											<Icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
 										</div>
 									</div>

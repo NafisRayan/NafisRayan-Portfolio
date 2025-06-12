@@ -122,36 +122,6 @@
   body {
     @apply bg-background text-foreground;
     background-attachment: fixed;
-    /* Performance optimizations */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "liga", "kern";
-  }
-  
-  /* Performance optimizations for 3D content */
-  canvas {
-    will-change: transform;
-    transform: translateZ(0);
-  }
-  
-  /* Optimize animations */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-  
-  /* GPU acceleration for smooth scrolling */
-  .smooth-scroll {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000;
   }
 }
 
