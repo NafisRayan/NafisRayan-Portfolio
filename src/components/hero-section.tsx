@@ -7,29 +7,141 @@ import { ArrowDown } from "lucide-react"
 import { motion, useSpring, useTransform, SpringOptions } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
-// Lazy load Spline
-const Spline = lazy(() => import('@splinetool/react-spline'))
+// Lazy load Spline with delay for better initial performance
+const Spline = lazy(() => 
+  new Promise<any>(resolve => {
+    setTimeout(() => {
+      import('@splinetool/react-spline').then(module => {
+        resolve(module)
+      })
+    }, 1000) // Delay loading by 1 second
+  })
+)
 
-// SplineScene Component
+// Device detection hook with proper types
+function useDeviceDetection() {
+  const [isMobile, setIsMobile] = useState(false)
+  const [isLowPerformance, setIsLowPerformance] = useState(false)
+
+  useEffect(() => {
+    const checkDevice = () => {
+      const userAgent = navigator.userAgent
+      const isMobileDevice = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)
+      setIsMobile(isMobileDevice)
+
+      // Check for low-performance indicators with proper type checking
+      interface NavigatorConnection {
+        effectiveType?: string;
+      }
+      interface ExtendedNavigator extends Navigator {
+        connection?: NavigatorConnection;
+        deviceMemory?: number;
+      }
+      
+      const nav = navigator as ExtendedNavigator
+      const isSlowConnection = nav.connection?.effectiveType && 
+        ['slow-2g', '2g', '3g'].includes(nav.connection.effectiveType)
+      const hasLowMemory = nav.deviceMemory && nav.deviceMemory < 4
+      const isOldDevice = /Android [1-6]\.|iPhone OS [1-9]_/i.test(userAgent)
+      
+      setIsLowPerformance(Boolean(isSlowConnection || hasLowMemory || isOldDevice))
+    }
+
+    checkDevice()
+  }, [])
+
+  return { isMobile, isLowPerformance }
+}
+
+// Optimized SplineScene Component with intersection observer
 interface SplineSceneProps {
   scene: string
   className?: string
+  shouldLoad: boolean
 }
 
-function SplineScene({ scene, className }: SplineSceneProps) {
+function SplineScene({ scene, className, shouldLoad }: SplineSceneProps) {
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const [hasLoaded, setHasLoaded] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!shouldLoad) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasLoaded) {
+          setIsIntersecting(true)
+          setHasLoaded(true)
+        }
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [shouldLoad, hasLoaded])
+
+  if (!shouldLoad) {
+    return (
+      <div ref={ref} className={cn("w-full h-full", className)}>
+        <div className="w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-primary/10 animate-pulse" />
+      </div>
+    )
+  }
+
   return (
-    <Suspense 
-      fallback={
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
-        </div>
-      }
-    >
-      <Spline
-        scene={scene}
-        className={className}
-      />
-    </Suspense>
+    <div ref={ref} className={cn("w-full h-full", className)}>
+      {isIntersecting ? (
+        <Suspense 
+          fallback={
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/10">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary/30"></div>
+            </div>
+          }
+        >
+          <Spline
+            scene={scene}
+            className="w-full h-full"
+            onLoad={() => console.log('Spline loaded successfully')}
+            onError={(error: unknown) => console.warn('Spline failed to load:', error)}
+          />
+        </Suspense>
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-primary/10 animate-pulse" />
+      )}
+    </div>
+  )
+}
+
+// Fallback animated background for low-performance devices
+function FallbackBackground({ className }: { className?: string }) {
+  return (
+    <div className={cn("w-full h-full relative overflow-hidden", className)}>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,theme(colors.primary/0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,theme(colors.primary/0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,theme(colors.primary/0.08),transparent_50%)]" />
+      
+      {/* Animated particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/20 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -113,6 +225,7 @@ function Spotlight({
 // Main HeroSection Component
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const { isMobile, isLowPerformance } = useDeviceDetection()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -151,10 +264,15 @@ export function HeroSection() {
             className="-top-40 left-0 md:left-60 md:-top-20"
             size={300}
           />
-          <SplineScene 
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full opacity-20 dark:opacity-30 pointer-events-auto"
-          />
+          {isLowPerformance ? (
+            <FallbackBackground className="w-full h-full opacity-20 dark:opacity-30" />
+          ) : (
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full opacity-20 dark:opacity-30 pointer-events-auto"
+              shouldLoad={!isLowPerformance}
+            />
+          )}
         </div>
       </div><div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative z-10 pointer-events-none">
         <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 lg:space-y-12 max-w-5xl mx-auto">

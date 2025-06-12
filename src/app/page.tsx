@@ -5,10 +5,12 @@ import { ProjectsSection } from "@/components/projects-section"
 import { SkillsSection } from "@/components/skills-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { PerformanceOptimization } from "@/components/performance-optimization"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black">
+      <PerformanceOptimization />
       <Header />
       <main>
         <HeroSection />
