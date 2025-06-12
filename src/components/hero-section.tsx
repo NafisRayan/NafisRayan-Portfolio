@@ -225,7 +225,7 @@ function Spotlight({
 // Main HeroSection Component
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const { isLowPerformance } = useDeviceDetection()
+  const { isMobile, isLowPerformance } = useDeviceDetection()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -264,13 +264,13 @@ export function HeroSection() {
             className="-top-40 left-0 md:left-60 md:-top-20"
             size={300}
           />
-          {isLowPerformance ? (
+          {(isMobile || isLowPerformance) ? (
             <FallbackBackground className="w-full h-full opacity-20 dark:opacity-30" />
           ) : (
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full opacity-20 dark:opacity-30 pointer-events-auto"
-              shouldLoad={!isLowPerformance}
+              shouldLoad={true}
             />
           )}
         </div>
