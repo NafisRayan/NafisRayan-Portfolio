@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "title": "E-commerce ReactNative",
+      "title": "Ecommerce ReactNative",
       "description": "This React Native e-commerce app, built with Expo, delivers a seamless mobile shopping experience. Key features include a detailed product catalog, intuitive shopping cart, secure user authentication, and efficient order management. Optimized for both iOS and Android, it showcases cross-platform development skills and provides a user-friendly interface.",
       "icon": "ShoppingCart",
       "image": "/projects/E-commerce ReactNative.png",
@@ -42,13 +42,13 @@
     },
     {
       "id": 5,
-      "title": "Fitness Tracking App",
-      "description": "This comprehensive fitness application offers advanced workout tracking and detailed progress monitoring. It includes social networking features and personalized training plans. Built with React Native for cross-platform compatibility, it utilizes an SQLite database for local storage. Wellness insights and motivation tools help users achieve their fitness goals effectively.",
-      "icon": "Activity",
-      "image": "/projects/Fitness Tracking App.png",
-      "tags": ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
-      "sourceCode": "https://github.com/NafisRayan/FitUp-ReactNative",
-      "demoUrl": "https://github.com/NafisRayan/FitUp-ReactNative"
+      "title": "Social Media Dashboard",
+      "description": "A comprehensive responsive social media analytics platform built with Next.js, React, and TypeScript. Features real-time insights, interactive data visualization, advanced user experience with keyboard shortcuts, theme switching, and WCAG compliance. Includes overview dashboard, profile analytics, post scheduling, engagement tracking, and export functionality for modern social media management.",
+      "icon": "Users",
+      "image": "/projects/Social Media Dashboard.png",
+      "tags": ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
+      "sourceCode": "https://github.com/NafisRayan/Social-Media-Dashboard",
+      "demoUrl": "https://social-media-dashboard-pink-tau.vercel.app/"
     },
     {
       "id": 6,
@@ -62,13 +62,13 @@
     },
     {
       "id": 7,
-      "title": "Social Media Dashboard",
-      "description": "A comprehensive responsive social media analytics platform built with Next.js, React, and TypeScript. Features real-time insights, interactive data visualization, advanced user experience with keyboard shortcuts, theme switching, and WCAG compliance. Includes overview dashboard, profile analytics, post scheduling, engagement tracking, and export functionality for modern social media management.",
-      "icon": "Users",
-      "image": "/projects/Social Media Dashboard.png",
-      "tags": ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
-      "sourceCode": "https://github.com/NafisRayan/Social-Media-Dashboard",
-      "demoUrl": "https://social-media-dashboard-pink-tau.vercel.app/"
+      "title": "Fitness Tracking App",
+      "description": "This comprehensive fitness application offers advanced workout tracking and detailed progress monitoring. It includes social networking features and personalized training plans. Built with React Native for cross-platform compatibility, it utilizes an SQLite database for local storage. Wellness insights and motivation tools help users achieve their fitness goals effectively.",
+      "icon": "Activity",
+      "image": "/projects/Fitness Tracking App.png",
+      "tags": ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
+      "sourceCode": "https://github.com/NafisRayan/FitUp-ReactNative",
+      "demoUrl": "https://github.com/NafisRayan/FitUp-ReactNative"
     },
     {
       "id": 8,
