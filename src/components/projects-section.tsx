@@ -6,144 +6,41 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap, LayoutDashboard, Github } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import projectsData from "@/data/projects.json"
 
-const projects = [
-	{
-		title: "E-commerce Platform",
-		description: "This full-featured e-commerce solution offers a comprehensive product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
-		icon: ShoppingCart,
-		image: "/projects/E-commerce Platform.png",
-		tags: ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
-		sourceCode: "https://github.com/NafisRayan/GoMert-Ecommerce",
-		demoUrl: "https://go-mert-ecommerce.vercel.app",
-	},
-	{
-		title: "E-commerce ReactNative",
-		description: "This React Native e-commerce app, built with Expo, delivers a seamless mobile shopping experience. Key features include a detailed product catalog, intuitive shopping cart, secure user authentication, and efficient order management. Optimized for both iOS and Android, it showcases cross-platform development skills and provides a user-friendly interface.",
-		icon: ShoppingCart,
-		image: "/projects/E-commerce ReactNative.png",
-		tags: ["react-native", "expo", "ecommerce", "mobile"],
-		sourceCode: "https://github.com/NafisRayan/Ecommerce-Mobile",
-		demoUrl: "https://github.com/NafisRayan/Ecommerce-Mobile",
-	},
-	{
-		title: "Admin Dashboard",
-		description: "This modern admin panel dashboard, built with ShadcnUI in Next.js, offers both light and dark modes. It features a responsive design and is highly accessible. Key components include a built-in sidebar, global search command, and over 10 pages with custom elements. It serves as a reusable collection for future projects.",
-		icon: LayoutDashboard,
-		image: "/projects/Admin Dashboard.png",
-		tags: ["react", "light-theme", "admin", "dark-theme", "reactjs", "nextjs", "admin-dashboard", "admin-panel", "shadcn-ui", "shadcn"],
-		sourceCode: "https://github.com/NafisRayan/AdminPanel-Shadcn",
-		demoUrl: "https://admin-panel-demo-five.vercel.app",
-	},
-	{
-		title: "Fitness Tracking App",
-		description: "This comprehensive fitness application offers advanced workout tracking and detailed progress monitoring. It includes social networking features and personalized training plans. Built with React Native for cross-platform compatibility, it utilizes an SQLite database for local storage. Wellness insights and motivation tools help users achieve their fitness goals effectively.",
-		icon: Activity,
-		image: "/projects/Fitness Tracking App.png",
-		tags: ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
-		sourceCode: "https://github.com/NafisRayan/FitUp-ReactNative",
-		demoUrl: "https://github.com/NafisRayan/FitUp-ReactNative",
-	},
-	{
-		title: "Educational Learning Platform",
-		description: "This interactive e-learning platform provides a comprehensive course management system and detailed progress tracking. It offers collaborative learning features for students and educators. Built with React and NodeJS, it includes Firebase integration and learning management system capabilities. Assessment tools and real-time communication features enhance the educational experience.",
-		icon: GraduationCap,
-		image: "/projects/ducational Learning Platform.png",
-		tags: ["education", "e-learning", "react", "nodejs", "firebase", "lms"],
-		sourceCode: "https://github.com/NafisRayan/EdTech",
-		demoUrl: "https://ed-tech-rouge.vercel.app/",
-	},
-	{
-	title: "Social Media Dashboard",
-	description: "A comprehensive responsive social media analytics platform built with Next.js, React, and TypeScript. Features real-time insights, interactive data visualization, advanced user experience with keyboard shortcuts, theme switching, and WCAG compliance. Includes overview dashboard, profile analytics, post scheduling, engagement tracking, and export functionality for modern social media management.",
-	icon: Users,
-	image: "/projects/Social Media Dashboard.png",
-	tags: ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
-	sourceCode: "https://github.com/NafisRayan/Social-Media-Dashboard",
-	demoUrl: "https://social-media-dashboard-pink-tau.vercel.app/",
-	},
-	{
-		title: "Ecommerce Flutter App",
-		description: "This modern cross-platform e-commerce mobile application, built with Flutter and Dart, offers intuitive product browsing. It features advanced shopping cart functionality and comprehensive user profiles, ensuring a seamless shopping experience. Optimized for both iOS and Android platforms, it delivers responsive design and smooth performance across devices.",
-		icon: Smartphone,
-		image: "/projects/Ecommerce-Flutter.png",
-		tags: ["flutter", "dart", "mobile", "ecommerce", "cross-platform", "ios", "android"],
-		sourceCode: "https://github.com/nafisrayan/ecommerce-flutter",
-		demoUrl: "https://github.com/nafisrayan/ecommerce-flutter",
-	},
-	{
-		title: "AI-Powered Customer Support",
-		description: "This intelligent customer support system features advanced AI chatbots and automated ticket routing. It utilizes sentiment analysis for enhanced customer experience. Built with React and NodeJS, it incorporates natural language processing and machine learning algorithms. Real-time communication improves customer service and support efficiency, providing a cutting-edge solution.",
-		icon: Brain,
-		image: "/projects/AI-Powered Customer Support.png",
-		tags: ["ai", "nlp", "chatbot", "react", "nodejs", "machine-learning"],
-		sourceCode: "https://github.com/NafisRayan/chatCOMsystem",
-		demoUrl: "https://github.com/NafisRayan/chatCOMsystem",
-	},
-	{
-		title: "Fintech Mobile App",
-		description: "This secure mobile financial application offers comprehensive account management and detailed transaction history. It provides advanced budgeting tools and encrypted payment processing. Built with React Native and Supabase backend, it includes banking integrations and financial analytics. A user-friendly interface ensures a seamless financial management experience for users.",
-		icon: Smartphone,
-		image: "/projects/Fintech Mobile App.png",
-		tags: ["fintech", "react-native", "mobile", "payments", "security", "supabase", "banking"],
-		sourceCode: "#",
-		demoUrl: "#",
-	},
-	{
-		title: "HealthCare Dashboard",
-		description: "This modern React-based healthcare web application, built with Vite and Tailwind CSS, manages patient health data effectively. It features interactive blood pressure charts and detailed diagnosis history. Comprehensive patient management tools and Chart.js data visualization, combined with responsive design, optimize the healthcare workflow.",
-		icon: Activity,
-		image: "/projects/Health Dashboard.png",
-		tags: ["healthcare", "react", "dashboard", "vite", "tailwind", "chartjs", "responsive", "patient-data"],
-		sourceCode: "https://github.com/NafisRayan/HealthCare-Dashboard",
-		demoUrl: "https://health-care-dashboard-sigma.vercel.app",
-	},
-	{
-		title: "Crypto Trading Platform",
-		description: "This advanced cryptocurrency trading platform features real-time market data and comprehensive portfolio management. It offers secure transaction processing and is built with React and WebSocket technology for live updates. Blockchain integration, trading analytics, charting tools, and robust security measures ensure a safe trading experience.",
-		icon: CreditCard,
-		image: "/projects/Crypto Trading Platform.png",
-		tags: ["crypto", "trading", "blockchain", "react", "websockets", "fintech"],
-		sourceCode: "#",
-		demoUrl: "#",
-	},
-	{
-		title: "AR Product Visualization",
-		description: "This innovative augmented reality application provides immersive product visualization. Customers can view and interact with products in their real environment before making purchase decisions. Built with WebXR and ThreeJS technology for mobile devices, it enhances the e-commerce experience through cutting-edge AR technology, creating a unique shopping journey.",
-		icon: Eye,
-		image: "/projects/AR Product Visualization.png",
-		tags: ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
-		sourceCode: "#",
-		demoUrl: "#",
-	},
-	{
-		title: "3D Lego Simulation",
-		description: "This modern web-based 3D Lego simulation game is built with Next.js 15, React 19, and Three.js. Users can create, modify, and explore virtual Lego structures using an elegant UI and immersive 3D environment. It offers a creative and engaging experience for Lego enthusiasts of all ages.",
-		icon: Box,
-		image: "/projects/Lego Simulation.png",
-		tags: ["nextjs", "react", "threejs", "3d", "lego", "simulation"],
-		sourceCode: "https://github.com/NafisRayan/Lego-Blocks-Game",
-		demoUrl: "https://lego-blocks-game.vercel.app",
-	},
-	{
-		title: "Revenue Tracking App",
-		description: "This comprehensive business intelligence dashboard is designed for revenue tracking and advanced financial analytics. It offers performance monitoring with real-time insights. Interactive charts, reporting tools, business metrics analysis, and data visualization capabilities provide effective business decision-making and financial management strategies for businesses.",
-		icon: TrendingUp,
-		image: "/projects/Revenue Tracking and Management App.png",
-		tags: ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
-		sourceCode: "#",
-		demoUrl: "#",
-	},
-	{
-		title: "Virtual Reality Game",
-		description: "This immersive virtual reality gaming experience features interactive 3D environments and realistic physics simulation. It offers engaging multiplayer capabilities and is built with WebXR and ThreeJS technology. Advanced gaming mechanics, collision detection, real-time networking, and optimized performance ensure smooth VR gameplay across various devices.",
-		icon: Gamepad2,
-		image: "/projects/Virtual Reality Game.png",
-		tags: ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
-		sourceCode: "https://github.com/NafisRayan/FPS-Game-ThreeJS",
-		demoUrl: "https://nafisrayan.github.io/FPS-Game-ThreeJS/",
-	}
-]
+// Icon mapping to convert string names to Lucide React components
+const iconMap = {
+  ShoppingCart,
+  LayoutDashboard,
+  Activity,
+  GraduationCap,
+  Users,
+  Smartphone,
+  Brain,
+  CreditCard,
+  Eye,
+  Box,
+  TrendingUp,
+  Gamepad2,
+}
+
+// Define the project type
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+  tags: string[];
+  sourceCode: string;
+  demoUrl: string;
+}
+
+// Transform the JSON data to include the actual icon components
+const projects = projectsData.projects.map((project: Project) => ({
+  ...project,
+  icon: iconMap[project.icon as keyof typeof iconMap] || ShoppingCart
+}))
 
 export function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
