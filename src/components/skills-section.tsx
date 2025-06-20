@@ -22,9 +22,12 @@ export function SkillsSection() {
               Full Stack Expertise
             </h2>
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                I bring comprehensive full-stack development expertise with a strong foundation in both frontend and backend technologies, particularly the MERN stack and modern web frameworks. I excel in database design and optimization across multiple platforms including MongoDB, MySQL, SQLite, and modern cloud solutions like Supabase, GCP, and Firebase. I build scalable, efficient applications that deliver exceptional user experiences, from optimizing database performance to creating intuitive interfaces. I tackle complex technical challenges with innovative solutions while maintaining clean, maintainable code.
-              </p>
+              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                <li>• Comprehensive development expertise with React, MERN stack, and modern web frameworks</li>
+                <li>• Database design and optimization across MongoDB, MySQL, SQLite, Supabase, GCP, and Firebase</li>
+                <li>• Build scalable, efficient applications with exceptional user experiences and intuitive interfaces</li>
+                <li>• Tackle complex technical challenges with innovative solutions while maintaining clean code standards</li>
+              </ul>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MERN Stack</span>
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Next.js</span>
@@ -44,9 +47,12 @@ export function SkillsSection() {
               Android/iOS Applications
             </h2>
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                My primary expertise lies in React Native development, enabling me to create efficient, high-performance mobile applications for both Android and iOS platforms using a single codebase. I leverage React Native&apos;s powerful ecosystem and my JavaScript/TypeScript skills to build native-quality mobile experiences. I excel at creating complex, feature-rich applications while maintaining clean code, with additional experience in Flutter for specific project requirements.
-              </p>
+              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                <li>• Primary expertise in React Native development for cross-platform mobile applications</li>
+                <li>• Create efficient, high-performance apps for both Android and iOS using single codebase</li>
+                <li>• Leverage React Native&apos;s powerful ecosystem and JavaScript/TypeScript skills</li>
+                <li>• Build native-quality mobile experiences with clean code standards and Flutter experience</li>
+              </ul>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">React Native</span>
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">JavaScript</span>
@@ -64,9 +70,12 @@ export function SkillsSection() {
               3D Graphics & Game Development
             </h2>
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                I specialize in creating immersive 3D experiences using Three.js for interactive web applications and Blender for professional 3D modeling and animations. My expertise combines technical proficiency with creative vision to develop stunning 3D visualizations and interactive environments. I push the boundaries of web-based graphics to bring complex ideas to life through compelling 3D presentations.
-              </p>
+              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                <li>• Specialize in creating immersive 3D experiences using Three.js for interactive web applications</li>
+                <li>• Professional 3D modeling and animations using Blender</li>
+                <li>• Combine technical proficiency with creative vision for stunning 3D visualizations</li>
+                <li>• Push the boundaries of web-based graphics to bring complex ideas to life through interactive environments</li>
+              </ul>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Three.js</span>
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Blender</span>
@@ -83,9 +92,12 @@ export function SkillsSection() {
               AI/ML Solutions
             </h2>
             <div className="space-y-3 sm:space-y-4">
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-                I develop intelligent applications and machine learning solutions using Flask for robust backend services, while creating interactive AI interfaces with Gradio and Streamlit for seamless user experiences. From computer vision algorithms to autonomous systems, I combine advanced AI technologies with practical implementation skills. I build powerful, user-friendly applications that leverage machine learning capabilities to solve real-world problems.
-              </p>
+              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                <li>• Develop intelligent applications and machine learning solutions using Flask for robust backend services</li>
+                <li>• Create interactive AI interfaces with Gradio and Streamlit for seamless user experiences</li>
+                <li>• Build computer vision algorithms and autonomous systems with advanced AI technologies</li>
+                <li>• Focus on solving real-world problems through powerful, user-friendly AI-driven applications</li>
+              </ul>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flask</span>
                 <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Gradio</span>
