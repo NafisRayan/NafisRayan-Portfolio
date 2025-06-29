@@ -85,8 +85,9 @@ export function HeroSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 lg:space-y-12 max-w-5xl mx-auto">
             <div className={`space-y-3 sm:space-y-4 lg:space-y-6 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight leading-tight">
-                Hi, I'm{" "}
+                Hello, I am{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                   Nafis Rayan
                 </span>
