@@ -8,6 +8,7 @@ import { SplineScene } from "@/components/ui/spline"
 
 function LazySplineBackground() {
   const [showSpline, setShowSpline] = React.useState(false);
+  const [hasLoadedOnce, setHasLoadedOnce] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -20,9 +21,27 @@ function LazySplineBackground() {
   }, []);
 
   React.useEffect(() => {
+    // Check session storage to see if Spline has already been loaded in this session
+    const hasSplineLoaded = sessionStorage.getItem('splineLoaded') === 'true';
+    if (hasSplineLoaded) {
+      setShowSpline(true);
+      setHasLoadedOnce(true);
+    }
+  }, []);
+
+  React.useEffect(() => {
     if (!ref.current || isMobile) return;
     const observer = new window.IntersectionObserver(
-      ([entry]) => setShowSpline(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowSpline(true);
+          setHasLoadedOnce(true);
+          // Mark in session storage that Spline has been loaded
+          sessionStorage.setItem('splineLoaded', 'true');
+        } else {
+          setShowSpline(false); // Hide Spline when out of view to free resources
+        }
+      },
       { rootMargin: "400px" }
     );
     observer.observe(ref.current);
@@ -32,12 +51,13 @@ function LazySplineBackground() {
   // Do not render Spline on mobile devices
   if (isMobile) return null;
 
+  // Implement lazy loading: Only render SplineScene initially when needed, but keep mounted after first load
   return (
     <div ref={ref} className="absolute inset-0 z-0">
-      {showSpline && (
+      {hasLoadedOnce && (
         <SplineScene
           scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-          className="w-full h-full pointer-events-auto"
+          className={`w-full h-full pointer-events-auto ${showSpline ? 'block' : 'hidden'}`}
         />
       )}
     </div>
