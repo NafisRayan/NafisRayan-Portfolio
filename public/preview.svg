@@ -1,0 +1,35 @@
+<svg width="800" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="black"/>
+
+  <!-- Full Stack Expertise -->
+  <text x="20" y="40" font-family="Arial" font-size="24" fill="white">Full Stack Expertise</text>
+  <text x="20" y="70" font-family="Arial" font-size="16" fill="white">• Comprehensive development expertise with React, MERN stack, and modern web frameworks</text>
+  <text x="20" y="90" font-family="Arial" font-size="16" fill="white">• Database design and optimization across MongoDB, MySQL, SQLite, Supabase, GCP, and Firebase</text>
+  <text x="20" y="110" font-family="Arial" font-size="16" fill="white">• Build scalable, efficient applications with exceptional user experiences and intuitive interfaces</text>
+  <text x="20" y="130" font-family="Arial" font-size="16" fill="white">• Tackle complex technical challenges with innovative solutions while maintaining clean code standards</text>
+  <text x="20" y="160" font-family="Arial" font-size="16" fill="white">MERN Stack Next.js TypeScript Python MongoDB MySQL Supabase Firebase</text>
+
+  <!-- Android/iOS Applications -->
+  <text x="20" y="210" font-family="Arial" font-size="24" fill="white">Android/iOS Applications</text>
+  <text x="20" y="240" font-family="Arial" font-size="16" fill="white">• Primary expertise in React Native development for cross-platform mobile applications</text>
+  <text x="20" y="260" font-family="Arial" font-size="16" fill="white">• Create efficient, high-performance apps for both Android and iOS using single codebase</text>
+  <text x="20" y="280" font-family="Arial" font-size="16" fill="white">• Leverage React Native's powerful ecosystem and JavaScript/TypeScript skills</text>
+  <text x="20" y="300" font-family="Arial" font-size="16" fill="white">• Build native-quality mobile experiences with clean code standards and Flutter experience</text>
+  <text x="20" y="330" font-family="Arial" font-size="16" fill="white">React Native JavaScript TypeScript Expo Flutter Mobile UI/UX</text>
+
+  <!-- 3D Graphics & Game Development -->
+  <text x="20" y="380" font-family="Arial" font-size="24" fill="white">3D Graphics & Game Development</text>
+  <text x="20" y="410" font-family="Arial" font-size="16" fill="white">• Specialize in creating immersive 3D experiences using Three.js for interactive web applications</text>
+  <text x="20" y="430" font-family="Arial" font-size="16" fill="white">• Professional 3D modeling and animations using Blender</text>
+  <text x="20" y="450" font-family="Arial" font-size="16" fill="white">• Combine technical proficiency with creative vision for stunning 3D visualizations</text>
+  <text x="20" y="470" font-family="Arial" font-size="16" fill="white">• Push the boundaries of web-based graphics to bring complex ideas to life through interactive environments</text>
+  <text x="20" y="500" font-family="Arial" font-size="16" fill="white">Three.js Blender WebGL 3D Animation Interactive Design</text>
+
+  <!-- AI/ML Solutions -->
+  <text x="20" y="550" font-family="Arial" font-size="24" fill="white">AI/ML Solutions</text>
+  <text x="20" y="580" font-family="Arial" font-size="16" fill="white">• Develop intelligent applications and machine learning solutions using Flask for robust backend services</text>
+  <text x="20" y="600" font-family="Arial" font-size="16" fill="white">• Create interactive AI interfaces with Gradio and Streamlit for seamless user experiences</text>
+  <text x="20" y="620" font-family="Arial" font-size="16" fill="white">• Build computer vision algorithms and autonomous systems with advanced AI technologies</text>
+  <text x="20" y="640" font-family="Arial" font-size="16" fill="white">• Focus on solving real-world problems through powerful, user-friendly AI-driven applications</text>
+  <text x="20" y="670" font-family="Arial" font-size="16" fill="white">Flask Gradio Streamlit Computer Vision Machine Learning Python</text>
+</svg>
