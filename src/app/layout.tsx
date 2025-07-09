@@ -27,9 +27,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
         <head>
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <meta property="og:image" content="/preview.svg" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content="/preview.svg" />
         </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
