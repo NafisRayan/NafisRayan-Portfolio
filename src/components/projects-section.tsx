@@ -131,7 +131,7 @@ export function ProjectsSection() {
 											</div>
 
 											{/* Action buttons */}
-<div className="flex sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2 flex-wrap">
+			<div className="flex sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2 flex-wrap">
 												<Button
 													variant="outline"
 													size="sm"
