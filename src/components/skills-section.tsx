@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { FaLaptopCode, FaMobileAlt, FaCube, FaBrain } from "react-icons/fa"
+import { FaLaptopCode, FaMobileAlt, FaGamepad, FaBrain } from "react-icons/fa"
 
 export function SkillsSection() {
   return (
@@ -21,7 +21,7 @@ export function SkillsSection() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-                Full Stack Expertise
+                Full-Stack Developemnt
               </h2>
               <div className="space-y-3 sm:space-y-4">
                 <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
@@ -79,13 +79,13 @@ export function SkillsSection() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-                3D Graphics & Game Development
+                3D/VR Games & Simulations
               </h2>
               <div className="space-y-3 sm:space-y-4">
                 <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
-                  <li>• Specialize in creating immersive 3D experiences using Three.js for interactive applications</li>
+                  <li>• Specialize in creating immersive VR experiences using Three.js for interactive applications</li>
                   <li>• Professional 3D modeling and animations using tools like Blender and WebGL</li>
-                  <li>• Combine technical proficiency with creative vision for stunning 3D visualizations</li>
+                  <li>• Combine technical proficiency with creative vision for stunning 3D games and simulations</li>
                   <li>• Push the boundaries to bring complex ideas to life through interactive environments</li>
                 </ul>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -98,7 +98,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaCube className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
+              <FaGamepad className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
             </div>
           </div>
 
@@ -106,14 +106,14 @@ export function SkillsSection() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-                AI/ML Solutions
+                AI/ML Agents & Solutions
               </h2>
               <div className="space-y-3 sm:space-y-4">
                 <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
                   <li>• Develop intelligent machine learning solutions using Flask for robust backend services</li>
                   <li>• Create interactive AI interfaces with Gradio and Streamlit for seamless user experiences</li>
                   <li>• Build computer vision algorithms and autonomous systems with advanced AI technologies</li>
-                  <li>• Focus on solving real-world problems through powerful, user-friendly AI-driven applications</li>
+                  <li>• Solving real-world problems through powerful agent technologies like n8n and Langflow</li>
                 </ul>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flask</span>
