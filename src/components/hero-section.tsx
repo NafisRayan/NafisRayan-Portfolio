@@ -68,6 +68,7 @@ const clientLogos = [
   'BoctoCrop.png',
   'ByteSlack.png',
   'CollegeMastermind.png',
+  'NuvroAI.svg',
   'CreativeCentralian.png',
   'EcoMart.png',
   'LNP.png',
