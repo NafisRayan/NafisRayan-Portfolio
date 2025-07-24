@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { FaLaptopCode, FaMobileAlt, FaCube, FaBrain } from "react-icons/fa"
 
 export function SkillsSection() {
   return (
@@ -17,95 +18,115 @@ export function SkillsSection() {
 
         <div className="space-y-12 sm:space-y-16">
           {/* Full Stack Development */}
-          <div className="space-y-3 sm:space-y-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-              Full Stack Expertise
-            </h2>
-            <div className="space-y-3 sm:space-y-4">
-              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
-                <li>• Comprehensive development expertise with React, MERN stack, and modern web frameworks</li>
-                <li>• Database design and optimization across MongoDB, MySQL, SQLite, Supabase, GCP, and Firebase</li>
-                <li>• Build scalable, efficient applications with exceptional user experiences and intuitive interfaces</li>
-                <li>• Tackle complex technical challenges with innovative solutions while maintaining clean code standards</li>
-              </ul>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MERN Stack</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Next.js</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">TypeScript</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Python</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MongoDB</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MySQL</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Supabase</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Firebase</span>
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+            <div className="space-y-3 sm:space-y-4 md:w-3/4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
+                Full Stack Expertise
+              </h2>
+              <div className="space-y-3 sm:space-y-4">
+                <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                  <li>• Comprehensive expertise with React, MERN stack, and modern web frameworks</li>
+                  <li>• Database design and optimization across MongoDB, SQLite, Supabase, GCP, and Firebase</li>
+                  <li>• Build scalable, efficient applications with exceptional performance and intuitive interfaces</li>
+                  <li>• Tackle complex technical challenges with innovative solutions while maintaining standards</li>
+                </ul>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MERN Stack</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Next.js</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">TypeScript</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Python</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MongoDB</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">MySQL</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Supabase</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Firebase</span>
+                </div>
               </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/4">
+              <FaLaptopCode className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
             </div>
           </div>
 
           {/* Mobile Development */}
-          <div className="space-y-3 sm:space-y-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-              Android/iOS Applications
-            </h2>
-            <div className="space-y-3 sm:space-y-4">
-              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
-                <li>• Primary expertise in React Native development for cross-platform mobile applications</li>
-                <li>• Create efficient, high-performance apps for both Android and iOS using single codebase</li>
-                <li>• Leverage React Native&apos;s powerful ecosystem and JavaScript/TypeScript skills</li>
-                <li>• Build native-quality mobile experiences with clean code standards and Flutter experience</li>
-              </ul>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">React Native</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">JavaScript</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">TypeScript</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Expo</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flutter</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Mobile UI/UX</span>
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+            <div className="space-y-3 sm:space-y-4 md:w-3/4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
+                Android/iOS Applications
+              </h2>
+              <div className="space-y-3 sm:space-y-4">
+                <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                  <li>• Primary expertise in React Native development for cross-platform mobile applications</li>
+                  <li>• Create efficient, high-performance apps for both Android and iOS using single codebase</li>
+                  <li>• Leverage React Native&#39;s powerful ecosystem and JavaScript/TypeScript skills</li>
+                  <li>• Build native-quality mobile experiences with clean code standards and Flutter experience</li>
+                </ul>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">React Native</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">JavaScript</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">TypeScript</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Expo</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flutter</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Mobile UI/UX</span>
+                </div>
               </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/4">
+              <FaMobileAlt className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
             </div>
           </div>
 
           {/* 3D Graphics Development */}
-          <div className="space-y-3 sm:space-y-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-              3D Graphics & Game Development
-            </h2>
-            <div className="space-y-3 sm:space-y-4">
-              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
-                <li>• Specialize in creating immersive 3D experiences using Three.js for interactive web applications</li>
-                <li>• Professional 3D modeling and animations using Blender</li>
-                <li>• Combine technical proficiency with creative vision for stunning 3D visualizations</li>
-                <li>• Push the boundaries of web-based graphics to bring complex ideas to life through interactive environments</li>
-              </ul>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Three.js</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Blender</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">WebGL</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">3D Animation</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Interactive Design</span>
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+            <div className="space-y-3 sm:space-y-4 md:w-3/4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
+                3D Graphics & Game Development
+              </h2>
+              <div className="space-y-3 sm:space-y-4">
+                <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                  <li>• Specialize in creating immersive 3D experiences using Three.js for interactive applications</li>
+                  <li>• Professional 3D modeling and animations using tools like Blender and WebGL</li>
+                  <li>• Combine technical proficiency with creative vision for stunning 3D visualizations</li>
+                  <li>• Push the boundaries to bring complex ideas to life through interactive environments</li>
+                </ul>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Three.js</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Blender</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">WebGL</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">3D Animation</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Interactive Design</span>
+                </div>
               </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/4">
+              <FaCube className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
             </div>
           </div>
 
           {/* AI Solutions */}
-          <div className="space-y-3 sm:space-y-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
-              AI/ML Solutions
-            </h2>
-            <div className="space-y-3 sm:space-y-4">
-              <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
-                <li>• Develop intelligent applications and machine learning solutions using Flask for robust backend services</li>
-                <li>• Create interactive AI interfaces with Gradio and Streamlit for seamless user experiences</li>
-                <li>• Build computer vision algorithms and autonomous systems with advanced AI technologies</li>
-                <li>• Focus on solving real-world problems through powerful, user-friendly AI-driven applications</li>
-              </ul>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flask</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Gradio</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Streamlit</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Computer Vision</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Machine Learning</span>
-                <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Python</span>
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+            <div className="space-y-3 sm:space-y-4 md:w-3/4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
+                AI/ML Solutions
+              </h2>
+              <div className="space-y-3 sm:space-y-4">
+                <ul className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed space-y-2">
+                  <li>• Develop intelligent machine learning solutions using Flask for robust backend services</li>
+                  <li>• Create interactive AI interfaces with Gradio and Streamlit for seamless user experiences</li>
+                  <li>• Build computer vision algorithms and autonomous systems with advanced AI technologies</li>
+                  <li>• Focus on solving real-world problems through powerful, user-friendly AI-driven applications</li>
+                </ul>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Flask</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Gradio</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Streamlit</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Computer Vision</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Machine Learning</span>
+                  <span className="text-xs sm:text-sm text-primary px-2 sm:px-3 py-1 rounded-full bg-primary/10 inline-block">Python</span>
+                </div>
               </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/4">
+              <FaBrain className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
             </div>
           </div>
         </div>
