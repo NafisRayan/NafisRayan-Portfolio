@@ -43,7 +43,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaLaptopCode className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
+              <FaLaptopCode className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
             </div>
           </div>
 
@@ -71,7 +71,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaMobileAlt className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
+              <FaMobileAlt className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaCube className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
+              <FaCube className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaBrain className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-20" />
+              <FaBrain className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-75" />
             </div>
           </div>
         </div>
