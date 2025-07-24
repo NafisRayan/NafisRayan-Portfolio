@@ -1,7 +1,9 @@
 "use client"
 
 import React from "react"
-import { FaLaptopCode, FaMobileAlt, FaGamepad, FaBrain } from "react-icons/fa"
+import { FaLaptopCode, FaMobileAlt } from "react-icons/fa"
+import { LiaVrCardboardSolid } from "react-icons/lia"
+import { LuBrainCircuit } from "react-icons/lu"
 
 export function SkillsSection() {
   return (
@@ -98,7 +100,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaGamepad className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
+              <LiaVrCardboardSolid className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
           </div>
 
@@ -126,7 +128,7 @@ export function SkillsSection() {
               </div>
             </div>
             <div className="flex items-center justify-center md:w-1/4">
-              <FaBrain className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
+              <LuBrainCircuit className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
           </div>
         </div>
