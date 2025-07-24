@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Brain, Box, Eye, Smartphone, CreditCard, Activity, TrendingUp, Users, Gamepad2, ShoppingCart, GraduationCap, LayoutDashboard, Github } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import { } from "react"
 import projectsData from "@/data/projects.json"
 
 // Icon mapping to convert string names to Lucide React components
@@ -43,25 +43,7 @@ const projects = projectsData.projects.map((project: Project) => ({
 }))
 
 export function ProjectsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [scrollOffset, setScrollOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        // Smoother calculation with reduced multiplier for gentler movement
-        const currentOffset = Math.max(0, -rect.top) * 0.02;
-        setScrollOffset(currentOffset);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial calculation
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  return (    <section id="projects" ref={sectionRef} className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-3 sm:mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 grid-dots bg-white dark:bg-black">
+  return (    <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-3 sm:mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 grid-dots bg-white dark:bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
 					<span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -76,22 +58,21 @@ export function ProjectsSection() {
 						return (
 							<div 
 								key={project.title}
-								className="stacking-item transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"								style={{
+								className="stacking-item"								style={{
 									zIndex: 100 + index,
-									transform: `translateY(${index * 10 - scrollOffset}px)`,
 									transformOrigin: 'center top'
 								}}
 							>							<Card
-									className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] cursor-pointer overflow-hidden py-0 stacking-card h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm"
+									className="group cursor-pointer overflow-hidden py-0 stacking-card h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm"
 								>
 								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0 h-full">
 									{/* Project Image */}
-									<div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden order-1 xl:order-1">
+									<div className="relative w-full overflow-hidden order-1 xl:order-1 h-full">
 										<Image
 											src={project.image}
 											alt={project.title}
 											fill
-											className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
+											className="object-cover"
 										/>										<div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-sm">
 											<Icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
 										</div>
