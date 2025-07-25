@@ -72,7 +72,7 @@ export function ProjectsSection() {
 											src={project.image}
 											alt={project.title}
 											fill
-											className="object-fill"
+											className="object-cover"
 										/>										<div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-1.5 sm:p-2 rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-sm">
 											<Icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
 										</div>
