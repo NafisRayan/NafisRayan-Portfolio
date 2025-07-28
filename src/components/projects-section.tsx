@@ -43,7 +43,7 @@ const projects = projectsData.projects.map((project: Project) => ({
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-3 sm:mb-4 lg:mb-6 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+    <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-0 mb-6 sm:mb-9 lg:mb-14 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -53,14 +53,11 @@ export function ProjectsSection() {
             Featured Projects
           </h1>
         </div>
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-6xl mx-auto space-y-6">
           {projects.map((project) => {
             const Icon = project.icon
             return (
-              <div
-                key={project.title}
-                className="mb-8"
-              >
+              <div key={project.title}>
                 <Card className="group cursor-pointer overflow-hidden h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm">
 								<div className="flex flex-col lg:grid lg:grid-cols-1 xl:grid-cols-2 gap-0 h-full">
 									{/* Project Image */}
@@ -109,7 +106,7 @@ export function ProjectsSection() {
 											</div>
 
 											{/* Action buttons */}
-<div className="flex sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2 flex-wrap">
+											<div className="flex sm:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2 flex-wrap">
 												<Button
 													variant="outline"
 													size="sm"
