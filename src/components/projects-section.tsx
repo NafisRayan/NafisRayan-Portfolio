@@ -56,7 +56,7 @@ export function ProjectsSection() {
     updateHeights();
     window.addEventListener("resize", updateHeights);
     return () => window.removeEventListener("resize", updateHeights);
-  }, [projects.length]);
+  }, []);
 
   return (
     <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
