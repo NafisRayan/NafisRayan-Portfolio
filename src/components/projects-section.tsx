@@ -53,15 +53,15 @@ export function ProjectsSection() {
             Featured Projects
           </h1>
         </div>
-        <div className="relative max-w-6xl mx-auto space-y-10">
+        <div className="relative max-w-6xl mx-auto space-y-12">
         {projects.map((project, index) => {
           const Icon = project.icon
           return (
             <div key={project.title} className="sticky top-34" style={{ zIndex: index + 1 }}>
-              <Card className="group cursor-pointer overflow-hidden h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm">
+              <Card className="group cursor-pointer overflow-hidden h-[455px] bg-white/80 dark:bg-black/80 backdrop-blur-sm">
       <div className="flex flex-col md:flex-row h-full">
        {/* Image Section */}
-									<div className="relative w-full md:w-1/2 aspect-[16/10] md:aspect-auto">
+									<div className="relative w-full md:w-1/2 aspect-[16/10]">
 										<Image
 											src={project.image}
 											alt={project.title}
@@ -75,7 +75,7 @@ export function ProjectsSection() {
 
 									{/* Content Section */}
 									<CardBody>
-										<div className="flex flex-col h-full">
+										<div className="flex flex-col h-full overflow-y-auto">
 											<CardHeader className="p-0 pb-3 sm:pb-4">
 												<CardTitle className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight mb-2 sm:mb-3">
 													{project.title}
