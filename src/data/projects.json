@@ -97,8 +97,8 @@
       "icon": "Smartphone",
       "image": "/projects/Fintech Mobile App.png",
       "tags": ["fintech", "react-native", "mobile", "payments", "security", "supabase", "banking"],
-      "sourceCode": "#",
-      "demoUrl": "#"
+      "sourceCode": "https://github.com/NafisRayan/Fintech-ReactNative",
+      "demoUrl": "https://github.com/NafisRayan/Fintech-ReactNative"
     },
     {
       "id": 11,
@@ -117,18 +117,18 @@
       "icon": "CreditCard",
       "image": "/projects/Crypto Trading Platform.png",
       "tags": ["crypto", "trading", "blockchain", "react", "websockets", "fintech"],
-      "sourceCode": "#",
-      "demoUrl": "#"
+      "sourceCode": "https://github.com/NafisRayan/Crypto-Trading-Platform",
+      "demoUrl": "https://github.com/NafisRayan/Crypto-Trading-Platform"
     },
     {
       "id": 13,
       "title": "AR Product Visualization",
-      "description": "This innovative augmented reality application provides immersive product visualization. Customers can view and interact with products in their real environment before making purchase decisions. Built with WebXR and ThreeJS technology for mobile devices, it enhances the e-commerce experience through cutting-edge AR technology, creating a unique shopping journey.",
-      "icon": "Eye",
+      "description": "A powerful, customizable tray configuration tool built with React-Three-Fiber, Next.js, and Tailwind CSS. This project enables users to design, preview, and manage tray layouts with advanced UI controls and modular architecture. It is a versatile tool for creating and managing complex 3D models and layouts. It is a versatile tool for creating and managing complex 3D models and layouts.",
+      "icon": "Box",
       "image": "/projects/AR Product Visualization.png",
       "tags": ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
-      "sourceCode": "#",
-      "demoUrl": "#"
+      "sourceCode": "https://github.com/NafisRayan/Cabinate-Configurator-R3F-Threejs",
+      "demoUrl": "https://cabinate-configurator-r3-f-threejs.vercel.app/"
     },
     {
       "id": 14,
@@ -147,8 +147,8 @@
       "icon": "TrendingUp",
       "image": "/projects/Revenue Tracking and Management App.png",
       "tags": ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
-      "sourceCode": "#",
-      "demoUrl": "#"
+      "sourceCode": "https://github.com/NafisRayan/Revenue-Tracking-App-ReactNative",
+      "demoUrl": "https://github.com/NafisRayan/Revenue-Tracking-App-ReactNative"
     },
     {
       "id": 16,
