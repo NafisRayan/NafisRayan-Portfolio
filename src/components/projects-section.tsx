@@ -41,7 +41,23 @@ const projects = projectsData.projects.map((project: Project) => ({
   icon: iconMap[project.icon as keyof typeof iconMap] || ShoppingCart
 }))
 
+import React, { useRef, useEffect, useState } from "react";
+
 export function ProjectsSection() {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    function updateHeights() {
+      const heights = cardRefs.current.map(ref => ref?.offsetHeight || 0);
+      const max = Math.max(...heights, 0);
+      setMaxHeight(max);
+    }
+    updateHeights();
+    window.addEventListener("resize", updateHeights);
+    return () => window.removeEventListener("resize", updateHeights);
+  }, [projects.length]);
+
   return (
     <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
       <div className="container mx-auto">
@@ -57,8 +73,16 @@ export function ProjectsSection() {
         {projects.map((project, index) => {
           const Icon = project.icon
           return (
-            <div key={project.title} className="sticky top-34" style={{ zIndex: index + 1 }}>
-              <Card className="group cursor-pointer overflow-hidden h-[460px] bg-white/80 dark:bg-black/80 backdrop-blur-sm">
+            <div
+              key={project.title}
+              className="sticky top-34"
+              style={{ zIndex: index + 1 }}
+              ref={el => { cardRefs.current[index] = el; }}
+            >
+              <Card
+                className="group cursor-pointer overflow-hidden bg-white/80 dark:bg-black/80 backdrop-blur-sm"
+                style={maxHeight ? { height: maxHeight } : undefined}
+              >
       <div className="flex flex-col md:flex-row h-full">
        {/* Image Section */}
 									<div className="relative w-full md:w-1/2 aspect-[16/10]">
@@ -75,7 +99,7 @@ export function ProjectsSection() {
 
 									{/* Content Section */}
 									<CardBody>
-										<div className="flex flex-col h-full overflow-y-auto">
+<div className="flex flex-col h-full">
 											<CardHeader className="p-0 pb-3 sm:pb-4">
 												<CardTitle className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight mb-2 sm:mb-3">
 													{project.title}
