@@ -57,7 +57,7 @@ export function ProjectsSection() {
         {projects.map((project, index) => {
           const Icon = project.icon
           return (
-            <div key={project.title} className="sticky top-24" style={{ zIndex: index + 1 }}>
+            <div key={project.title} className="sticky top-34" style={{ zIndex: index + 1 }}>
               <Card className="group cursor-pointer overflow-hidden h-full bg-white/80 dark:bg-black/80 backdrop-blur-sm">
       <div className="flex flex-col md:flex-row h-full">
        {/* Image Section */}
