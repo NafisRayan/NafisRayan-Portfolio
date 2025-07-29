@@ -97,8 +97,8 @@
       "icon": "Smartphone",
       "image": "/projects/Fintech Mobile App.png",
       "tags": ["fintech", "react-native", "mobile", "payments", "security", "supabase", "banking"],
-      "sourceCode": "#",
-      "demoUrl": "#"
+      "sourceCode": "https://github.com/NafisRayan/Fintech-ReactNative",
+      "demoUrl": "https://github.com/NafisRayan/Fintech-ReactNative"
     },
     {
       "id": 11,
