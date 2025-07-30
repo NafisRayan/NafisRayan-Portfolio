@@ -2,11 +2,11 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-commerce Platform",
-      "description": "This full-featured e-commerce solution offers a comprehensive product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
+      "title": "TechX Ecommerce",
+      "description": "This full-featured e-commerce solution offers a comprehensive admin dashboard, product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
       "icon": "ShoppingCart",
       "image": "/projects/E-commerce Platform.png",
-      "tags": ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
+      "tags": ["ecommerce", "react", "nextjs", "nodejs", "prisma", "mongodb", "nextauth"],
       "sourceCode": "https://github.com/NafisRayan/TechX-Ecommerce",
       "demoUrl": "https://tech-x-ecommerce.vercel.app/"
     },
