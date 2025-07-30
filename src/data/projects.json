@@ -7,8 +7,8 @@
       "icon": "ShoppingCart",
       "image": "/projects/E-commerce Platform.png",
       "tags": ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
-      "sourceCode": "https://github.com/NafisRayan/GoMert-Ecommerce",
-      "demoUrl": "https://go-mert-ecommerce.vercel.app"
+      "sourceCode": "https://github.com/NafisRayan/TechX-Ecommerce",
+      "demoUrl": "https://tech-x-ecommerce.vercel.app/"
     },
     {
       "id": 2,
