@@ -33,32 +33,10 @@ const experiences = [
     technologies: ["MERN Stack", "ThreeJS", "React Native", "Database Optimization"],
   },
   {
-    title: "Contractual Developer",
-    company: "Micratto Technologies",
-    location: "Dhaka, Bangladesh",
-    period: "Nov 2023 – Jan 2024",
-    responsibilities: [
-      "Developed a performant, SEO-friendly Nuxt.js website showcasing Micratto's graphene-based energy products. Implemented responsive UI components aligned with the company's sustainability branding.",
-      "Connected a headless CMS for easy content management and localization support.",
-    ],
-    technologies: ["Nuxt.js", "Web Development", "CMS Integration"],
-  },
-  {
-    title: "Contractual Developer",
-    company: "Ultra Engineering",
-    location: "Dhaka, Bangladesh",
-    period: "July 2023 – Oct 2023",
-    responsibilities: [
-      "Collaborated with Ultra Engineering's team to build a sustainable tech management platform using MongoDB, Express.js, React, and Node.js.",
-      "Developed interfaces to showcase solar power systems, IoT sensors, and energy efficiency metrics. Built APIs to integrate real-time data and automate system responses.",
-    ],
-    technologies: ["MongoDB", "Express.js", "React", "Node.js", "IoT", "API Development"],
-  },
-  {
     title: "Full Stack Developer",
     company: "College Mastermind",
     location: "Arizona, USA (Remote)",
-    period: "April 2023 – Jun 2023",
+    period: "April 2023 – Jan 2024",
     responsibilities: [
       "Developed the platform using MERN stack, Tailwind CSS and RESTful APIs.",
       "Dashboard to manage student data, consultant assignments, and admissions tracking.",
