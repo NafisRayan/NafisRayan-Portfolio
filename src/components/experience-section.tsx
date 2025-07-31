@@ -7,7 +7,7 @@ import { Calendar, MapPin, CircleDot } from "lucide-react"
 const experiences = [
   {
     title: "React Native Developer",
-    company: "Nuvro",
+    company: "Nuvro AI",
     location: "Remote",
     period: "Jun 2025 – Present",
     role: "Lead Android/iOS Developer",
