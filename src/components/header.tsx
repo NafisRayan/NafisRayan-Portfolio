@@ -6,6 +6,7 @@ import { Menu, Download, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { motion } from "framer-motion"
 
 const navigation = [
   { name: "Experience", href: "#experience" },
@@ -28,14 +29,19 @@ export function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[9999] p-2 sm:p-3 md:p-4 lg:p-6 transition-all duration-300">
-      <div className="container mx-auto max-w-7xl">        <nav 
+      <div className="container mx-auto max-w-7xl">
+        <motion.nav
           className={`
             backdrop-blur-md rounded-xl sm:rounded-2xl border transition-all duration-300
-            ${isScrolled 
-              ? "bg-white/85 dark:bg-black/85 border-border/50 shadow-lg" 
+            ${isScrolled
+              ? "bg-white/85 dark:bg-black/85 border-border/50 shadow-lg"
               : "bg-white/75 dark:bg-black/75 border-border/40 shadow-sm"
             }
           `}
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ amount: 0.7 }}
         >
           <div className="flex h-14 sm:h-16 md:h-18 lg:h-20 items-center justify-between px-3 sm:px-4 md:px-5 lg:px-6 xl:px-8">
             
@@ -163,7 +169,7 @@ export function Header() {
               </Sheet>
             </div>
           </div>
-        </nav>
+        </motion.nav>
       </div>
     </div>
   )

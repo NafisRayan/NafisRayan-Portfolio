@@ -4,23 +4,36 @@ import React from "react"
 import { FaLaptopCode, FaMobileAlt } from "react-icons/fa"
 import { LiaVrCardboardSolid } from "react-icons/lia"
 import { LuBrainCircuit } from "react-icons/lu"
+import { motion } from "framer-motion"
 
 export function SkillsSection() {
   return (
     <section id="hire-me" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
             Why Hire Me?
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             What I Bring to the Table
           </h1>
-        </div>
+        </motion.div>
 
         <div className="space-y-12 sm:space-y-16">
           {/* Full Stack Development */}
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
                 Full-Stack Developemnt
@@ -47,10 +60,16 @@ export function SkillsSection() {
             <div className="flex items-center justify-center md:w-1/4">
               <FaLaptopCode className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Mobile Development */}
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
                 Android/iOS Applications
@@ -75,10 +94,16 @@ export function SkillsSection() {
             <div className="flex items-center justify-center md:w-1/4">
               <FaMobileAlt className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
-          </div>
+          </motion.div>
 
-          {/* 3D Graphics Development */}
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+          {/* 3D/VR Games & Simulations */}
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
                 3D/VR Games & Simulations
@@ -102,10 +127,16 @@ export function SkillsSection() {
             <div className="flex items-center justify-center md:w-1/4">
               <LiaVrCardboardSolid className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
-          </div>
+          </motion.div>
 
-          {/* AI Solutions */}
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+          {/* AI/ML Agents & Solutions */}
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground">
                 AI/ML Agents & Solutions
@@ -130,7 +161,7 @@ export function SkillsSection() {
             <div className="flex items-center justify-center md:w-1/4">
               <LuBrainCircuit className="text-primary text-7xl sm:text-8xl md:text-9xl opacity-50" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

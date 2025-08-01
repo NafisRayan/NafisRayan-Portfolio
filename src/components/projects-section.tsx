@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import Image from "next/image"
 import { Card, CardBody, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -61,14 +62,20 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
             My Portfolio
           </span>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Featured Projects
           </h1>
-        </div>
+        </motion.div>
         <div className="relative max-w-6xl mx-auto space-y-12">
         {projects.map((project, index) => {
           const Icon = project.icon
@@ -79,10 +86,14 @@ export function ProjectsSection() {
               style={{ zIndex: index + 1 }}
               ref={el => { cardRefs.current[index] = el; }}
             >
-              <Card
-                className="group cursor-pointer overflow-hidden bg-white/80 dark:bg-black/80 backdrop-blur-sm"
-                style={maxHeight ? { height: maxHeight } : undefined}
+              <motion.div
+                whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
+                <Card
+                  className="group cursor-pointer overflow-hidden bg-white/80 dark:bg-black/80 backdrop-blur-sm"
+                  style={maxHeight ? { height: maxHeight } : undefined}
+                >
       <div className="flex flex-col md:flex-row h-full">
        {/* Image Section */}
 									<div className="relative w-full md:w-1/2 aspect-[16/10]">
@@ -170,11 +181,12 @@ export function ProjectsSection() {
 									</CardBody>
 								</div>
 							</Card>
-							       </div>
-							     )
-							   })}
-							 </div>
-						</div>
-				</section>
-		)
+							      </motion.div>
+							    </div>
+							  )
+							})}
+					</div>
+			</div>
+	</section>
+)
 }
