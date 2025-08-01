@@ -1,10 +1,11 @@
 ﻿"use client"
 
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 import { SplineScene } from "@/components/ui/spline"
+import { motion } from "framer-motion"
 
 function LazySplineBackground() {
   const [showSpline, setShowSpline] = React.useState(false);
@@ -81,12 +82,6 @@ const clientLogos = [
 ];
 
 export function HeroSection() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   const scrollToNextSection = React.useCallback(() => {
     const experienceSection = document.getElementById("experience");
     if (experienceSection) {
@@ -105,7 +100,13 @@ export function HeroSection() {
       <div className="relative z-10 w-full pointer-events-none">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8 lg:space-y-12 max-w-5xl mx-auto">
-            <div className={`space-y-3 sm:space-y-4 lg:space-y-6 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+            <motion.div
+              className="space-y-3 sm:space-y-4 lg:space-y-6"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight leading-tight">
                 Hello, I am{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
@@ -117,17 +118,29 @@ export function HeroSection() {
                 <br className="hidden sm:inline" />
                 building Web, Mobile, and 3D applications.
               </p>
-            </div>
-            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 ${isLoaded ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+            </motion.div>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.6 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+            >
               <Button size="lg" className="text-sm sm:text-base px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 pointer-events-auto" asChild>
                 <a href="#hire-me">Learn More</a>
               </Button>
               <Button variant="outline" size="lg" className="text-sm sm:text-base px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 pointer-events-auto" asChild>
                 <a href="#contact">Get In Touch</a>
               </Button>
-            </div>
+            </motion.div>
             {/* Client Logos */}
-            <div className={`w-full max-w-7xl mx-auto ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+            <motion.div
+              className="w-full max-w-7xl mx-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+            >
               <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 text-center">Trusted by amazing clients</p>
               <div className="relative overflow-hidden">
                 <div className="flex animate-slide-carousel space-x-4 sm:space-x-6 lg:space-x-8 items-center">
@@ -164,16 +177,19 @@ export function HeroSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* Scroll indicator */}
-            <button 
+            <motion.button
               onClick={scrollToNextSection}
-              className={`absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 cursor-pointer group pointer-events-auto ${isLoaded ? 'animate-pulse-slow' : 'opacity-0'}`} 
-              style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
+              className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 cursor-pointer group pointer-events-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               aria-label="Scroll to next section"
             >
               <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

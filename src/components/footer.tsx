@@ -1,5 +1,7 @@
+"use client"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { WhatsappIcon } from "@/components/ui/whatsapp-icon"
+import { motion } from "framer-motion"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,7 +12,13 @@ export function Footer() {
     { name: "Email", href: "mailto:nafisrayan123@gmail.com", icon: Mail },  ]
   
   return (
-    <footer className="w-full border-t bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
+    <motion.footer
+      className="w-full border-t bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.5 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Main footer content */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
@@ -23,7 +31,7 @@ export function Footer() {
               | Software Developer
             </span>
           </div>
-
+  
           {/* Social links - Center */}
           <div className="flex items-center gap-3 sm:gap-4">
             {socialLinks.map((link) => {
@@ -50,6 +58,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
