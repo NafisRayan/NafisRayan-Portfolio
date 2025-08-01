@@ -87,8 +87,13 @@ export function ProjectsSection() {
               ref={el => { cardRefs.current[index] = el; }}
             >
               <motion.div
-                whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.04 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 120,
+                  damping: 18
+                }}
+                className="transition-shadow duration-300 hover:shadow-lg"
               >
                 <Card
                   className="group cursor-pointer overflow-hidden bg-white/80 dark:bg-black/80 backdrop-blur-sm"
