@@ -222,11 +222,11 @@ export function ContactSection() {
             Contact Me
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Let's Work Together on Your Next Project
+            Let&apos;s Work Together on Your Next Project
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Have an idea you want to bring to life? I'm here to help you create something amazing. Get in 
-            touch and let's discuss how we can make your vision a reality.
+            Have an idea you want to bring to life? I&apos;m here to help you create something amazing. Get in 
+            touch and let&apos;s discuss how we can make your vision a reality.
           </p>
         </motion.div>
 
@@ -296,9 +296,9 @@ export function ContactSection() {
                   </p>
                   <br />
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    Whether you're looking to collaborate on a project, need technical
-                    consultation, or just want to connect, I'm always open to meaningful
-                    conversations. Let's build something amazing together!
+                    Whether you&apos;re looking to collaborate on a project, need technical
+                    consultation, or just want to connect, I&apos;m always open to meaningful
+                    conversations. Let&apos;s build something amazing together!
                   </p>
                 </CardContent>
               </Card>
@@ -314,7 +314,7 @@ export function ContactSection() {
                   </div>
                   <CardTitle className="text-lg sm:text-xl text-foreground">Send me a message</CardTitle>
                   <CardDescription className="text-sm sm:text-base text-muted-foreground">
-                    Fill out the form below and I'll get back to you as soon as possible.
+                    Fill out the form below and I&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 
@@ -341,7 +341,7 @@ export function ContactSection() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder="What's your good name?"
+                            placeholder="What&apos;s your good name?"
                             value={formData.name}
                             onChange={handleInputChange}
                             className={`h-10 sm:h-12 ${formErrors.name ? 'border-red-500' : ''}`}
@@ -363,7 +363,7 @@ export function ContactSection() {
                             id="email"
                             name="email"
                             type="email"
-                            placeholder="What's your web address?"
+                            placeholder="What&apos;s your web address?"
                             value={formData.email}
                             onChange={handleInputChange}
                             className={`h-10 sm:h-12 ${formErrors.email ? 'border-red-500' : ''}`}
@@ -384,7 +384,7 @@ export function ContactSection() {
                       viewport={{ once: false, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.16 }}
                     >
-                      <Label htmlFor="projectTitle" className="text-sm font-medium text-foreground">What's Your Project Called?</Label>
+                      <Label htmlFor="projectTitle" className="text-sm font-medium text-foreground">What&apos;s Your Project Called?</Label>
                       <Input
                         id="projectTitle"
                         name="projectTitle"
@@ -407,7 +407,7 @@ export function ContactSection() {
                       viewport={{ once: false, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.19 }}
                     >
-                      <Label htmlFor="bigIdea" className="text-sm font-medium text-foreground">What's the Big Idea?</Label>
+                      <Label htmlFor="bigIdea" className="text-sm font-medium text-foreground">What&apos;s the Big Idea?</Label>
                       <Textarea
                         id="bigIdea"
                         name="bigIdea"
@@ -518,7 +518,7 @@ export function ContactSection() {
                   {isSubmitted && (
                     <div className="p-4 rounded-lg bg-green-50 border border-green-200 dark:bg-green-900/20 dark:border-green-800">
                       <p className="text-sm text-green-600 dark:text-green-400">
-                        🎉 Your message has been sent successfully! I'll get back to you within 24 hours.
+                        🎉 Your message has been sent successfully! I&apos;ll get back to you within 24 hours.
                       </p>
                       <p className="text-xs text-green-500 dark:text-green-300 mt-1">
                         📧 Check your email for a confirmation message with next steps.
