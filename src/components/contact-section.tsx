@@ -215,7 +215,7 @@ export function ContactSection() {
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.7 }}
+          viewport={{ amount: 0.7, once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-4">
@@ -236,7 +236,7 @@ export function ContactSection() {
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ amount: 0.5, once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Feel free to reach out directly...</h3>
@@ -250,7 +250,7 @@ export function ContactSection() {
                     key={link.name}
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.7 }}
+                    viewport={{ amount: 0.7, once: true }}
                     transition={{ duration: 0.7, delay: 0.05 + i * 0.07 }}
                   >
                     <Card className="border border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm hover:shadow-md transition-all duration-300">
@@ -284,7 +284,7 @@ export function ContactSection() {
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.7 }}
+              viewport={{ amount: 0.7, once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
             >
               <Card className="border border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
@@ -326,7 +326,7 @@ export function ContactSection() {
                       className="space-y-2"
                       initial={{ opacity: 0, y: 60 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, amount: 0.7 }}
+                      viewport={{ once: true, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.10 }}
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -334,7 +334,7 @@ export function ContactSection() {
                           className="space-y-2"
                           initial={{ opacity: 0, y: 60 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: false, amount: 0.7 }}
+                          viewport={{ once: true, amount: 0.7 }}
                           transition={{ duration: 0.7, delay: 0.10 }}
                         >
                           <Label htmlFor="name" className="text-sm font-medium text-foreground">Your Name</Label>
@@ -355,7 +355,7 @@ export function ContactSection() {
                           className="space-y-2"
                           initial={{ opacity: 0, y: 60 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: false, amount: 0.7 }}
+                          viewport={{ once: true, amount: 0.7 }}
                           transition={{ duration: 0.7, delay: 0.13 }}
                         >
                           <Label htmlFor="email" className="text-sm font-medium text-foreground">Email Address</Label>
@@ -381,7 +381,7 @@ export function ContactSection() {
                       className="space-y-2"
                       initial={{ opacity: 0, y: 60 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, amount: 0.7 }}
+                      viewport={{ once: true, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.16 }}
                     >
                       <Label htmlFor="projectTitle" className="text-sm font-medium text-foreground">What&apos;s Your Project Called?</Label>
@@ -404,7 +404,7 @@ export function ContactSection() {
                       className="space-y-2"
                       initial={{ opacity: 0, y: 60 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, amount: 0.7 }}
+                      viewport={{ once: true, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.19 }}
                     >
                       <Label htmlFor="bigIdea" className="text-sm font-medium text-foreground">What&apos;s the Big Idea?</Label>
@@ -428,7 +428,7 @@ export function ContactSection() {
                       className="space-y-2 sm:space-y-3"
                       initial={{ opacity: 0, y: 60 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, amount: 0.7 }}
+                      viewport={{ once: true, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.22 }}
                     >
                       <Label className="text-sm font-medium text-foreground">What Do You Need Help With?</Label>
@@ -439,7 +439,7 @@ export function ContactSection() {
                             className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
                             initial={{ opacity: 0, y: 60 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.7 }}
+                            viewport={{ once: true, amount: 0.7 }}
                             transition={{ duration: 0.7, delay: 0.23 + idx * 0.03 }}
                           >
                             <input
@@ -462,7 +462,7 @@ export function ContactSection() {
                       className="space-y-2"
                       initial={{ opacity: 0, y: 60 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, amount: 0.7 }}
+                      viewport={{ once: true, amount: 0.7 }}
                       transition={{ duration: 0.7, delay: 0.28 }}
                     >
                       <Label className="text-sm font-medium text-foreground">Share an Image with Us?</Label>

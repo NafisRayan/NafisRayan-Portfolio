@@ -14,7 +14,7 @@ export function SkillsSection() {
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.7 }}
+          viewport={{ amount: 0.7, once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -31,7 +31,7 @@ export function SkillsSection() {
             className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
@@ -67,7 +67,7 @@ export function SkillsSection() {
             className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
@@ -101,7 +101,7 @@ export function SkillsSection() {
             className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">
@@ -134,7 +134,7 @@ export function SkillsSection() {
             className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           >
             <div className="space-y-3 sm:space-y-4 md:w-3/4">

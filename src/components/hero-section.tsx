@@ -104,7 +104,7 @@ export function HeroSection() {
               className="space-y-3 sm:space-y-4 lg:space-y-6"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
+              viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight leading-tight">
@@ -123,7 +123,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.6 }}
+              viewport={{ amount: 0.6, once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
             >
               <Button size="lg" className="text-sm sm:text-base px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 pointer-events-auto" asChild>
@@ -138,7 +138,7 @@ export function HeroSection() {
               className="w-full max-w-7xl mx-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
             >
               <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 text-center">Trusted by amazing clients</p>
@@ -184,7 +184,7 @@ export function HeroSection() {
               className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 cursor-pointer group pointer-events-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ amount: 0.5, once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               aria-label="Scroll to next section"
             >
