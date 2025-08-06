@@ -10,7 +10,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **⚡ Performance** - Fast loading with Next.js 15 App Router
 - **🎬 Animations** - Smooth loading animations and hover effects
 - **📧 Contact Form** - Functional contact form with validation
-- **🎯 Smooth Navigation** - Anchor-based smooth scrolling between sections
+- **🎯 Smooth Scrolling** - Enhanced smooth scrolling experience powered by Lenis
 - **🎨 Grid Background** - Beautiful animated grid background pattern
 
 ## 🛠️ Tech Stack
@@ -20,6 +20,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **Styling:** Tailwind CSS
 - **UI Components:** ShadCN UI
 - **Icons:** Lucide React
+- **Smooth Scrolling:** Lenis
 - **Theme:** next-themes
 - **Deployment:** Ready for Vercel/Netlify
 
@@ -109,6 +110,7 @@ nafis-portfolio/
 - **Contact Form** with loading states and validation
 - **Professional Timeline** for experience display
 - **Social Media Integration** with external links
+- **Smooth Scrolling** for a fluid navigation experience
 - **SEO Optimized** with proper meta tags
 
 ## 🚀 Deployment

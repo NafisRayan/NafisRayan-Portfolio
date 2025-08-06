@@ -69,7 +69,7 @@ export function ExperienceSection() {
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.7 }}
+          viewport={{ amount: 0.7, once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
@@ -85,7 +85,7 @@ export function ExperienceSection() {
               key={index}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ amount: 0.5, once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.12 }}
             >
               <Card className="p-4 sm:p-6 border border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-sm">
