@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, Download, Mail } from "lucide-react"
+import { Menu } from "lucide-react"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -18,6 +19,12 @@ const navigation = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,43 +65,107 @@ export function Header() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1 lg:space-x-2 xl:space-x-3">
               {navigation.map((item) => (
-                <Link
+                <motion.li
                   key={item.name}
-                  href={item.href}
-                  className="px-2 lg:px-3 xl:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 rounded-lg hover:bg-muted/50 hover:scale-105 active:scale-95"
+                  whileHover="hover"
+                  whileTap="tap"
+                  className="relative flex items-center"
                 >
-                  {item.name}
-                </Link>
+                  <motion.span
+                    className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary rounded-full"
+                    initial={{ width: 0, height: 0, opacity: 0, x: 0 }}
+                    variants={{
+                      hover: { width: 8, height: 8, opacity: 1, x: -12 },
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  />
+                  <motion.div
+                    variants={{
+                      hover: { x: 8 },
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="px-2 lg:px-3 xl:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 rounded-lg hover:bg-muted/50 hover:scale-105 active:scale-95"
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                </motion.li>
               ))}
             </div>
 
             {/* Desktop Right Side */}
             <div className="hidden md:flex items-center space-x-2 lg:space-x-3 xl:space-x-4">
               <ThemeToggle />
-              <Button 
-                variant="outline" 
-                size="icon" 
-                className="rounded-lg h-9 w-9 lg:h-10 lg:w-10 transition-all duration-300 hover:scale-105 active:scale-95"
-                title="Download CV" 
-                asChild
+              <motion.div
+                className={`flex items-center rounded-full px-1 py-1 shadow-lg cursor-pointer transition ${mounted ? (theme === 'dark' ? 'bg-background' : 'bg-background') : ''} border border-border/50`}
+                style={{ minWidth: '200px', minHeight: '48px' }}
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                variants={{
+                  rest: {},
+                  hover: {},
+                }}
               >
-                <a href="/NafisRayan_CV.pdf" download="NafisRayan_CV.pdf">
-                  <Download className="h-4 w-4 lg:h-5 lg:w-5" />
-                  <span className="sr-only">Download CV</span>
-                </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                className="rounded-lg h-9 w-9 lg:h-10 lg:w-10 transition-all duration-300 hover:scale-105 active:scale-95"
-                title="Contact Me" 
-                asChild
-              >
-                <Link href="#contact">
-                  <Mail className="h-4 w-4 lg:h-5 lg:w-5" />
-                  <span className="sr-only">Contact Me</span>
-                </Link>
-              </Button>
+                <motion.div
+                  className="flex items-center w-full"
+                  style={{ width: '100%' }}
+                  variants={{
+                    rest: { flexDirection: "row" },
+                    hover: { flexDirection: "row-reverse" }
+                  }}
+                  transition={{ type: "tween", duration: 0.6, ease: "easeInOut" }}
+                >
+                  <button
+                    className="flex items-center group"
+                    style={{
+                      outline: "none",
+                      "--arrow-move": "190px",
+                      "--rest-move": "40px",
+                    } as React.CSSProperties}
+                    onClick={() => {
+                      document.querySelector("#contact")?.scrollIntoView({ behavior: 'smooth' });
+                      const link = document.createElement('a');
+                      link.href = '/NafisRayan_CV.pdf';
+                      link.download = 'NafisRayan_CV.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    <div
+                      className={`z-10 flex items-center font-semibold text-base rounded-full px-6 py-2 transition-shadow shadow
+                        ${mounted
+                          ? theme === "dark"
+                            ? " hover:text-foreground bg-primary/5"
+                            : " hover:text-foreground bg-primary/5"
+                          : ""
+                        }
+                        transition-transform duration-350
+                        group-hover:translate-x-[var(--rest-move)]
+                      `}
+                    >
+                      Get In Touch • Here
+                    </div>
+                    <span className="inline-flex items-center ml-2 mr-2 transition-transform duration-350 group-hover:-translate-x-[var(--arrow-move)]">
+                      <svg
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                  </button>
+                </motion.div>
+              </motion.div>
             </div>            {/* Mobile Navigation */}
             <div className="flex md:hidden items-center space-x-2 sm:space-x-3">
               <ThemeToggle />
