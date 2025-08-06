@@ -278,6 +278,35 @@ export function ContactSection() {
                   </motion.div>
                 )
               })}
+              {/* CV Download Option */}
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.7, once: true }}
+                transition={{ duration: 0.7, delay: 0.35 }}
+              >
+                <Card className="border border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm hover:shadow-md transition-all duration-300">
+                  <CardContent className="p-3 sm:p-4 lg:p-6">
+                    <a
+                      href="/NafisRayan_CV.pdf"
+                      download
+                      className="flex items-center gap-3 sm:gap-4 group"
+                    >
+                      <div className="p-2 sm:p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+                        <Cloud className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-semibold group-hover:text-primary transition-colors text-sm sm:text-base text-foreground">
+                          Download CV
+                        </h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
+                          Get my latest resume as PDF
+                        </p>
+                      </div>
+                    </a>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
             
             {/* Additional contact info */}
