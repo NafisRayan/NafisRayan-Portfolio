@@ -69,26 +69,31 @@ export function Header() {
                   key={item.name}
                   whileHover="hover"
                   whileTap="tap"
-                  className="relative flex items-center"
+                  className="flex items-center"
                 >
-                  <motion.span
-                    className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary rounded-full"
-                    initial={{ width: 0, height: 0, opacity: 0, x: 0 }}
-                    variants={{
-                      hover: { width: 8, height: 8, opacity: 1, x: -12 },
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  />
                   <motion.div
                     variants={{
                       hover: { x: 8 },
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="flex items-center w-full"
                   >
                     <Link
                       href={item.href}
-                      className="px-2 lg:px-3 xl:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 rounded-lg hover:bg-muted/50 hover:scale-105 active:scale-95"
+                      className="flex items-center gap-2 px-2 lg:px-3 xl:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 rounded-lg hover:bg-muted/50 hover:scale-105 active:scale-95"
                     >
+                      <motion.span
+                        className="bg-primary rounded-full"
+                        initial={{ width: 0, height: 0, opacity: 0 }}
+                        variants={{
+                          hover: {
+                            width: "0.5em",
+                            height: "0.5em",
+                            opacity: 1
+                          },
+                        }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
                       {item.name}
                     </Link>
                   </motion.div>
