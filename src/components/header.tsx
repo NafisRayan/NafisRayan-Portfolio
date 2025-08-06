@@ -140,8 +140,8 @@ export function Header() {
                       className={`z-10 flex items-center font-semibold text-base rounded-full px-6 py-2 transition-shadow shadow
                         ${mounted
                           ? theme === "dark"
-                            ? " hover:text-foreground bg-primary/5"
-                            : " hover:text-foreground bg-primary/5"
+                            ? "text-muted-foreground hover:text-foreground bg-primary/5"
+                            : "text-muted-foreground hover:text-foreground bg-primary/5"
                           : ""
                         }
                         transition-transform duration-350
