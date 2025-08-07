@@ -2,16 +2,6 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-commerce Platform",
-      "description": "This full-featured e-commerce solution offers a comprehensive product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
-      "icon": "ShoppingCart",
-      "image": "/projects/E-commerce Platform.png",
-      "tags": ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
-      "sourceCode": "https://github.com/NafisRayan/Basic-Ecommerce",
-      "demoUrl": "https://basic-ecommerce-six.vercel.app/"
-    },
-    {
-      "id": 2,
       "title": "Fashion Ecommerce",
       "description": "TEEZ.LO is a modern e-commerce front-end application built with Next.js 14, TypeScript, and Tailwind CSS. Features Redux Toolkit for state management, Framer Motion animations, and ShadCN UI components. This production-ready application demonstrates design-to-code implementation with optimized performance, SEO compliance, and full accessibility standards following industry best practices.",
       "icon": "ShoppingCart",
@@ -21,7 +11,7 @@
       "demoUrl": "https://fashion-ecommerce-gilt.vercel.app/"
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Ecommerce ReactNative",
       "description": "This React Native e-commerce app, built with Expo, delivers a seamless mobile shopping experience. Key features include a detailed product catalog, intuitive shopping cart, secure user authentication, and efficient order management. Optimized for both iOS and Android, it showcases cross-platform development skills and provides a user-friendly interface.",
       "icon": "ShoppingCart",
@@ -29,6 +19,16 @@
       "tags": ["react-native", "expo", "ecommerce", "mobile"],
       "sourceCode": "https://github.com/NafisRayan/Ecommerce-Mobile",
       "demoUrl": "https://github.com/NafisRayan/Ecommerce-Mobile"
+    },
+    {
+      "id": 3,
+      "title": "TechX-Ecommerce",
+      "description": "TechX-Ecommerce is a robust, full-stack E-Commerce platform built with Next.js 14, React, and TypeScript. It features a modern, responsive UI powered by Tailwind CSS and an advanced admin dashboard for managing products, orders, and users. The backend leverages Prisma ORM and MongoDB for data management, while NextAuth provides secure authentication and user sessions.",
+      "icon": "ShoppingCart",
+      "image": "/projects/TechX.png",
+      "tags": ["react", "redux", "ecommerce", "typescript", "mongodb", "nextjs", "admin-dashboard", "prisma", "tailwind", "tailwindcss", "nextauth"],
+      "sourceCode": "https://github.com/NafisRayan/TechX-Ecommerce",
+      "demoUrl": "https://tech-x-ecommerce.vercel.app/"
     },
     {
       "id": 4,
@@ -52,6 +52,16 @@
     },
     {
       "id": 6,
+      "title": "E-commerce Platform",
+      "description": "This full-featured e-commerce solution offers a comprehensive product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
+      "icon": "ShoppingCart",
+      "image": "/projects/E-commerce Platform.png",
+      "tags": ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
+      "sourceCode": "https://github.com/NafisRayan/Basic-Ecommerce",
+      "demoUrl": "https://basic-ecommerce-six.vercel.app/"
+    },
+    {
+      "id": 7,
       "title": "Educational Learning Platform",
       "description": "This interactive e-learning platform provides a comprehensive course management system and detailed progress tracking. It offers collaborative learning features for students and educators. Built with React and NodeJS, it includes Firebase integration and learning management system capabilities. Assessment tools and real-time communication features enhance the educational experience.",
       "icon": "GraduationCap",
