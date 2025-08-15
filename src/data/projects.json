@@ -5,7 +5,7 @@
       "title": "Fashion Ecommerce",
       "description": "TEEZ.LO is a modern e-commerce front-end application built with Next.js 14, TypeScript, and Tailwind CSS. Features Redux Toolkit for state management, Framer Motion animations, and ShadCN UI components. This production-ready application demonstrates design-to-code implementation with optimized performance, SEO compliance, and full accessibility standards following industry best practices.",
       "icon": "ShoppingCart",
-      "image": "/projects/Fashion Ecommerce.png",
+      "image": "/projects/Fashion Ecommerce.webp",
       "tags": ["nextjs", "typescript", "tailwind", "redux", "framer-motion", "shadcn", "ecommerce", "responsive"],
       "sourceCode": "https://github.com/NafisRayan/Fashion-Ecommerce",
       "demoUrl": "https://fashion-ecommerce-gilt.vercel.app/"
@@ -15,7 +15,7 @@
       "title": "Ecommerce ReactNative",
       "description": "This React Native e-commerce app, built with Expo, delivers a seamless mobile shopping experience. Key features include a detailed product catalog, intuitive shopping cart, secure user authentication, and efficient order management. Optimized for both iOS and Android, it showcases cross-platform development skills and provides a user-friendly interface.",
       "icon": "ShoppingCart",
-      "image": "/projects/E-commerce ReactNative.png",
+      "image": "/projects/E-commerce ReactNative.webp",
       "tags": ["react-native", "expo", "ecommerce", "mobile"],
       "sourceCode": "https://github.com/NafisRayan/Ecommerce-Mobile",
       "demoUrl": "https://github.com/NafisRayan/Ecommerce-Mobile"
@@ -25,7 +25,7 @@
       "title": "TechX-Ecommerce",
       "description": "TechX-Ecommerce is a robust, full-stack E-Commerce platform built with Next.js 14, React, and TypeScript. It features a modern, responsive UI powered by Tailwind CSS and an advanced admin dashboard for managing products, orders, and users. The backend leverages Prisma ORM and MongoDB for data management, while NextAuth provides secure authentication and user sessions.",
       "icon": "ShoppingCart",
-      "image": "/projects/TechX.png",
+      "image": "/projects/TechX.webp",
       "tags": ["react", "redux", "ecommerce", "typescript", "mongodb", "nextjs", "admin-dashboard", "prisma", "tailwind", "tailwindcss", "nextauth"],
       "sourceCode": "https://github.com/NafisRayan/TechX-Ecommerce",
       "demoUrl": "https://tech-x-ecommerce.vercel.app/"
@@ -35,7 +35,7 @@
       "title": "Admin Dashboard",
       "description": "This modern admin panel dashboard, built with ShadcnUI in Next.js, offers both light and dark modes. It features a responsive design and is highly accessible. Key components include a built-in sidebar, global search command, and over 10 pages with custom elements. It serves as a reusable collection for future projects.",
       "icon": "LayoutDashboard",
-      "image": "/projects/Admin Dashboard.png",
+      "image": "/projects/Admin Dashboard.webp",
       "tags": ["react", "light-theme", "admin", "dark-theme", "reactjs", "nextjs", "admin-dashboard", "admin-panel", "shadcn-ui", "shadcn"],
       "sourceCode": "https://github.com/NafisRayan/AdminPanel-Shadcn",
       "demoUrl": "https://admin-panel-demo-five.vercel.app"
@@ -45,7 +45,7 @@
       "title": "Social Media Dashboard",
       "description": "A comprehensive responsive social media analytics platform built with Next.js, React, and TypeScript. Features real-time insights, interactive data visualization, advanced user experience with keyboard shortcuts, theme switching, and WCAG compliance. Includes overview dashboard, profile analytics, post scheduling, engagement tracking, and export functionality for modern social media management.",
       "icon": "Users",
-      "image": "/projects/Social Media Dashboard.png",
+      "image": "/projects/Social Media Dashboard.webp",
       "tags": ["social-media", "dashboard", "analytics", "content", "scheduling", "apis"],
       "sourceCode": "https://github.com/NafisRayan/Social-Media-Dashboard",
       "demoUrl": "https://social-media-dashboard-pink-tau.vercel.app/"
@@ -55,7 +55,7 @@
       "title": "E-commerce Platform",
       "description": "This full-featured e-commerce solution offers a comprehensive product catalog and advanced shopping cart. It features secure Stripe payment integration and a complete order management system. User authentication, inventory tracking, efficient order processing, and responsive design ensure an optimal shopping experience across all devices.",
       "icon": "ShoppingCart",
-      "image": "/projects/E-commerce Platform.png",
+      "image": "/projects/E-commerce Platform.webp",
       "tags": ["ecommerce", "react", "nodejs", "stripe", "mongodb", "responsive"],
       "sourceCode": "https://github.com/NafisRayan/Basic-Ecommerce",
       "demoUrl": "https://basic-ecommerce-six.vercel.app/"
@@ -65,7 +65,7 @@
       "title": "Educational Learning Platform",
       "description": "This interactive e-learning platform provides a comprehensive course management system and detailed progress tracking. It offers collaborative learning features for students and educators. Built with React and NodeJS, it includes Firebase integration and learning management system capabilities. Assessment tools and real-time communication features enhance the educational experience.",
       "icon": "GraduationCap",
-      "image": "/projects/ducational Learning Platform.png",
+      "image": "/projects/ducational Learning Platform.webp",
       "tags": ["education", "e-learning", "react", "nodejs", "firebase", "lms"],
       "sourceCode": "https://github.com/NafisRayan/EdTech",
       "demoUrl": "https://ed-tech-rouge.vercel.app/"
@@ -75,7 +75,7 @@
       "title": "Fitness Tracking App",
       "description": "This comprehensive fitness application offers advanced workout tracking and detailed progress monitoring. It includes social networking features and personalized training plans. Built with React Native for cross-platform compatibility, it utilizes an SQLite database for local storage. Wellness insights and motivation tools help users achieve their fitness goals effectively.",
       "icon": "Activity",
-      "image": "/projects/Fitness Tracking App.png",
+      "image": "/projects/Fitness Tracking App.webp",
       "tags": ["fitness", "mobile", "tracking", "health", "react-native", "sqlite", "wellness"],
       "sourceCode": "https://github.com/NafisRayan/FitUp-ReactNative",
       "demoUrl": "https://github.com/NafisRayan/FitUp-ReactNative"
@@ -85,7 +85,7 @@
       "title": "Ecommerce Flutter App",
       "description": "This modern cross-platform e-commerce mobile application, built with Flutter and Dart, offers intuitive product browsing. It features advanced shopping cart functionality and comprehensive user profiles, ensuring a seamless shopping experience. Optimized for both iOS and Android platforms, it delivers responsive design and smooth performance across devices.",
       "icon": "Smartphone",
-      "image": "/projects/Ecommerce-Flutter.png",
+      "image": "/projects/Ecommerce-Flutter.webp",
       "tags": ["flutter", "dart", "mobile", "ecommerce", "cross-platform", "ios", "android"],
       "sourceCode": "https://github.com/nafisrayan/ecommerce-flutter",
       "demoUrl": "https://github.com/nafisrayan/ecommerce-flutter"
@@ -95,7 +95,7 @@
       "title": "AI-Powered Customer Support",
       "description": "This intelligent customer support system features advanced AI chatbots and automated ticket routing. It utilizes sentiment analysis for enhanced customer experience. Built with React and NodeJS, it incorporates natural language processing and machine learning algorithms. Real-time communication improves customer service and support efficiency, providing a cutting-edge solution.",
       "icon": "Brain",
-      "image": "/projects/AI-Powered Customer Support.png",
+      "image": "/projects/AI-Powered Customer Support.webp",
       "tags": ["ai", "nlp", "chatbot", "react", "nodejs", "machine-learning"],
       "sourceCode": "https://github.com/NafisRayan/chatCOMsystem",
       "demoUrl": "https://github.com/NafisRayan/chatCOMsystem"
@@ -105,7 +105,7 @@
       "title": "Fintech Mobile App",
       "description": "This secure mobile financial application offers comprehensive account management and detailed transaction history. It provides advanced budgeting tools and encrypted payment processing. Built with React Native and Supabase backend, it includes banking integrations and financial analytics. A user-friendly interface ensures a seamless financial management experience for users.",
       "icon": "Smartphone",
-      "image": "/projects/Fintech Mobile App.png",
+      "image": "/projects/Fintech Mobile App.webp",
       "tags": ["fintech", "react-native", "mobile", "payments", "security", "supabase", "banking"],
       "sourceCode": "https://github.com/NafisRayan/Fintech-ReactNative",
       "demoUrl": "https://github.com/NafisRayan/Fintech-ReactNative"
@@ -115,7 +115,7 @@
       "title": "HealthCare Dashboard",
       "description": "This modern React-based healthcare web application, built with Vite and Tailwind CSS, manages patient health data effectively. It features interactive blood pressure charts and detailed diagnosis history. Comprehensive patient management tools and Chart.js data visualization, combined with responsive design, optimize the healthcare workflow.",
       "icon": "Activity",
-      "image": "/projects/Health Dashboard.png",
+      "image": "/projects/Health Dashboard.webp",
       "tags": ["healthcare", "react", "dashboard", "vite", "tailwind", "chartjs", "responsive", "patient-data"],
       "sourceCode": "https://github.com/NafisRayan/HealthCare-Dashboard",
       "demoUrl": "https://health-care-dashboard-sigma.vercel.app"
@@ -125,7 +125,7 @@
       "title": "Crypto Trading Platform",
       "description": "This advanced cryptocurrency trading platform features real-time market data and comprehensive portfolio management. It offers secure transaction processing and is built with React and WebSocket technology for live updates. Blockchain integration, trading analytics, charting tools, and robust security measures ensure a safe trading experience.",
       "icon": "CreditCard",
-      "image": "/projects/Crypto Trading Platform.png",
+      "image": "/projects/Crypto Trading Platform.webp",
       "tags": ["crypto", "trading", "blockchain", "react", "websockets", "fintech"],
       "sourceCode": "https://github.com/NafisRayan/Crypto-Trading-Platform",
       "demoUrl": "https://crypto-trading-platform-xi.vercel.app/"
@@ -135,7 +135,7 @@
       "title": "AR Product Visualization",
       "description": "A powerful, customizable tray configuration tool built with React-Three-Fiber, Next.js, and Tailwind CSS. This project enables users to design, preview, and manage tray layouts with advanced UI controls and modular architecture. It is a versatile tool for creating and managing complex 3D models and layouts. It is a versatile tool for creating and managing complex 3D models and layouts.",
       "icon": "Box",
-      "image": "/projects/AR Product Visualization.png",
+      "image": "/projects/AR Product Visualization.webp",
       "tags": ["ar", "webxr", "threejs", "mobile", "ecommerce", "visualization"],
       "sourceCode": "https://github.com/NafisRayan/Cabinate-Configurator-R3F-Threejs",
       "demoUrl": "https://cabinate-configurator-r3-f-threejs.vercel.app/"
@@ -145,7 +145,7 @@
       "title": "3D Lego Simulation",
       "description": "This modern web-based 3D Lego simulation game is built with Next.js 15, React 19, and Three.js. Users can create, modify, and explore virtual Lego structures using an elegant UI and immersive 3D environment. It offers a creative and engaging experience for Lego enthusiasts of all ages.",
       "icon": "Box",
-      "image": "/projects/Lego Simulation.png",
+      "image": "/projects/Lego Simulation.webp",
       "tags": ["nextjs", "react", "threejs", "3d", "lego", "simulation"],
       "sourceCode": "https://github.com/NafisRayan/Lego-Blocks-Game",
       "demoUrl": "https://lego-blocks-game.vercel.app"
@@ -155,7 +155,7 @@
       "title": "Revenue Tracking App",
       "description": "This comprehensive business intelligence dashboard is designed for revenue tracking and advanced financial analytics. It offers performance monitoring with real-time insights. Interactive charts, reporting tools, business metrics analysis, and data visualization capabilities provide effective business decision-making and financial management strategies for businesses.",
       "icon": "TrendingUp",
-      "image": "/projects/Revenue Tracking and Management App.png",
+      "image": "/projects/Revenue Tracking and Management App.webp",
       "tags": ["analytics", "dashboard", "revenue", "business", "charts", "reporting"],
       "sourceCode": "https://github.com/NafisRayan/Revenue-Tracking-App-ReactNative",
       "demoUrl": "https://github.com/NafisRayan/Revenue-Tracking-App-ReactNative"
@@ -165,7 +165,7 @@
       "title": "Virtual Reality Game",
       "description": "This immersive virtual reality gaming experience features interactive 3D environments and realistic physics simulation. It offers engaging multiplayer capabilities and is built with WebXR and ThreeJS technology. Advanced gaming mechanics, collision detection, real-time networking, and optimized performance ensure smooth VR gameplay across various devices.",
       "icon": "Gamepad2",
-      "image": "/projects/Virtual Reality Game.png",
+      "image": "/projects/Virtual Reality Game.webp",
       "tags": ["vr", "webxr", "gaming", "threejs", "physics", "multiplayer"],
       "sourceCode": "https://github.com/NafisRayan/FPS-Game-ThreeJS",
       "demoUrl": "https://nafisrayan.github.io/FPS-Game-ThreeJS/"
