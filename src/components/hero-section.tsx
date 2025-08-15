@@ -66,19 +66,19 @@ function LazySplineBackground() {
 }
 
 const clientLogos = [
-  'BoctoCrop.png',
-  'ByteSlack.png',
-  'CollegeMastermind.png',
+  'BoctoCrop.webp',
+  'ByteSlack.webp',
+  'CollegeMastermind.webp',
   'NuvroAI.svg',
-  'CreativeCentralian.png',
-  'EcoMart.png',
-  'LNP.png',
-  'Micratto.png',
-  'Middler.png',
-  'PetSquadTV.png',
-  'Photoreviser.png',
-  'ReviewSensical.png',
-  'Ultra Engineering.png'
+  'CreativeCentralian.webp',
+  'EcoMart.webp',
+  'LNP.webp',
+  'Micratto.webp',
+  'Middler.webp',
+  'PetSquadTV.webp',
+  'Photoreviser.webp',
+  'ReviewSensical.webp',
+  'Ultra Engineering.webp'
 ];
 
 export function HeroSection() {
@@ -152,7 +152,7 @@ export function HeroSection() {
                     >
                       <Image
                         src={`/client/${logo}`}
-                        alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                        alt={`${logo.replace('.webp', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
                         width={120}
                         height={40}
                         loading="lazy"
@@ -168,7 +168,7 @@ export function HeroSection() {
                     >
                       <Image
                         src={`/client/${logo}`}
-                        alt={`${logo.replace('.png', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
+                        alt={`${logo.replace('.webp', '').replace(/([A-Z])/g, ' $1').trim()} logo`}
                         width={120}
                         height={40}
                         className="h-5 w-auto sm:h-6 md:h-8 lg:h-10 object-contain filter brightness-0 saturate-100 dark:filter dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-all duration-300"
