@@ -54,7 +54,7 @@ function LazySplineBackground() {
 
   // Implement lazy loading: Only render SplineScene initially when needed, but keep mounted after first load
   return (
-    <div ref={ref} className="absolute inset-0 z-0">
+    <div ref={ref} className="absolute inset-0 z-3">
       {hasLoadedOnce && (
         <SplineScene
           scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"

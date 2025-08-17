@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LenisProvider } from "@/components/lenis-provider";
 import { cn } from "@/lib/utils";
+import DotGrid from "@/components/react-bites/DotGrid/DotGrid";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <DotGrid />
             {children}
           </ThemeProvider>
         </LenisProvider>
