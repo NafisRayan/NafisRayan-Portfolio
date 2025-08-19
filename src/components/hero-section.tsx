@@ -108,13 +108,13 @@ export function HeroSection() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight leading-tight">
-                Hello, I am{" "}
+                Welcome to{" "}
                 <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                  Nafis Rayan
+                  Rockect Lab
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                Innovative Software Developer,{" "}
+                Innovative Software Solutions,{" "}
                 <br className="hidden sm:inline" />
                 building Web, Mobile, and 3D applications.
               </p>

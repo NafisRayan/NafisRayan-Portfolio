@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nafis | Software Developer",
-  description: "Innovative Software Developer building web and mobile applications",
+  title: "RocketLab | Digital Agency",
+  description: "RocketLab is a leading digital agency offering innovative web and mobile solutions.",
 };
 
 export default function RootLayout({

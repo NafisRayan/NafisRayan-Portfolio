@@ -1,6 +1,6 @@
-# Nafis Portfolio Website
+# RocketLab Agency Website
 
-A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and ShadCN UI components, showcasing a software developer's projects, experience, and skills.
+A modern, responsive agency website built with Next.js 15, TypeScript, Tailwind CSS, and ShadCN UI components, showcasing RocketLab's services, projects, methodology, expertise, and contact information.
 
 ## ✨ Features
 
@@ -11,7 +11,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **🎬 Animations** - Smooth loading animations, slide-up effects, interactive hover transitions on project cards, and a captivating grid background.
 - **📧 Contact Form** - Functional contact form with client-side validation, loading states, and file upload capability.
 - **🎯 Smooth Scrolling** - Enhanced smooth scrolling experience powered by Lenis for fluid navigation.
-- **💡 Professional Sections** - Dedicated sections for Hero, Experience, Projects, Skills, and Contact, providing a comprehensive overview.
+- **💡 Professional Sections** - Dedicated sections for Hero, Services, Projects, Methodology, Expertise, and Contact, providing a comprehensive overview.
 - **🌐 SEO Optimized** - Proper meta tags and structure for improved search engine visibility.
 - **🔗 Social Media Integration** - Easy access to social profiles and external links.
 
@@ -41,8 +41,8 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/NafisRayan/nafis-portfolio.git
-    cd nafis-portfolio
+    git clone https://github.com/RocketLab-Agency/rocketlab-agency.git
+    cd rocketlab-agency
     ```
 
 2.  **Install dependencies**
@@ -71,7 +71,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 ## 📁 Project Structure
 
 ```
-nafis-portfolio/
+rocketlab-agency/
 ├── public/                    # Static assets (images, favicon, client logos, project images)
 ├── src/
 │   ├── app/
@@ -83,14 +83,16 @@ nafis-portfolio/
 │   │   ├── ui/                # ShadCN UI components and custom UI elements
 │   │   ├── contact-section.tsx  # Contact form and social links
 │   │   ├── email-templates.tsx  # Email templates for contact form
-│   │   ├── experience-section.tsx # Professional timeline
+│   │   ├── expertise-section.tsx  # Displays industry expertise
 │   │   ├── footer.tsx         # Footer component
 │   │   ├── header.tsx         # Navigation header
 │   │   ├── hero-section.tsx   # Landing section with interactive 3D and client logos
 │   │   ├── lenis-provider.tsx # Context provider for smooth scrolling
 │   │   ├── loading-spinner.tsx  # Loading components (spinners, skeletons)
+│   │   ├── methodology-section.tsx # Our development methodology
 │   │   ├── projects-section.tsx # Project showcase
-│   │   ├── skills-section.tsx # Displays technical skills
+│   │   ├── services-section.tsx # Our services section
+│   │   ├── skills-section.tsx # Displays technical skills/core competencies
 │   │   ├── theme-provider.tsx # Theme context provider
 │   │   └── theme-toggle.tsx   # Theme switching button
 │   ├── data/

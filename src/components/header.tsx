@@ -10,9 +10,12 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { motion } from "framer-motion"
 
 const navigation = [
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Why Hire Me", href: "#hire-me" },
+  { name: "Services", href: "#services" },
+  
+  { name: "Methodology", href: "#methodology" },
+  { name: "Expertise", href: "#expertise" },
+
+  // { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -55,10 +58,10 @@ export function Header() {
             {/* Logo/Brand */}
             <Link href="/" className="flex items-center space-x-2 shrink-0 group">
               <span className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
-                Nafis
+                RocketLab
               </span>
               <span className="hidden sm:inline text-xs md:text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
-                | Software Developer
+                Software Solutions
               </span>
             </Link>
 
@@ -106,7 +109,7 @@ export function Header() {
               <ThemeToggle />
               <motion.div
                 className={`flex items-center rounded-full px-1 py-1 shadow-lg cursor-pointer transition ${mounted ? (theme === 'dark' ? 'bg-background' : 'bg-background') : ''} border border-border/50`}
-                style={{ minWidth: '200px', minHeight: '48px' }}
+                style={{ minWidth: '100px', minHeight: '48px' }}
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
@@ -128,17 +131,11 @@ export function Header() {
                     className="flex items-center group"
                     style={{
                       outline: "none",
-                      "--arrow-move": "190px",
+                      "--arrow-move": "140px",
                       "--rest-move": "40px",
                     } as React.CSSProperties}
                     onClick={() => {
                       document.querySelector("#contact")?.scrollIntoView({ behavior: 'smooth' });
-                      const link = document.createElement('a');
-                      link.href = '/NafisRayan_CV.pdf';
-                      link.download = 'NafisRayan_CV.pdf';
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
                     }}
                   >
                     <div
@@ -153,7 +150,7 @@ export function Header() {
                         group-hover:translate-x-[var(--rest-move)]
                       `}
                     >
-                      Get In Touch • Here
+                      Get In Touch
                     </div>
                     <span className="inline-flex items-center ml-2 mr-2 transition-transform duration-350 group-hover:-translate-x-[var(--arrow-move)]">
                       <svg
@@ -225,8 +222,8 @@ export function Header() {
                         className="w-full rounded-xl text-sm sm:text-base h-12 sm:h-14 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]" 
                         asChild
                       >
-                        <a href="/NafisRayan_CV.pdf" download="NafisRayan_CV.pdf" onClick={() => setIsOpen(false)}>
-                          Download CV
+                        <a href="#contact" onClick={() => setIsOpen(false)}>
+                          Contact Us
                         </a>
                       </Button>
                       <Button 
@@ -236,7 +233,7 @@ export function Header() {
                         asChild
                       >
                         <Link href="#contact" onClick={() => setIsOpen(false)}>
-                          Contact Me
+                          Contact Us
                         </Link>
                       </Button>
                     </div>

@@ -70,7 +70,7 @@ export function ProjectsSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-3 sm:mb-4">
-            My Portfolio
+            Our Portfolio
           </span>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Featured Projects

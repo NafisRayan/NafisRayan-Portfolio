@@ -25,10 +25,10 @@ export function Footer() {
           {/* Brand/Logo section */}
           <div className="flex items-center gap-2 text-center lg:text-left">
             <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Nafis
+              RocketLab
             </span>
             <span className="hidden sm:inline text-sm text-muted-foreground">
-              | Software Developer
+              | Software Solutions
             </span>
           </div>
   
@@ -51,7 +51,7 @@ export function Footer() {
             })}
           </div>          {/* Credit text - Right */}
           <div className="text-xs sm:text-sm text-muted-foreground text-center lg:text-right">
-            © {currentYear} Nafis Rayan. All rights reserved.
+            © {currentYear} RocketLab. All rights reserved.
             <div className="text-xs mt-1">
               Design That Solve Real Life Problems.
             </div>

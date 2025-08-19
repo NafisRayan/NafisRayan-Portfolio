@@ -142,27 +142,27 @@ export function ContactSection() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/nafisrayan",
+      href: "https://linkedin.com/company/rocketlab-agency",
       icon: Linkedin,
-      description: "Connect with me on LinkedIn"
+      description: "Connect with us on LinkedIn"
     },
     {
       name: "GitHub",
-      href: "https://github.com/NafisRayan", 
+      href: "https://github.com/RocketLab-Agency",
       icon: Github,
-      description: "Check out my repositories"
+      description: "Explore our open-source projects"
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/8801931999190",
+      href: "https://wa.me/YOUR_AGENCY_WHATSAPP_NUMBER", // Replace with actual number
       icon: WhatsappIcon,
-      description: "Chat with me on WhatsApp"
+      description: "Chat with us on WhatsApp"
     },
     {
       name: "Email",
-      href: "mailto:nafisrayan123@gmail.com",
+      href: "mailto:info@rocketlab.agency",
       icon: Mail,
-      description: "Send me an email"
+      description: "Send us an email"
     }
   ]
   
@@ -219,7 +219,7 @@ export function ContactSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs sm:text-sm text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 inline-block mb-4">
-            Contact Me
+            Contact Us
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
             Let&apos;s Work Together on Your Next Project
@@ -239,7 +239,7 @@ export function ContactSection() {
               viewport={{ amount: 0.5, once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Feel free to reach out directly...</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">Connect with us directly...</h3>
             </motion.div>
 
             <div className="space-y-3 sm:space-y-4">
@@ -297,10 +297,10 @@ export function ContactSection() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <h4 className="font-semibold group-hover:text-primary transition-colors text-sm sm:text-base text-foreground">
-                          Download CV
+                          Our Brochure
                         </h4>
                         <p className="text-xs sm:text-sm text-muted-foreground">
-                          Get my latest resume as PDF
+                          Download our company brochure
                         </p>
                       </div>
                     </a>
@@ -320,8 +320,8 @@ export function ContactSection() {
                 <CardContent className="p-3 sm:p-4 lg:p-6">
                   <h4 className="font-semibold mb-2 text-sm sm:text-base text-foreground">Quick Response</h4>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    I typically respond to messages within 24 hours. For urgent inquiries,
-                    feel free to reach out on WhatsAPP for faster communication.
+                    We typically respond to messages within 24-48 hours. For urgent inquiries,
+                    feel free to reach out on WhatsApp for faster communication.
                   </p>
                   <br />
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -341,7 +341,7 @@ export function ContactSection() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                     <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
-                  <CardTitle className="text-lg sm:text-xl text-foreground">Send me a message</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl text-foreground">Send us a message</CardTitle>
                   <CardDescription className="text-sm sm:text-base text-muted-foreground">
                     Fill out the form below and I&apos;ll get back to you as soon as possible.
                   </CardDescription>
