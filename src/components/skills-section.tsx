@@ -21,7 +21,7 @@ export function SkillsSection() {
             Why Hire Me?
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            What I Bring to the Table
+            What I Bring <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">to the Table</span>
           </h1>
         </motion.div>
 

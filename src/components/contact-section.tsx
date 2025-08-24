@@ -222,7 +222,7 @@ export function ContactSection() {
             Contact Me
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Let&apos;s Work Together on Your Next Project
+            Let&apos;s Work Together on <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Your Next Project</span>
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Have an idea you want to bring to life? I&apos;m here to help you create something amazing. Get in 

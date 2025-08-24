@@ -73,7 +73,7 @@ export function ProjectsSection() {
             My Portfolio
           </span>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Featured Projects
+            Featured <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Projects</span>
           </h1>
         </motion.div>
         <div className="relative max-w-6xl mx-auto space-y-12">
