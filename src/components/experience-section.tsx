@@ -7,18 +7,17 @@ import { Calendar, MapPin, CircleDot } from "lucide-react"
 
 const experiences = [
   {
-    title: "React Native Developer",
-    company: "Nuvro AI",
-    location: "Remote",
+    title: "Software Engineer",
+    company: "Brain Station 23",
+    location: "Dhaka, Bangladesh",
     period: "Jun 2025 – Present",
-    role: "Lead Android/iOS Developer",
     responsibilities: [
-      "Led the development of Android and iOS applications using React Native.",
-      "Architected and maintained cross-platform mobile codebases for high performance and scalability.",
-      "Collaborated with designers and backend engineers to deliver seamless user experiences.",
-      "Implemented CI/CD pipelines and managed app store deployments."
+      "Developed scalable web and mobile applications using the MERN stack and Next.js.",
+      "Built and maintained cross-platform mobile apps using React Native, ensuring reusability.",
+      "Designed and integrated RESTful APIs and handled server-side logic with Node.js and Express.js.",
+      "Collaborated with UI/UX and DevOps teams to ensure smooth development workflow."
     ],
-    technologies: ["React Native", "Android", "iOS", "CI/CD", "Mobile Architecture"]
+    technologies: ["MERN Stack", "Next.js", "React Native", "RESTful APIs", "Node.js", "Express.js"]
   },
   {
     title: "Software Engineer",
@@ -27,11 +26,11 @@ const experiences = [
     period: "Feb 2024 – Jun 2025",
     responsibilities: [
       "Collaborated with a team to develop scalable applications using MERN stack.",
-      "Integrated ThreeJS for 3D & VR simulations and interactive web experiences.",
+      "Integrated Three.js for 3D & VR simulations and interactive web experiences.",
       "Developed Android and iOS applications using React Native.",
       "Improved database performance by optimizing algorithms, and SQL queries.",
     ],
-    technologies: ["MERN Stack", "ThreeJS", "React Native", "Database Optimization"],
+    technologies: ["MERN Stack", "Three.js", "React Native", "Database Optimization"],
   },
   {
     title: "Full Stack Developer",
