@@ -12,10 +12,10 @@ const experiences = [
     location: "Dhaka, Bangladesh",
     period: "Jun 2025 – Present",
     responsibilities: [
-      "Developed scalable web and mobile applications using the MERN stack and Next.js.",
-      "Built and maintained cross-platform mobile apps using React Native, ensuring reusability.",
-      "Designed and integrated RESTful APIs and handled server-side logic with Node.js and Express.js.",
-      "Collaborated with UI/UX and DevOps teams to ensure smooth development workflow."
+      "Developed scalable web and mobile apps using MERN stack and Next.js successfully.",
+      "Built cross-platform mobile apps using React Native for better reusability across platforms.",
+      "Designed RESTful APIs and handled server-side logic with Node.js efficiently.",
+      "Collaborated with UI/UX and DevOps teams for smooth development workflow integration."
     ],
     technologies: ["MERN Stack", "Next.js", "React Native", "RESTful APIs", "Node.js", "Express.js"]
   },
@@ -25,10 +25,10 @@ const experiences = [
     location: "Dhaka, Bangladesh",
     period: "Feb 2024 – Jun 2025",
     responsibilities: [
-      "Collaborated with a team to develop scalable applications using MERN stack.",
-      "Integrated Three.js for 3D & VR simulations and interactive web experiences.",
-      "Developed Android and iOS applications using React Native.",
-      "Improved database performance by optimizing algorithms, and SQL queries.",
+      "Collaborated on scalable applications using MERN stack with team members effectively.",
+      "Integrated Three.js for 3D and VR simulations in web experiences.",
+      "Developed Android and iOS apps using React Native for cross-platform compatibility.",
+      "Optimized database performance with algorithms and SQL queries for speed."
     ],
     technologies: ["MERN Stack", "Three.js", "React Native", "Database Optimization"],
   },
@@ -38,10 +38,10 @@ const experiences = [
     location: "Arizona, USA (Remote)",
     period: "April 2023 – Jan 2024",
     responsibilities: [
-      "Developed the platform using MERN stack, Tailwind CSS and RESTful APIs.",
-      "Dashboard to manage student data, consultant assignments, and admissions tracking.",
-      "Integrated scheduling, email, and document-sharing APIs to streamline workflows.",
-      "Tested and deployed the app using Vercel-Heroku, set up version control, and ensured reliability.",
+      "Developed platform using MERN stack, Tailwind CSS, and RESTful APIs fully.",
+      "Managed student data, consultant assignments, and admissions tracking comprehensively.",
+      "Integrated scheduling, email, and document-sharing APIs for streamlined workflows.",
+      "Tested and deployed app using Vercel and Heroku with reliability ensured."
     ],
     technologies: ["MERN Stack", "Tailwind CSS", "RESTful APIs", "Vercel", "Heroku"],
   },
@@ -51,10 +51,10 @@ const experiences = [
     location: "Dhaka, Bangladesh",
     period: "Jan 2022 – March 2023",
     responsibilities: [
-      "Designed and implemented AI algorithms for rover navigation and autonomous rescue missions.",
-      "Developed and tested embedded firmware for rover localization, and telemetry.",
-      "Engineered AI-powered robots equipped with IoT components for intelligent rescue operations.",
-      "Utilized OpenCV for navigation and image-processing algorithms enabling real-time telemetry.",
+      "Designed AI algorithms for rover navigation and autonomous rescue missions effectively.",
+      "Developed embedded firmware for rover localization and telemetry systems accurately.",
+      "Engineered AI-powered robots with IoT components for intelligent rescue operations.",
+      "Used OpenCV for navigation and image-processing algorithms enabling real-time telemetry."
     ],
     technologies: ["AI", "Firmware", "IoT", "OpenCV", "Robotics"],
   },
@@ -78,16 +78,14 @@ export function ExperienceSection() {
             Professional <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Experience</span>
           </h1>
         </motion.div>
-          <div className="max-w-6xl mx-auto space-y-6">
+        <div className="relative max-w-6xl mx-auto space-y-12">
           {experiences.map((experience, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5, once: true }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.12 }}
+              className="sticky top-34"
+              style={{ zIndex: index + 1 }}
             >
-              <Card className="p-4 sm:p-6 border border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-sm">
+              <Card className="p-4 sm:p-6 border-10 border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-sm w-[85%] mx-auto">
                 {/* Mobile-first responsive layout */}
                 <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr] gap-4 lg:gap-8">
                   {/* Top section on mobile, Left column on desktop - Date and Location */}
@@ -136,7 +134,7 @@ export function ExperienceSection() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

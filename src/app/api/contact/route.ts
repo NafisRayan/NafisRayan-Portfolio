@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { uploadToCloudinary } from '@/lib/cloudinary'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: NextRequest) {
   try {
     // Parse FormData
@@ -94,9 +92,10 @@ export async function POST(req: NextRequest) {
     
     // Send email notification using Resend
     try {
+      const resend = new Resend('re_2Qv9RCXF_2DbqkCepyYXzt2XLY6bPrJJw')
       const emailData = await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
-        to: process.env.CONTACT_EMAIL || 'nafisrayan123@gmail.com',
+        from: 'onboarding@resend.dev',
+        to: 'nafisrayan123@gmail.com',
         subject: `New Project Inquiry: ${projectTitle}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -152,7 +151,7 @@ export async function POST(req: NextRequest) {
       
       // Send confirmation email to the user
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+        from: 'onboarding@resend.dev',
         to: email,
         subject: 'Thanks for reaching out! - Nafis Rayan',
         html: `
