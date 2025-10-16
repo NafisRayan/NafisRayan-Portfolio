@@ -104,7 +104,7 @@ export default function Carousel({ slides, index, setIndex, renderSlide }: Carou
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
-        className="relative flex items-center justify-center overflow-visible py-[20%] select-none mt-16"
+        className="relative flex items-center justify-center overflow-visible py-[20%] select-none"
       >
         {slides.map((s, i) => {
           const offset = i - index;
@@ -155,7 +155,7 @@ export default function Carousel({ slides, index, setIndex, renderSlide }: Carou
               style={{
                 zIndex: 1000 - abs,
                 touchAction: "none",
-                boxShadow,
+                // boxShadow,
                 filter: `brightness(${brightness})`,
               }}
               className={`absolute w-[40vw] max-w-lg left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform group ${
