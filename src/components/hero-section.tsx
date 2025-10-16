@@ -3,9 +3,9 @@
 import React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
 import { SplineScene } from "@/components/ui/spline"
 import { motion } from "framer-motion"
+import { ArrowDown } from "lucide-react"
 
 function LazySplineBackground() {
   const [showSpline, setShowSpline] = React.useState(false);
@@ -82,16 +82,6 @@ const clientLogos = [
 ];
 
 export function HeroSection() {
-  const scrollToNextSection = React.useCallback(() => {
-    const experienceSection = document.getElementById("experience");
-    if (experienceSection) {
-      experienceSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, []);
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 bg-white dark:bg-black overflow-hidden">
       {/* 3D Robot Background */}
@@ -178,18 +168,25 @@ export function HeroSection() {
                 </div>
               </div>
             </motion.div>
-            {/* Scroll indicator */}
-            <motion.button
-              onClick={scrollToNextSection}
-              className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 cursor-pointer group pointer-events-auto"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5, once: true }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              aria-label="Scroll to next section"
+            {/* Arrow Down */}
+            <motion.div
+              className="mt-12 pointer-events-auto"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8 }}
             >
-              <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-            </motion.button>
+              <motion.div
+                className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-colors cursor-pointer"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                >
+                  <ArrowDown className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
