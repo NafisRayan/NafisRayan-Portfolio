@@ -82,7 +82,7 @@ export function ExperienceSection() {
           {experiences.map((experience, index) => (
             <div
               key={index}
-              className="sticky top-18 sm:top-22 md:top-26 lg:top-34"
+              className="sticky top-22 sm:top-22 md:top-28 lg:top-34"
               style={{ zIndex: index + 1 }}
             >
               <Card className="p-4 sm:p-6 border-10 border-border/50 bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-sm w-[85%] mx-auto">
