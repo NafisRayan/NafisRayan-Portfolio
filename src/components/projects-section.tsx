@@ -64,7 +64,7 @@ export function ProjectsSection() {
             Featured <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Projects</span>
           </h1>
         </motion.div>
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto overflow-hidden">
           <Carousel
             slides={projects}
             index={currentIndex}
