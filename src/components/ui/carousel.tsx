@@ -2,24 +2,24 @@
 
 import {
   motion,
-  useAnimationFrame,
-  useMotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
 } from "framer-motion";
-import type { PanInfo } from "framer-motion";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { MotionValue } from "framer-motion";
-import Image from "next/image";
 
 interface CarouselProps {
-  slides: any[];
+  slides: Array<{
+    id: number;
+    title: string;
+    description: string;
+    icon: React.ComponentType<{ className?: string }>;
+    image: string;
+    tags: string[];
+    sourceCode: string;
+    demoUrl: string;
+  }>;
   index: number;
   setIndex: React.Dispatch<React.SetStateAction<number>>;
-  renderSlide: (slide: any, index: number, isActive: boolean) => React.ReactNode;
+  renderSlide: (slide: CarouselProps['slides'][0], index: number, isActive: boolean) => React.ReactNode;
 }
 
 export default function Carousel({ slides, index, setIndex, renderSlide }: CarouselProps) {
@@ -55,7 +55,7 @@ export default function Carousel({ slides, index, setIndex, renderSlide }: Carou
     // capture pointer to receive move/up events
     try {
       (e.target as Element).setPointerCapture(e.pointerId);
-    } catch (err) {
+    } catch {
       /* ignore */
     }
   };
@@ -82,7 +82,7 @@ export default function Carousel({ slides, index, setIndex, renderSlide }: Carou
     finishPointer(e.clientX);
     try {
       (e.target as Element).releasePointerCapture(e.pointerId);
-    } catch (err) {
+    } catch {
       /* ignore */
     }
   };
@@ -122,11 +122,7 @@ export default function Carousel({ slides, index, setIndex, renderSlide }: Carou
           const opacity = abs > maxVisibleCards ? 0 : 1 - abs * 0.25;
 
           // compute shadow and subtle brightness based on distance from center
-          const shadowIntensity = Math.max(0, 28 - abs * 6); // px blur fallback
-          const yOffset = Math.min(12, abs * 4);
-          const spread = Math.max(0, 2 - abs * 0.5);
           // stronger, darker shadow for nearer cards; softer for far cards
-          const boxShadow = `0 ${yOffset}px ${shadowIntensity}px ${spread}px rgba(0,0,0,${0.25 + Math.max(0, 0.15 - abs * 0.03)})`;
           // subtle brightness reduction for background cards so the centered card reads on top
           const brightness = abs === 0 ? 1 : 1 - Math.min(0.18, abs * 0.06);
 
