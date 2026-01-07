@@ -1,10 +1,14 @@
 // Test script for Resend email functionality
 // Run this file to test your email setup
 
+import { config } from 'dotenv';
 import { Resend } from 'resend';
 
+// Load environment variables
+config({ path: '.env.local' });
+
 // Initialize Resend with your API key
-const resend = new Resend('re_2Qv9RCXF_2DbqkCepyYXzt2XLY6bPrJJw');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function testEmail() {
   try {
@@ -58,6 +62,6 @@ async function testEmail() {
 }
 
 // Uncomment the line below to run the test
-// testEmail();
+testEmail();
 
 export { testEmail };

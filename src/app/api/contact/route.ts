@@ -92,7 +92,7 @@ export async function POST(req: NextRequest) {
     
     // Send email notification using Resend
     try {
-      const resend = new Resend('re_2Qv9RCXF_2DbqkCepyYXzt2XLY6bPrJJw')
+      const resend = new Resend(process.env.RESEND_API_KEY)
       const emailData = await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'nafisrayan123@gmail.com',
