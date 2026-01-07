@@ -1,13 +1,19 @@
-# Nafis Portfolio Website
+# Nafis Rayan Portfolio Website
 
-A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and ShadCN UI components, showcasing a software developer's projects, experience, and skills.
+A modern, responsive portfolio website built with Next.js 16, TypeScript, Tailwind CSS, and ShadCN UI components, showcasing a software developer's projects, experience, and skills.
+
+## 💡 About This Project
+
+This is my personal portfolio website that I'm sharing publicly with the developer community. As someone who started their journey in web development, I know how challenging it can be to find good examples and learn from real-world projects. I hope this codebase serves as a helpful reference for new developers looking to build their own portfolios or learn modern web development practices.
+
+Feel free to fork, clone, and modify this project for your own use. If you find it helpful, consider giving it a star ⭐ and sharing it with others who might benefit from it!
 
 ## ✨ Features
 
 - **🌓 Dark/Light Mode** - Full theme switching with system preference detection and persistent user preference.
 - **📱 Responsive Design** - Mobile-first approach with seamless responsive navigation and a dedicated mobile hamburger menu.
 - **🎨 Modern UI** - Built with ShadCN components and Tailwind CSS for a sleek and accessible user interface.
-- **⚡ Performance** - Fast loading with Next.js 15 App Router, optimized for a smooth user experience.
+- **⚡ Performance** - Fast loading with Next.js 16 App Router, optimized for a smooth user experience.
 - **🎬 Animations** - Smooth loading animations, slide-up effects, interactive hover transitions on project cards, and a captivating grid background.
 - **📧 Contact Form** - Functional contact form with client-side validation, loading states, and file upload capability.
 - **🎯 Smooth Scrolling** - Enhanced smooth scrolling experience powered by Lenis for fluid navigation.
@@ -17,7 +23,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15
+- **Framework:** Next.js 16.1.1
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **UI Components:** ShadCN UI (Button, Card, Badge, Sheet, Input, Textarea, Label, Skeleton)
@@ -26,10 +32,10 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **3D Graphics:** @splinetool/react-spline (for interactive 3D elements)
 - **Smooth Scrolling:** Lenis
 - **Theme Management:** next-themes
-- **Email Service:** EmailJS (for contact form submissions)
+- **Email Service:** Resend (for contact form submissions)
 - **Image Uploads:** Cloudinary
 - **Form Handling:** Custom validation
-- **Deployment:** Ready for Vercel/Netlify/Railway/DigitalOcean App Platform
+- **Deployment:** Ready for Netlify/Railway/DigitalOcean App Platform
 
 ## 🚀 Getting Started
 
@@ -51,13 +57,19 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
     ```
 
 3.  **Set up Environment Variables**
-    Create a `.env.local` file in the root directory and add your EmailJS and Cloudinary credentials:
-    ```
-    NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_emailjs_service_id
-    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
-    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-    NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_cloudinary_upload_preset
+    Create a `.env.local` file in the root directory and add your Resend and Cloudinary credentials:
+    ```env
+    # Resend API Configuration
+    RESEND_API_KEY=your_resend_api_key
+
+    # Email Configuration
+    CONTACT_EMAIL=your_contact_email
+    FROM_EMAIL=your_from_email
+
+    # Cloudinary Configuration
+    CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+    CLOUDINARY_API_KEY=your_cloudinary_api_key
+    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
     ```
 
 4.  **Run the development server**
@@ -72,6 +84,19 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 
 ```
 nafis-portfolio/
+├── .env.local                # Environment variables (not committed)
+├── components.json            # ShadCN configuration
+├── EMAILJS_SETUP.md           # EmailJS setup instructions (legacy)
+├── env.local.demo.txt         # Example environment variables
+├── eslint.config.mjs          # ESLint configuration
+├── FRONTEND_IMAGE_CONFIG.md   # Frontend image configuration
+├── next.config.ts             # Next.js configuration
+├── package.json               # Project dependencies and scripts
+├── postcss.config.mjs         # PostCSS configuration
+├── README.md                  # Project documentation
+├── ShadCN-context.md          # ShadCN component usage context
+├── test-email.js              # Email testing script
+├── tsconfig.json              # TypeScript configuration
 ├── public/                    # Static assets (images, favicon, client logos, project images)
 ├── src/
 │   ├── app/
@@ -98,50 +123,59 @@ nafis-portfolio/
 │   ├── lib/
 │   │   ├── cloudinary.ts      # Cloudinary configuration
 │   │   └── utils.ts           # Utility functions (cn for Tailwind classes)
-├── components.json            # ShadCN configuration
-├── EMAILJS_SETUP.md           # EmailJS setup instructions
-├── env.local.demo.txt         # Example environment variables
-├── eslint.config.mjs          # ESLint configuration
-├── FRONTEND_IMAGE_CONFIG.md   # Frontend image configuration
-├── next.config.ts             # Next.js configuration
-├── package.json               # Project dependencies and scripts
-├── postcss.config.mjs         # PostCSS configuration
-├── README.md                  # Project documentation
-├── ShadCN-context.md          # ShadCN component usage context
-├── test-email.js              # Email testing script
-├── tsconfig.json              # TypeScript configuration
 ```
 
 ## 📈 Project Showcase (Highlights)
 
 Here are a few highlights from the projects featured in this portfolio:
 
--   **Fashion Ecommerce**: A modern e-commerce front-end built with Next.js 14, TypeScript, and Tailwind CSS, featuring Redux Toolkit for state management and Framer Motion animations.
--   **TechX-Ecommerce**: A robust, full-stack E-Commerce platform using Next.js 14, React, and TypeScript, with a responsive UI, admin dashboard, Prisma ORM, MongoDB, and NextAuth for secure authentication.
--   **Admin Dashboard**: A modern admin panel dashboard built with ShadcnUI in Next.js, offering light/dark modes, responsive design, and reusable components for various projects.
--   **AI-Powered Customer Support**: An intelligent customer support system featuring AI chatbots, automated ticket routing, and sentiment analysis, built with React and NodeJS, incorporating NLP and ML.
--   **AR Product Visualization**: A powerful, customizable tray configuration tool built with React-Three-Fiber, Next.js, and Tailwind CSS, enabling users to design and visualize 3D models.
--   **3D Lego Simulation**: A web-based 3D Lego simulation game built with Next.js 15, React 19, and Three.js, offering a creative and engaging experience for Lego enthusiasts.
+-   **[Fashion Ecommerce](https://github.com/NafisRayan/Fashion-Ecommerce)**: A modern e-commerce front-end built with Next.js 16, TypeScript, and Tailwind CSS, featuring Redux Toolkit for state management and Framer Motion animations.  
+    *[Live Demo](https://fashion-ecommerce-gilt.vercel.app/)*
+
+-   **[TechX-Ecommerce](https://github.com/NafisRayan/TechX-Ecommerce)**: A robust, full-stack E-Commerce platform using Next.js 16, React, and TypeScript, with a responsive UI, admin dashboard, Prisma ORM, MongoDB, and NextAuth for secure authentication.  
+    *[Live Demo](https://tech-x-ecommerce.vercel.app/)*
+
+-   **[Admin Dashboard](https://github.com/NafisRayan/AdminPanel-Shadcn)**: A modern admin panel dashboard built with ShadcnUI in Next.js, offering light/dark modes, responsive design, and reusable components for various projects.  
+    *[Live Demo](https://admin-panel-demo-five.vercel.app)*
+
+-   **[AI-Powered Customer Support](https://github.com/NafisRayan/chatCOMsystem)**: An intelligent customer support system featuring AI chatbots, automated ticket routing, and sentiment analysis, built with React and NodeJS, incorporating NLP and ML.  
+    *[Repository](https://github.com/NafisRayan/chatCOMsystem)*
+
+-   **[AR Product Visualization](https://github.com/NafisRayan/Cabinate-Configurator-R3F-Threejs)**: A powerful, customizable tray configuration tool built with React-Three-Fiber, Next.js, and Tailwind CSS, enabling users to design and visualize 3D models.  
+    *[Live Demo](https://cabinate-configurator-r3-f-threejs.vercel.app/)*
+
+-   **[3D Lego Simulation](https://github.com/NafisRayan/Lego-Blocks-Game)**: A web-based 3D Lego simulation game built with Next.js 16, React 19, and Three.js, offering a creative and engaging experience for Lego enthusiasts.  
+    *[Live Demo](https://lego-blocks-game.vercel.app)*
 
 ## 🚀 Deployment
 
 The project is ready for deployment on platforms like:
 
--   **Vercel** (Recommended for Next.js)
 -   **Netlify**
 -   **Railway**
 -   **DigitalOcean App Platform**
+-   **Render**
+-   **AWS Amplify**
 
-### Quick Deploy to Vercel
+> **⚠️ Note:** I do not recommend deploying to Vercel. Their CEO has met with the Israeli PM, and I stand in solidarity with Palestine. Please consider ethical alternatives for hosting your projects. I will also be moving my own projects away from Vercel soon.
+
+### Quick Deploy to Netlify
 
 ```bash
-npm install -g vercel
-vercel
+npm install -g netlify-cli
+netlify deploy --prod
 ```
 
-## 🤝 Contributing
+## 🤝 Contributing & Community
 
-Feel free to submit issues and enhancement requests!
+This project is open source and I welcome contributions from the community! Whether it's:
+
+- Bug fixes and improvements
+- New features or components
+- Documentation updates
+- Performance optimizations
+
+Feel free to submit issues, create pull requests, or reach out if you have questions. Let's build something amazing together! 🚀
 
 ## 📄 License
 
@@ -149,4 +183,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Built with ❤️ using Next.js, TypeScript, and ShadCN UI**
+**Built with ❤️ by Nafis Rayan - Sharing knowledge with the developer community**
